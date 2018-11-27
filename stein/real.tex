@@ -1,0 +1,54 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{enumitem}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{lemma}{Lemma}
+\begin{document}
+\chapter{Measures}
+
+
+\setlist[2]{label=\alph*.,font=\bfseries}
+
+\begin{enumerate}[label=\arabic*.,font=\bfseries]
+	\setcounter{enumi}{19}
+	\item \begin{enumerate}
+		      \item Consider $(M_n)$ in $M^*$ such that $E \subset \cup M_n$. Then $\mu^*(E) \le \mu^*(\cup M_n) \le \sum \mu^*(M_n) = \sum \bar\mu(M_n)$. Since $\mu^*(E)$ is as small as RHS for all $(M_n)$, it is a lower bound. By definition, $\mu^+(E)$ is the largest lower bound. Hence $\mu^*(E)\le\mu^+(E)$.
+		            For equality, if such $A$ exists, $\mu^*(E)\le\mu^+(E)\le\bar\mu(A)=\mu^*(A)=\mu^*(E)$ hence the equality holds. Conversely, if the equality holds, for any $\epsilon>0$, $\exists A_n\in M^*$ with $A\supset E$ and $\bar\mu(A_n)\le\mu^*(E)+\epsilon/2^n$. Let $A=\cap A_n$, then $\mu^*(E)\le\mu^*(A)=\bar\mu(A)\le\mu^*(E)+\epsilon/2^n$ for all $n$, which implies $\mu^*(E)=\mu^*(A)$.
+		      \item Suppose $\mu^*$ is induced by a premeasure on $\mathcal A \subset M^*$. By Ex. 18a, for any $\epsilon>0$, $\exists A_n \in \mathcal A_\sigma \subset M^*$ with $\mu^*(A_n) \le \mu^*(E)+\epsilon/2^n$. As in 20a, let $A=\cap A_n \in \mathcal A_\sigma \subset M^*$. Then $\mu^*(A)=\mu^*(E)$, therefore by Ex 20a $\mu^*(E)=\mu^+(E)$.
+		      \item Consider $\mu^*(\{0\})=1, \mu^*(\{1\})=1, \mu^*(\{0,1\})=3$. Then $M^*=\{\varnothing, \{0\}, \{1\}\}$. $\mu^+(\{0,1\}) \le \bar\mu(\{0\})+\bar\mu(\{1\})=2$.
+	      \end{enumerate}
+
+	\item Let $E\in X$ locally measurable. We will show that $E\in M^*$. This proves $\bar\mu$ is saturated on $M^*$. For any $A\in X$ with $\bar\mu(A)<\infty$, we can construct using 18a $(A_n)$ in $M^*$ such that $A\subset A_n$ and $\mu^*(A_n)\le\mu^*(A)+\epsilon/2^n$. Then $\mu^*(A\cap E)+\mu^*(A\cap E^C)\le\mu^*(A_n\cap E)+\mu^*(A_n\cap E^C)=\mu^*(A_n)\le\mu^*(A)+\epsilon/2^n$. The equality comes from that E is locally measurable so $A_n\cap E, A_n\cap E^C \in M^*$ and the additivity of $\mu^*$ on $M^*$. Since this is true for all $n$, the inequalities are the equalities. Hence E is $\mu^*$-measurable, $E\in M^*$, $\bar\mu$ is saturated.
+
+	      % 22
+	\item \begin{enumerate}
+		      % 22a
+		      \item \begin{proposition*}
+			            $\bar M = M^*$.
+		            \end{proposition*}
+
+
+		            \begin{proof}
+			            Since $M^*$ is complete,
+			            $E\cup F\in M^*$ for $E\in M \subset M^*$,
+			            $F\subset N\in \mathcal N$.
+			            Hence $\bar M \subset M^*$.
+			            Conversely, if $E\cup F \in \bar M$ for $E\in M$,
+			            $F\subset N\in \mathcal N$,
+			            for any $A\subset X$,
+			            $\mu^*(A\cap(E\cup F))+\mu^*(A\cap(E\cup F)^C)
+				            =\mu^*((A\cap E)\cup (A\cap F))+\mu^*(A\cap E^C \cap F^C)
+				            \le \mu^*(A\cap E)+\mu^*(A\cap F)+\mu^*(A\cap E^C)
+				            =\mu^*(A)$.
+			            We used $\mu^*(A\cap F)\le \mu^*(F)\le \mu^*(N)=\mu(N)=0$ and $E\in M\subset M^*$.
+
+			            ..
+		            \end{proof}
+	      \end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
