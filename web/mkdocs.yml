@@ -1,0 +1,16 @@
+site_name: Math
+repo_url: https://github.com/elbaro/math/
+markdown_extensions:
+    - pymdownx.arithmatex:
+        smart_dollar: False
+        generic: True
+
+extra_javascript: ['https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js', 'math.js']
+extra_css: ['https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css']
+
+nav:
+- Home: 'index.md'
+- Chung: 'chung'
+- Lee: 'lee'
+- Kreyszig: 'kreyszig'
+- Stein: 'stein'
