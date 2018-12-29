@@ -2,7 +2,7 @@ import os
 import shutil
 
 books = ['chung', 'lee', 'artin', 'kreyszig', 'stein']
-books = filter(lambda book: os.path.exists(f'../{book}'), books)
+books = list(filter(lambda book: os.path.exists(f'../{book}'), books))
 
 with open(f'docs/index.md','w') as f:
     f.write(f'# Index\n')
