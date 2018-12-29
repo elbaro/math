@@ -1,4 +1,7 @@
 *.pdf
+web/site
+web/docs/*
+!web/docs/math.js
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

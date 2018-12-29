@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.6"
+
+# command to install dependencies
+install:
+  - pip install -qr web/requirements.txt
+  - pip install -q sphinx sphinx_rtd_theme
+
+# build docs
+script:
+  - cd web && python generate.py && touch web/site/.nojekyll
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $gh
+  keep_history: false
+  local_dir: web/site
+  verbose: true
+  on:
+    branch: master
+  
