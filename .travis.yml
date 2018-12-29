@@ -9,7 +9,7 @@ install:
 
 # build docs
 script:
-  - cd web && python generate.py && touch web/site/.nojekyll
+  - cd web && python generate.py && touch site/.nojekyll
 
 deploy:
   provider: pages
