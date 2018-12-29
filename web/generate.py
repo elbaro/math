@@ -2,6 +2,7 @@ import os
 import shutil
 
 books = ['chung', 'lee', 'artin', 'kreyszig', 'stein']
+books = filter(lambda book: os.path.exists(f'../{book}'), books)
 
 with open(f'docs/index.md','w') as f:
     f.write(f'# Index\n')
@@ -15,7 +16,7 @@ for book in books:
         files = os.listdir(f'../{book}')
         chapters = [int(name[2:-3]) for name in files if name.startswith('ch')]
         f.write(f'# {book.capitalize()}\n')
-        os.unlink
+
         for i in sorted(chapters):
             try:
                 os.link(f'../{book}/ch{i}.md', f'docs/{book}/ch{i}.md')
