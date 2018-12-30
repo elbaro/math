@@ -1,6 +1,8 @@
 site_name: Math
 repo_url: https://github.com/elbaro/math/
 markdown_extensions:
+    - nl2br
+    - sane_lists
     - pymdownx.arithmatex:
         smart_dollar: False
         generic: True
