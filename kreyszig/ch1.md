@@ -142,14 +142,14 @@
     the last inequality holds because $\mathbb C$ is a metric space.
 
 
-15. $$\begin{aligned}\tilde{\tilde d}(x,y)&=max(d_1(x_1,y_1),d_2(x_2,y_2))\\
-    &=max(xy1, xy2)\\
-    &=max(xz1+zy1,xz2+zy2)=\triangle
+15. $$\begin{aligned}\tilde{\tilde{\kern{-0.3ex}d}}(x,y)&=\max(d_1(x_1,y_1),d_2(x_2,y_2))\\
+    &=\max(xy1, xy2)\\
+    &=\max(xz1+zy1,xz2+zy2)=\triangle
     \end{aligned}$$
 
     ($xy1$ represents $d_1(x_1,y_1)$ for convenience)
 
-    We want to prove $\triangle\le max(xz1, xz2)+max(zy1,zy2)$. This is equivalent to show $\max(a+b,c+d)\le \max(a,c)+\max(b,d)$.
+    We want to prove $\triangle\le \max(xz1, xz2)+\max(zy1,zy2)$. This is equivalent to show $\max(a+b,c+d)\le \max(a,c)+\max(b,d)$.
 
     $$\begin{aligned}
     \max(a+b,c+d)&\le\max(\max(a,c)+b,\max(a,c)+d)\\
@@ -158,6 +158,69 @@
     \end{aligned}$$
 
 ## 1.3. Open Set, Closed Set, Neighborhood
+1. (a) For any $x\in B(x_0,r)$, define $B'=\{y|d(x,y)<r-d(x,x_0)>\}$. Since $d(x_0,y)\le d(x,y)+d(x,x_0)<r$, $B'\sub B$. $\therefore B$ is an open set.
+    (b) Let a closed ball $\tilde B(x_0,r)$. Then $\tilde B^c = {p|d(p,x_0)>r}. For any point $x\in\tilde B^c$, let $B_x=B(x, d(x,x_0)-r)$. A point $y\in B_x$ is not in $B$ because $r<d(x,x_0)-d(x,y)\le d(x,y)+d(y,x_0)-d(x,y)=d(x_0,y)$. $\therefore B_x \in \tilde B^c$, so $x$ is an internal point of $\tilde B^c$, hence $B^c$ is open, and $B$ is closed.
+
+2. An open ball in $\R$ is an open interval. An open ball in $\mathbb C$ is a filled circle without boundary in the complex plane. An open ball $B(x_0,r) $in $C[a,b]$ is a set of functions $x$ whose the value at $t\in[a,b]$ satisfies $|x(t)-x_0(t)|\le r$. In other words, $x_0(t)-r\le x(t)\le x_0(t)+r$.
+
+3. We need to find the smallest $r$ such that $\forall t |\cos t-\sin t|\le r$. Equivalently, find the maximum $\cos t + \sin t$ where $t\in [0,\pi/4]$, or, $\max f(x)$ where $f(x)=x+\sqrt{1-x^2}, x\in[0,1]$. $f'(x)=1+\frac{-2x}{2\sqrt{1-x^2}}=0\Longrightarrow x=\frac{1}{\sqrt 2}$. Therefore $t$ is $0\degree, 45\degree, 90\degree$. Trying these values, we have $\max(\cos t + \sin t)=\sqrt 2$.
+
+4. If a non-empty set $A$ is open, each point $a\in A$ has a ball $B_a\sub A$. Let $B=\cup_a B_a$, then $B\sub A$. Also $A\sub B$ because every $a\in A$, $a\in B_a\sub B$. Hence $A=B$, and $A$ is an union of open balls. Conversely if $A$ is an union of open balls, it is open (by what we learned).
+
+5. (a) $\varnothing$ is open because it has no member and we can say all members are internal points. $X$ is open because any neighborhood is in $X$. $\varnothing, X$ are closed because their complements are open.
+    (b) For a subset $Y\sub X$, $Y$ is open because for $y\in Y, B(y,0.5)=\{y\}\sub Y$. Since every subset is open, $Y^c$ is open, hence $Y$ is closed.
+
+6. Suppose a neighborhood $N$ of $x_0$ contains finitely many points of $A$. Let $d_0=\min_{a\in N\cap A} d(x_0, a)$. Then it contradicts that $B(x_0, d_0/2)$ should contain at least one point of $A$.
+
+7. (a) $\N=\overline \N$ on $\R$
+    (b) $\overline\mathbb Q=\R$ on $\R$
+    (c) $\overline{\mathbb Q \times \mathbb Q}=\R\times\R$
+    (d) $\overline{\{z\mid \lvert z\rvert<1\}}=\{z\mid\lvert z\rvert \le 1\}$ on $C$
+
+8. Let $X=\{0,1\}$. Then $B(0;1)=\{0\}, \overline{B(0;1)}=\{0\}$, but $\tilde B(0;1)=\{0,1\}$.
+
+9. - $A\sub \overline A = A\cup\{\text{accumulation points}\}$
+    - $\overline A=\overline{\overline A}$: We have $\overline A\sub \overline {\overline A}$. For the converse, suppose the contrary, so $\exists a\in \overline{\overline A}, a\notin \overline A$. Since $a$ is not an accumulation point of $A$, but of $\overline A$,
+    $\exists \epsilon_0>0, B(a,\epsilon_0)\cap A-\{a\}=\varnothing$
+    $\forall \epsilon>0, B(a,\epsilon)\cap \overline A - \{a\}\neq \varnothing$
+    Let $a'\in B(a,\epsilon_0/2)\cap \overline A-\{a\}$, then $a'\in \overline A-A$ so $a'$ is an accumulation point of $A$.
+    $\forall \epsilon>0, B(a', \epsilon)\cap A-\{a'\}\neq \varnothing$
+    with $\epsilon=\epsilon_0/2$,
+    $\exists a''\in B(a', \epsilon_0/2)\cap A-\{a'\}$
+    $d(a'',a')<\epsilon_0/2, d(a',a)<\epsilon_0/2, d(a'',a)<\epsilon_0/2$
+    Also $a''\neq a$ because $a''\in A, a\in \overline A$. This contradicts to $a'' \in B(a,\epsilon_0)\cap A-\{a\}$. Therefore such $a$ does not exist, and $\overline{\overline A}=A$.
+
+    - $\overline{A\cup B}=\overline A\cup \overline B$: suppose $x\in \overline{A\cup B}, x\notin \overline A, x\notin \overline B$. Then $\exists \epsilon>0$, $B(x,\epsilon)\cap A\sub\{x\}$, $B(x,\epsilon)\cap B\sub \{x\}$, but $B(x,\epsilon)\cap(A\cup B)\not\subset \{x\}$, which contradicts. Hence $\overline{A\cup B}\sub (\overline A\cup \overline B)$. Now suppose $x\in \overline A$ but $x\notin \overline{A\cup B}$. $\forall \epsilon>0, B(x,\epsilon)\cap A-\{x\}\neq\varnothing, B(x,\epsilon)\cap(A\cup B)-\{x\}\neq \varnothing$, $x$ is an accumulation point of $(A\cup B)$. Therefore the converse is also true.
+
+    - $\overline{A\cap B}\sub \overline A\cap \overline B$
+        if $x\in A\cap B$, then $x\in A\sub \overline A, x\in B\sub \overline B\Longrightarrow x\sub \overline A\cap \overline B$. If $x\in \overline{A\cap B}$, $\forall \epsilon>0, B(x,\epsilon)\cap(A\cap B)-\{x\}\neq\varnothing, B(x,\epsilon)\cap A-\{x\}\neq\varnothing$ and $B(x,\epsilon)\cap B-\{x\}\neq\varnothing$, hence $x$ is in $\overline A$ and $\overline B$, and $x\in \overline A\cap \overline B$.
+
+        Conversely suppose $x\in \overline A\cap \overline B$. If $x\in A\cap B$ then $x\in \overline{A\cap B}$. If $x\notin A, x\in B$, then $B(x,\epsilon)\cap A-\{x\}\neq\varnothing, B(x,\epsilon)\cap B-\{x\}\neq\varnothing, B(x,\epsilon)\cap (A\cap B)-\{x\}\neq\varnothing, (\overline A\cap \overline B)\not\sub\overline{A\cap B}$. Hence $\overline{A\cap B}\not\sub\overline A\cap\overline B$.
+
+10. $x\in A \Longrightarrow d(x,x)=0 \Longrightarrow D(x,A)=0$,
+    $x\notin A\Longrightarrow \forall \epsilon>0, B(x,\epsilon)\cap A-\{x\}\neq \varnothing$
+    If $D(x,A)=\epsilon_0>0$ let $a\in B(x,\epsilon_0)\cap A-\{x\}$, then $d(x,a)<D(x,A)$ which contradicts. $\therefore x\in \overline A \Longrightarrow D(x,A)=0$.
+    For converse, $D(x,A)=0$. Then there exists a sequence in $A$ that converges to $x$, hence $x\in \overline A$.
+
+11. (a) the boundary of
+        $(-1,1)\Longrightarrow\{-1,1\}$
+        $[-1,1)\Longrightarrow\{-1,1\}$
+        $[-1,1]\Longrightarrow\{-1,1\}$
+    (b) $\mathbb Q\sub\R$: the boundary is $\R$ because any neighborhood has a point of $\mathbb Q$ and a point of $\R$.
+    (c) For both disks, the boundary is $\{z\mid \lvert z\rvert=1\}$.
+
+12. $B[a,b]$ is not separable: Consider a subset $F$, a set of functions $f(x)$ such that $f(x)=0$ if $a\le x<t$, 1 if $t\le x\le b$, for $a<t<b$. $F$ is uncountable and $B(f,1/2)=\{f\}$ for $f\in F$. If $B[a,b]$ has any dense subset $A$, disjoint and uncountably many neighbors $B(f,1/2)$ should contain a point of $A$, which makes $A$ uncountable.
+
+13. $X$ is separable $\iff$ $X$ has a countable dense subset $\iff$ $X$ has a countable subset $Y$ such that $\forall \epsilon>0, \forall x\in X, \exists y\in Y, d(x,y)<\epsilon$. The interpretation is that for any point $x$, there exists a sequence of $(y_n)$ that converges to $x$.
+
+14. Show ① $T:X\Longrightarrow Y$ is continuous $\iff$ ② $T^{-1}(M)$ is closed in $X$.
+    ① to ②: $T^{-1}(M^c)=(T^{-1}(M))^c$. If $M$ is closed, $M^c$ is open, and by ①, $T^{-1}(M^c)$ is open. Since $(T^{-1}(M))^c$ is open, $T^{-1}(M)$ is closed.
+
+    ② to ①: If $M$ is open, $M^c$ is closed, and by ②, $T^{-1}(M^c)=(T^{-1}(M))^c$ is closed, so $T^{-1}(M)$ is open.
+
+15. $cos(x)$ on $(-2\pi,2\pi)$ has an open domain but the range $[-1,1]$ is closed.
+
 ## 1.4. Convergence, Cauchy Sequence, Completeness
+
 ## 1.5. Examples, Completeness Proofs
 ## 1.6. Completion of Metric Spaces
