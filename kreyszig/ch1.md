@@ -222,5 +222,33 @@
 
 ## 1.4. Convergence, Cauchy Sequence, Completeness
 
+1. If $(x_n)$ converges to a limit $x$, $\forall \epsilon>0, \exists N>0, \forall n>N, d(x_n,x)<\epsilon$, then for any $(x_{n_k})$, $\forall\epsilon>0, \exists K>0, \forall k>K, d(x_{n_k}, x)<\epsilon$, therefore $x_{n_k}\longrightarrow x$
+
+2. $(x_n)$ is Cauchy and $x_{n_k}\longrightarrow x$, then $\forall \epsilon>0$,
+   - $\exists K>0, \forall k>K, d(x_{n_k},x)<\epsilon/2$
+   - $\exists N>0, \forall n,m>K, d(x_n,x_m)<\epsilon/2$
+   - Then $\forall n>max(N,n_k), \exists i, n_i>n$, and $d(x_n,x)\le d(x_n,x_{n_i})+d(x_{n_i},x)<\epsilon/2+\epsilon/2=\epsilon$.
+    Hence $(x_n)$ converges to $x$.
+
+3. $(x_n)\longrightarrow x$ is equivalent to $\forall V=n(x), \exists n_0, \forall n>n_0, x_n\in V$
+    ($\Longrightarrow$): for a neighborhood $V$, $\exists r, B_r(x)\sub V$, there exists $N$ such that $\forall n>N, d(x_n,x)<r$, hence $x_n\in B_r(x)\sub V$.
+
+    ($\Longleftarrow$): For any $\epsilon>0$ and $B_\epsilon (x)$, there exists $n_0$ such that $x_n\in B_\epsilon(x) \Longrightarrow d(x_n,x)<\epsilon$ for all $n>n_0$. Hence $(x_n)\longrightarrow x$.
+
+4. $\exists N, \forall n,m\ge N, d(x_n,x_m)<1\Longrightarrow \forall n\ge N, d(x_n,x_N)<1$. Hence $x_N,x_{N+1},..$ are bounded. Also $x_1, x_2, .. x_{N-1}$ are finite, so bounded.
+
+5. No. A counter example is $x_n=\sin n$.
+
+6. We will show that $(a_n)$ is Cauchy, then since $\R$ is complete, $(a_n)$ converges. For any $\epsilon>0, \exists N, \forall n,m>N, d(x_n,x_m)<\epsilon/4$ and $d(y_n,y_m)<\epsilon/4$. Then $|a_n-a_m|=|d(x_n,y_n)-d(x_m,y_m)|\le d(x_n,x_m)+d(y_n,y_m)<\epsilon/2$. Hence $(a_n)$ is Cauchy, thus convergent.
+
+7. 1.4-2 (b) has a stronger condition than Prob 6, hence 1.4-2 (b) is true.
+
+8. If $(x_n)$ is Cauchy in $(X,d_1)$, for $\epsilon>0$ and large enough $n,m$, we have $d_1(x_n,x_m)<b\epsilon$, or, $d_2(x_n,x_m)<\epsilon$. Hence $(x_n)$ is Cauchy in $(X,d_2)$. In the same way, a cauchy seq in $(X,d_2)$ is Cauchy in $(X,d_1)$.
+
+
+9. It can be easily shown that $\tilde{\tilde{\kern{-0.3ex}d}}\le \tilde d\le d\le 2*\tilde{\tilde{\kern{-0.3ex}d}}$.
+
+10. Consider a Cauchy sequence $c_n=(a_n+i b_n)$ in $\mathbb C$, where $a_n,b_n\in \R$. Then for any $\epsilon>0$ and large enough $n$ and $m$, $d(a_n,a_m)\le d(c_n,c_m)<\epsilon, d(b_n,b_m)\le d(c_n,c_m)<\epsilon$, hence $(a_n)$ and $(b_n)$ are Cauchy. Since $\R$ is complete, $(a_n)\longrightarrow a, (b_n)\longrightarrow b$. Again, for any $\epsilon>0$ and large enough $n$, $d(a_n,a)<\epsilon/2, d(b_n,b)=d(i b_n, i b)<\epsilon/2$, hence $d(c_n,a+bi)<\epsilon$, $(c_n)\longrightarrow a+bi$, $\mathbb C$ is complete.
+
 ## 1.5. Examples, Completeness Proofs
 ## 1.6. Completion of Metric Spaces
