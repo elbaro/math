@@ -58,7 +58,7 @@
 
 4.4. Any group with order greater than 1 has a trivial proper subgroup ${1}$ and it is the smallest group. Only ${1}$ has no proper subgroup.
 
-4.5. 
+4.5. If a subgroup is a trivial ${1}$, it is cyclic. Otherwise the subgroup of a group $<x>$ consists of $x^k$ and let $m$ be the smallest positive $k$. For any element of the subgroup $x^l$, $l=mq+r$ by the division theorem. Since the subgroup has $x^{mq}$ and $x^{mq+r}$, it also has $x^{-mq}$ (inverse) and $x^r$. If $r$ is not $0$, it contradicts that $m$ is the smallest positive $k$. Hence $r$ is zero, $l$ is a multiple of $m$. This proves the subgroup is a cyclic, $<x^m>$.
 
 4.6. .
     (a) skip
@@ -66,13 +66,17 @@
 
 4.7. $H$ is closed under the composition because $xx=1, yy=1, (xy)(xy)=1$, $xy$ is in $H$, $yx=y^{-1} x^{-1} = (xy)^{-1} = xy$ is in $H$, $xxy=xy$, $yxy=x^{-1}=x, xyx=y^{-1}=y, xyy=x$. $H$ also has $1$ and all inverses (the inverse of an element is itself). Hence $H$ is a subgroup. It is of order $4$ because $x, y, xy$ are all different. If $x=y$, $xy=1$, so the order of $xy$ is $1$, contradicts. If $x=xy$, then $y$ is an identity, $y=1$, the order of $y$ is $2$, contradicts. Therefore they are all different.
 
-4.8.
+4.8. .
+    (a) (Type 2) can be represented as (Type 1) and (Type 3). Suppose two rows are $(r1,r2)$. Then $(r1,r2)\Rightarrow (r1+r2,r2)\Rightarrow (r1+r2,-r1)\Rightarrow (r1+r2,r1)\Rightarrow (r2,r1)$. Therefore only (Type1) and (Type3) are enough to generate $GL_n(\R)$.
+    (b) Without (Type3) we can make a matrix similar to a row echelon one, except each row's leading non-zero element is not 1. Any product of (Type 1) matrices has the determinant $1$ hence it is in $SL_n(\R)$. Any element in $SL_n(\R)$ has the determinant $1$, and can be reduced to an upper triangle matrix using only (Type 1). The first $n-1$ diagonal elements also can be reduced to 1 using (Type 1). The last diagonal element is automatically $1$ since the product of diagonal elements is the determinant. Hence it is possible to reduce any element of $SL_n(\R)$ to $I$, and taking the inverse of a sequence of (Type 1) operations used, we have a product of (Type 1) which is equal to the element. Therefore (Type 1) operations exactly generates $SL_n(\R)$.
 
-4.9.
+4.9. skip
 
 4.10.
 
-4.11.
+4.11. .
+    (a) 
+    (b) 
 
 
 
