@@ -5,7 +5,7 @@
 It can be easily seen that all examples satisfy (i)~(iii) in page 20.
 
 - Ex 2.4
-(a) Suppose a set $A$ is open in $(M,d)$. Any point $x\in A$ is internal point in $(M,d)$ and there exists $r$ such that $B_r^{(d)}(x)\sub A$. Since $B_{r_1}^{(d')}(x)\sub A$, $x$ is an internal point of $A$ in $(M,d')$. Hence $A$ is open in $(M,d')$. Conversely, any open set in $(M,d')$ is open in $(M,d)$. Therefore two topologies are the same.
+(a) For "only if", any open ball w.r.t $d$ is an open set w.r.t $d'$, and any open set contains an open ball, hence there exists $r_1$. The same for $r_2$. For "if", Suppose a set $A$ is open in $(M,d)$. Any point $x\in A$ is internal point in $(M,d)$ and there exists $r$ such that $B_r^{(d)}(x)\sub A$. Since $B_{r_1}^{(d')}(x)\sub A$, $x$ is an internal point of $A$ in $(M,d')$. Hence $A$ is open in $(M,d')$. Conversely, any open set in $(M,d')$ is open in $(M,d)$. Therefore two topologies are the same.
 (b) $B_r^{(d)}=B_{cr}^{(d')}$, so their open sets are the same, and generated topologies are the same.
 (c) $d'\le d\le nd'$. It can be proved using (a) that $d$ and $d'$ generate the same topology.
 (d) With the discrete metric, $B_{0.5}(x)=\{x\}$. These generate all possible subsets of $X$.
@@ -113,8 +113,18 @@ A topology should have $X$ itself as an open set. If (i) is false, the basis can
 
 ## Manifolds
 
+- Ex 2.54
+If a topological space is a 0-manifold, for any element $x$, it has a neighborhood homeomorphic to $R^0={0}$. So the neighborhood of $x$ is $\{x\}$. Since the topology has the smallest unit of open sets, they generate the discrete topology. A manifold is second countable, hence countable.
+
+If a set $E$ is countable discrete space, it is a Hausdorff space and it has a basis that consists of single-element sets. This basis is countable, so $E$ is second-countable. For a point $x\in E$, it has a neighborhood $\{x\}$ which is homeomorphic to $R^0$. Hence $E$ is a 0-manifold.
+
 
 ## Problems
 2-1.
+(a) If $X$ is finite, $\mathscr T_1$ is the discrete topolgy. If $X$ is infinite, $\{\varnothing,X\}\sub \mathscr T_1$, $X\setminus\cup U_k\sub X\setminus U_1$ is finite, $X\setminus \cap U_k=\cup_1^n(X\setminus U_k)$ is finite, hence $\mathscr T_1$ is a topology.
+
+(b)
+
+(c) d
 
 2-25.
