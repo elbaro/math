@@ -251,4 +251,38 @@
 10. Consider a Cauchy sequence $c_n=(a_n+i b_n)$ in $\mathbb C$, where $a_n,b_n\in \R$. Then for any $\epsilon>0$ and large enough $n$ and $m$, $d(a_n,a_m)\le d(c_n,c_m)<\epsilon, d(b_n,b_m)\le d(c_n,c_m)<\epsilon$, hence $(a_n)$ and $(b_n)$ are Cauchy. Since $\R$ is complete, $(a_n)\longrightarrow a, (b_n)\longrightarrow b$. Again, for any $\epsilon>0$ and large enough $n$, $d(a_n,a)<\epsilon/2, d(b_n,b)=d(i b_n, i b)<\epsilon/2$, hence $d(c_n,a+bi)<\epsilon$, $(c_n)\longrightarrow a+bi$, $\mathbb C$ is complete.
 
 ## 1.5. Examples, Completeness Proofs
+
+1. Since $\R$ is complete, a subset is complete iff it is complete. Hence $(a,b)$ is incomplete and $[a,b]$ is complete.
+
+2. Consider a Cauchy $(x^(1),x^(2),\dots)$. For any $\epsilon$ and large enough $n,m$, $d(x^{(n)},x^{(m)})<\epsilon\Longrightarrow \forall j, |x_j^{(n)}-x_j^{(m)}|<\epsilon$. For a fixed $j$, (x^{(n)}_j) is Cauchy. Since $\R$ is complete, $x^{(n)}_j$ converges, and let the limit point $x_j$, and let $x=(x_n)$. Note that $x\in X$. For any $\epsilon>0$ and large enough $n,m$, $\forall j |x_j^n-x_j|\le \epsilon\Longrightarrow d(x^n,x)\le \epsilon$, and $x^n$ converges to $x$. Since any Cauchy converges, $X$ is compelte.
+
+3. Let $x_1=(1,0,0,\dots), x_2=(1,1/2,0,0,\dots), x_3=(1,1/2,1/4,0,0,\dots), \dots$. The sequence $(x_1,x_2,\dots)$ converges to $(1,1/2,1/4,1/8,\dots)$ but this has infinitely many zeros, therefore this is not in $M$. Hence $M$ is not complete.
+
+4. The previous example converges to a point not in $M$, hence $M$ is not closed, Since $l^\infty$ is complete, $M$ is not complete.
+
+5. Consider a Cauchy $(x_n)$. For $\epsilon=0.5$ and large enough $n,m$, $|x_n-x_m|<1$, which means $x_n=x_m$ and the sequence is eventually constant and convergent. Hence $X$ is complete.
+
+6. $(x_n=n)$ is Cauchy. Suppose this sequence converges to $x$. For large enough $n$, $x_n>x\Longrightarrow \arctan(x_n)>\arctan(x)$, so it cannot converge. Hence the space is incomplete.
+
+7. Similar to 6, $(x_n=n)$ is Cauchy but it does not converge.
+
+8. $C[a,b]$ is complete. We will show $Y$ is closed. Consider $(y_n)\longrightarrow y$ and suppose $y\notin Y$. Then $y(a)\neq y(b)$ and for any $\epsilon>0$ and large enough $n$, $|y_n(a)-y(a)|<\epsilon/2, |y_n(b)-y(b)|<\epsilon/2, |y(a)-y(b)|<\epsilon$, which implies $y(a)=y(b)$, a contradiction. Hence $Y$ is closed and complete.
+
+9. $(x_m)\in C[a,b], (x_m)\Longrightarrow x$. For any $\epsilon>0$ and large enough $n$, $d(x_n,x)<\epsilon\Longrightarrow |x_n(t)-x(t)|<\epsilon$. Since $x_n$ is continuous, for any $\epsilon_2>0$ there exists $\delta>0$, $|t_1-t_2|<\delta\Longrightarrow |x_n(t_1)-x_n(t_2)|<\epsilon_2$. Then for $t_1,t_2\in [a,b]$ such that $|t_1-t_2|<\delta, |x(t_1)-x(t_2)|\le|x(t_1)-x_n(t_1)|+|x_n(t_1)-x_n(t_2)|+|x_n(t_2)-x(t_2)|<\epsilon+\epsilon_2+\epsilon$. Since $\epsilon$ and $\epsilon_2$ were chosen arbitrarily, $x$ is continuous.
+
+10. Any Cauchy sequence in a discrete metric space is eventually constant (use $\epsilon=0.5$), and converges to the constant. Hence discrete metric spaces are complete.
+
+11. Suppose $x_n\longrightarrow x$. Then for any $\epsilon>0$ and large enough $n$, $d(x_n,x)=\sum_j \frac{1}{2^j} \frac{|x_j^{(n)}-x_j|}{|x_j^{(n)}-x_j|+1}<\epsilon$. Since all terms are positive, $\frac{|x_j^{(n)}-x_j|}{|x_j^{(n)}-x_j|+1}<2^j \epsilon$. Let $f(t)=\frac{t}{1+t}$. $f$ is continuous and increasing. $f(|x_j^{(n)}-x_j|)<2^j\epsilon$ implies $x_j^{(n)}\longrightarrow x_j$. (why?)
+
+12. Consider a Cauchy $(x^{(m)})$. For any $\epsilon>0$ and large enough $n,m$, $d(x^{(n)},x^{(m)})<\epsilon\Longrightarrow f(|x_j^{(n)}-x_j^{(m)}|)<2^j \epsilon\Longrightarrow |x_j^{(n)}-x_j^{(m)}|<f^{-1}(2^j\epsilon)$. For a fixed $j$ and any $\epsilon_2>0$, there exists $\epsilon_0$ such that $f^{-1}(2^j\epsilon_0)<\epsilon_2$. With $\epsilon=\epsilon_0$ in the previous inequality, $|x_j^{(n)}-x_j^{(m)}|<f^{-1}(2^j\epsilon_0)<\epsilon_2$, hence $x_j^{(n)}$ is Cauchy. This sequence converges to $x_j$ because $\R$ is complete. By Problem 11, $x^{(n)}\Longrightarrow x$. Therefore $s$ is complete.
+
+13. With $n<m$, $d(x_n,x_m)=\int_{m^{-2}}^{n^{-2}}(t^{-1/2}-t)dt=[2t^{1/2}-1/2 t^2]_{m^{-2}}^{n^{-2}}=2(n^{-1}-m^{-1})-1/2(n^{-4}-m^{-4})<2(n^{-1}-m^{-1})<2n^{-1}$. Thus for any $epsilon>0$, choose $n$ such that $2n^{-1}<\epsilon$, then $d(x_n,x_m)<\epsilon)$. Hence $(x_n)$ is Cauchy.
+
+
+14. $(x_n)$ converges to $x(t)=t^{-1/2}$ for $t>0$, but $x(0)=0$. Hence $x$ is not continuous at $t=0$ and $x$ is not in the space.
+
+15. $d(x_n,x_m)=\frac{1}{(n+1)^2}+\frac{1}{(n+2)^2}+\dots+\frac{1}{m^2}\le \int_{n+1}^{m+1} \frac{1}{t^2} dt = [-1/t]^{m+1}_{n+1}=\frac{1}{n+1}-\frac{1}{m+1}<\frac{1}{n+1}$. Therefore for $n,m>1/\epsilon, d(x_n,x_m)<\frac{1}{n+1}<\frac{1}{n}<\epsilon$, Hence this is Cauchy.
+Suppose this converges to $x$. Let $k$ the index ofo the last nonzero element of $x$. Then for $n>k, d(x,x_n)>\frac{1}{(k+1)^2}+\frac{1}{(k+2)^2}+\dots+\frac{1}{n^2}$. Hence $d(x,x_n)>\frac{1}{(k+1)^2}$ and $(x_n)$ does not converge to $x$.
+
+
 ## 1.6. Completion of Metric Spaces
