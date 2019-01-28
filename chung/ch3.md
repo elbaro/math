@@ -67,3 +67,24 @@
 20..
 
 ## 3.3. Independence
+
+1. [WIP] Let $\mathscr F=\{\varnothing,\{a\},\{b\},\{a,b\}\}, \mathscr P_1(\{a\})=0.5, \mathscr P_1(\{b\})=0.5, \mathscr P_1(\{a,b\})=1, X_1(a)=1, X_1(b)=2, X_2(a)=1, X_2(b)=1$. Then $\mathscr P(X_1=1)=0.5, P(X_2=1)=1$
+
+2. It can be easily checked that they are pairwise independent. They are not totally independent because $P(X_1X_2=1,X_1=1,X_2=1)=1/4\neq P(X_1=1)P(X_1=1)P(X_1X_2=1)=1/8$. $\mathscr F=\{X_1,X_2,\dots,X_{n-1},X_1X_2X_3\dots X_{n-1}\}$ is an example that every $n-1$ of them are independent but not all of them. Let $\Lambda_1=\{b,c\},\Lambda_2=\{a,b\},\Lambda_3=\{c,d\}, P(b)=1/4=P(ab)P(bc)=1/2*1/2$ and $P(c)=1/4=P(bc)P(cd)=1/2*1/2$. Then $\Lambda_1$ and $\Lambda_2\cup\Lambda_3=\{a,b,c,d\}$ are not independent.
+
+3..
+
+4..
+
+5..
+
+6..
+
+7..
+
+8..
+
+9. $\int_{Y\in B}Xd\mathscr P=\int X\Delta_B(Y)d\mathscr P=\mathscr E(X\Delta_B(Y))=\mathscr E(X) \mathscr E(\Delta_B(Y))=\mathscr E(X) \mathscr P(Y\in B)$. $X$ and $\Delta_B(Y)$ are independent because the identity is measurable and an indicator of a borel set is measurable, so by Theorem 3.3.1 they are independent.
+
+10. Let any possible value of $Y$ be $y$. By Fubini, $\mathscr E(|X+y|^p)<\infty$. There exists a constant $c\in(0,\infty)$ such that $|a+b|^p\le c(|a|^p+|b|^p)$ for all $a, b$.  Then $\mathscr E(|X|^p)=E(|X+y-y|^p)\le \mathscr E((|X+y|+|y|)^p)\le\mathscr E(c(|X+y|^p+|y|^p))=\mathscr cE(|X+y|^p)+|y|^p<\infty$. The similar proof for $\mathscr E(Y)$ holds. [link](https://math.stackexchange.com/questions/1589248/if-the-sum-of-two-independent-random-variables-is-lp-does-it-imply-that)
+
