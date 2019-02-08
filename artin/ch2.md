@@ -1,5 +1,14 @@
 # Chapter 2. Groups
 
+## Checklist
+- Group
+- Group's order
+- Subgroup
+- Relation between left inverse / right inverse
+- Cyclic Group
+- Coset
+
+
 ## Section 1. Laws of Composition
 
 1.1. $ab=a$, $(ab)c=ac=a$, $a(bc)=ab=a$.
@@ -48,7 +57,7 @@
 
 ## Section 4. Cyclic Groups
 
-4.1. $a^7=1, a^3b = ba^3, ba^3b^{-1}=a^3$, squaring the both sides, $ba^6b^{-1}=a^6, ba^{-1}b^{-1}=a^{-1}$, then $ab=ba$. 
+4.1. $a^7=1, a^3b = ba^3, ba^3b^{-1}=a^3$, squaring the both sides, $ba^6b^{-1}=a^6, ba^{-1}b^{-1}=a^{-1}$, then $ab=ba$.
 
 4.2. .
     (a) skip (use $e^{in/(2\pi)}$)
@@ -75,8 +84,8 @@
 4.10.
 
 4.11. .
-    (a) 
-    (b) 
+    (a)
+    (b)
 
 
 
@@ -107,4 +116,4 @@
 
 ## Miscellaneous Problems
 
-M.1. 
+M.1.
