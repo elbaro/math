@@ -1,7 +1,7 @@
 import os
 import shutil
 
-books = ['chung', 'lee', 'artin', 'kreyszig', 'stein']
+books = ['chung', 'lee', 'tu', 'artin', 'kreyszig', 'stein']
 books = list(filter(lambda book: os.path.exists(f'../{book}'), books))
 
 with open(f'docs/index.md', 'w') as f:
