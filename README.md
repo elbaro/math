@@ -14,6 +14,6 @@ See [Compiled](https://elbaro.github.io/math).
   - [Official errata](https://sites.math.washington.edu/~lee/Books/ITM/errata.pdf)
 - Loring W. Tu. 2010. An Introduction to Manifolds (2nd Ed.)
   - [Unofficial errata](http://sites.psu.edu/ehssan/wp-content/uploads/sites/7257/2013/10/Errata-for-An-Introduction-to-Manifolds-Second-Edition.pdf)
-
+  - [Partial Solutions by Clayton Lungstrum](http://web.math.rochester.edu/people/grads/clungstr/manifolds/manifolds.html)
 
 Please file an issue for typo, incorrect solution, or any helpful comment for other readers.
