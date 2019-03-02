@@ -3,6 +3,7 @@
 ## 3.1. General Definitions
 
 
+
 1. f
 
 2. d
@@ -28,25 +29,29 @@
 
 ## 3.2. Properties of mathematical expectation
 
-1..
+(46p)
+
+1. From $X\ge 0$ a.e., there exists a null set $N$ such that $X\ge 0$ on \Lambda\setminus N$. Consider a set $E_n=\{X\ge 1/n\}$. Then $\mathscr P(E_n)=0$ because if not, $\mathscr P(E_n)>0, \int_\Lambda Xd\mathscr P=\int_{\Lambda\setminus N} Xd\mathscr P\ge \int_{E_n} Xd\mathscr P\ge \mathscr P(E_n)*1/n>0$, which contradicts. Let $E=\cup_n E_n=\{X>0\}$, then $\mathscr P(E)=0$. Hence $X=0$ on $\Lambda\setminus E\setminus N$ whose the measure is 1. Therefore $X=0$ almost everywhere.
 
 2. (The statement is wrong in a case of direc-delta function?) [WIP] In particular, suppose $\lim_{n\Longrightarrow\infty}\mathscr P(|X|>n)=k>0$. Then it is a contradiction that $\int_X Xd\mathscr P\ge nk$ for all $n$ and thus $\int_X Xd\mathscr P=\infty$. Therefore $\lim_{n\Longrightarrow\infty}\mathscr P(|X|>n)=0$. (Or, more easily, use Theorem 3.2.1) Using the first statement in the problem,  $\lim_{n\longrightarrow\infty}\int_{|X|>n}Xd\mathscr P=0$.
 
-3..
+3. We show three conditions on page 21. (iii) $\nu(\Omega)=1d$, (i) $X\ge 0\Longrightarrow \nu(\Lambda)\ge 0$, (ii) the additivity from the additivity of integral. Therefore $\nu$ is a p.m.
 
-4..
+4. $\sum_{n=1}^\infty \mathscr P(|X|\ge cn)=\sum_{n=1}^\infty \mathscr P(|X|/c\ge n)<\infty \iff \mathscr E(|X|/c)<infty \iff \mathscr E(|X|)<infty$.
 
-5..
+5. ?
 
-6..
+6. Let $Z_n=Y-X_n$ and apply Fatou's lemma on $Z_n$. Since $Y-\limsup X_n=\liminf Z_n$, we get the desired inequality. Without the condition on $Y$, it's equivalent to claim Fatou's lemma without non-negativity, which is known false. (TODO: Counterexample)
 
-7..
+7. (This problem is equivalent to Folland 2.26) We use the dominated convergence theorem. First let $X=X^+-X^-$. For $X^+$, there exists a sequence of simple rv.s $(\phi^+_n)$ that pointwise converges to $X^+$. $|\phi^+_n-X^+|$ converges to $0$. Also $|\phi^+_n-X^+|\le|\phi^+_n|+|X^+|\le 2|X^+|$ and since $|X^+|$ is integrable, $|\phi^+_n-X^+|$ is bounded by an integral function. Now we apply the dominated convergence theorem on $|\phi^+_n-X^+|$ and get $\int |\phi^+_n-X^+| \longrightarrow \int \lim |\phi^+_n-X^+| = 0$. This means that for any $\epsilon>0$ and large enough $n$, $\int |\phi^+_n-X^+| < \epsilon/2$. We can do the same for $X^-$, and combining them to get the desired result.d
 
-8..
+8.
+
+#### Part 2
 
 9..
 
-10..
+10. Let $\phi(x)=x^{r'/r}$. Then $\phi$ is convex. By Jensen inequality, $\phi(\int |X|^{r})\le \int \phi(|X|^{r})=\int |X|^{r'}<\infty$. For the second statement, when $p\ge 1$ and $\mathscr E(|X|^r)<\infty$, using Minkowski, $\mathscr E(|X-a|^r)^{1/r} < \mathscr E(|X|^r)^{1/r} + \mathscr E(|a|^r)^{1/r} < \infty$. For the other direction, $\mathscr E(|X|^r)^{1/r}=\mathscr E(|X-a+a|^r)^{1/r}<E(|X-a|^r)^{1/r}+E(|a|^r)^{1/r}<\infty$. For $0<p<1$, $|X-a|^r\le |(|X|+|a|)|^r\le |X|^r+|a|^r$ since $f(x)=x^r$ is concave and the subadditivity holds. Similarily, $|X|^r=|X-a+a|^r\le |X-a|^r+|a|^r$. Applying integrals on both sides, this proves the second statement.d
 
 11..
 
@@ -58,12 +63,12 @@
 
 15..
 
-16.(*) [WIP] (if F is strictly increasing between 0 and 1) $\int_{-\infty}^{\infty}[F(x+a)-F(x)]dx=\int_0^1 m(F_a^{-1}(x)\setminus F^{-1}(x)) dy = a$. (Use lebesgue?)
+16. $\int_{-\infty}^{\infty}[F(x+a)-F(x)]dx=\int_{-\infty}^{\infty}\int_{x}^{x+a} f(t) dt dx=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(t) \chi_E(x,t) dt dx$ where $E=\{x\le t\le x+a\}$. By Fubini, This is equal to $\int\int f(t)\chi_E(x,t)dxdt = \int f(t) \int \chi_E(x,t) dxdt = \int f(t)*a \,dt=a\int_{-\infty}^\infty f(t)dt = a*1 = a$.
 
-17..
+17. $\int_0^\infty (1-F(x)) dx=\int_0^\infty \mathscr P(X>x)dx=\int_0^\infty \int_x^\infty \mathscr f(t) \,dt \,dx$. By Tonelli, this is $=\int_0^\infty \int_0^t \mathscr f(t) \,dx \,dt=\int_0^\infty t*f(t)\,dt=\mathscr E(X)$. Since $\mathscr P(X=x)=0$, $\mathscr P(X>x)=\mathscr P(X\ge x)$.
 
 18..
-19..
+19. ???
 20..
 
 ## 3.3. Independence
