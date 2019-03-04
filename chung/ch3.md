@@ -93,3 +93,22 @@
 
 10. Let any possible value of $Y$ be $y$. By Fubini, $\mathscr E(|X+y|^p)<\infty$. There exists a constant $c\in(0,\infty)$ such that $|a+b|^p\le c(|a|^p+|b|^p)$ for all $a, b$.  Then $\mathscr E(|X|^p)=E(|X+y-y|^p)\le \mathscr E((|X+y|+|y|)^p)\le\mathscr E(c(|X+y|^p+|y|^p))=\mathscr cE(|X+y|^p)+|y|^p<\infty$. The similar proof for $\mathscr E(Y)$ holds. [link](https://math.stackexchange.com/questions/1589248/if-the-sum-of-two-independent-random-variables-is-lp-does-it-imply-that)
 
+11..
+
+12..
+
+13..
+
+14..
+
+15..
+
+16..
+
+17..
+
+18..
+
+19..
+
+20..
