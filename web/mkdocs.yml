@@ -12,6 +12,7 @@ extra_css: ['https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css']
 
 nav:
 - Home: 'index.md'
+- Kim: 'kim'
 - Chung: 'chung'
 - Lee: 'lee'
 - Tu: 'tu'
