@@ -286,3 +286,29 @@ Suppose this converges to $x$. Let $k$ the index ofo the last nonzero element of
 
 
 ## 1.6. Completion of Metric Spaces
+
+1. Let $d_m=\min_{a,b\in Y, a\neq b} d(a,b)$. This exists because $Y$ is finite. Also $d_m>0$. For any Cauchy sequence $(x_n)$, with $\epsilon=d_m/2$ and large enough $n,m$, $d(x_n,x_m)<d_m/2$. The only possible distance smaller than $d_m$ is $0$, hence $x_n=x_m$, therefore $(x_n)$ converges to a constant in $Y$. This proves $Y$ is complete.
+
+2. The completion of $(\mathscr Q,d)$ is $(\R, d')$ where $d'(x,y)=|x-y|$.
+
+3. A discrete metric space is already complete.
+
+4. Let $T$ a bijective isometry from $X_1$ onto $X_2$. Consider a Cauchy sequence $(y_n)$ in $X_2$. Then $(T^{-1} y_n)$ is Cauchy in $X_1$ because $d'(y_n,y_m)<\epsilon\longrightarrow d(T^{-1}y_n,T^{-1}y_m)<\epsilon$. This converges to $x$ in $X_1$ because $X_1$ is complete. Then $d(T^{-1}y_n,x)<\epsilon\longrightarrow d'(y_n,Ty_n)<\epsilon$, hence $y_n$ converges to $Tx$. This proves $X_2$ is complete.
+
+5.
+(a) Let $T$ a bijective isometry from $X$ onto $Y$. It is continuous. (for any $\epsilon>0$, $\delta=\epsilon$) The inverse is also continuous (for any $\epsilon>0$, $\delta=\epsilon$). Hence $T$ is a homeomorphism.
+(b) $\arctan$ maps from $(-\infty,\infty)$ (complete) to $(-\pi/2,\pi/2)$ (incomplete). The function is bijective, and both the forward and inverse are continuous, hence $\arctan$ is a homeomorphism.
+
+6. Define $T:C[a,b]\longrightarrow C[0,1], T(f)(x)=f((b-a)x+a)$. Then for $f,g\in C[a,b]$,
+
+    $$\begin{aligned}
+    &d'(Tf,Tg) \\
+    &=\sup |Tf(t)-Tg(t)|, t\in[0,1] \\
+    &=\sup |f((b-a)t+a)-g((b-a)t+a)|, t\in[0,1] \\
+    &=\sup |f(x)-g(x)|, x\in[a,b] \\
+    &=d(f,g)
+    \end{aligned}$$
+
+where $C[a,b]$ is equipped with $d$ and $C[a,b]$ is equipped with $d'$. $T$ is bijective, hence $C[a,b]$ and $C[0,1]$ are isomorphic.
+
+7.
