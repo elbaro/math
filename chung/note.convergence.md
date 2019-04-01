@@ -7,6 +7,8 @@ $X_n, X$: random variables
 For more properties, see [Wikipedia](https://en.wikipedia.org/wiki/Convergence_of_random_variables).
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/6fafe753cbea59eaa36703e0d40921f74cb50827)
 
+- pr. => subseq is a.e.
+
 ## Convergence in dist.
 $\forall x, F_n(x)\longrightarrow F(x)$
 = converge in law
@@ -21,7 +23,7 @@ $\lim \Pr(|X_n-X|>\epsilon)=0$
 = $F_n\xrightarrow p F$
 = $\operatorname{plim}_{n\longrightarrow\infty} X_n = X$
 
-## Convergence in mean
+## Convergence in $L^r (r\ge 1)$
 $\lim E(|X_n-X|^r)=0 (r\ge 1)$
 = $X_n\xrightarrow{L^r} X$
 
@@ -42,3 +44,11 @@ $\Pr(\lim_n X_n = X)=1$
 $\forall \omega, X_n(\omega)\longrightarrow X(\omega)$
 = everywhere
 = pointwise
+
+## Vaguely convergence
+pp.85
+$a<b \Longrightarrow \{\mu_n((a,b])\longrightarrow\mu((a,b])\}$
+s.p.m. $\mu_n$ $\xrightarrow[v]{}$ s.p.m. $\mu$
+
+- 4.3.3. any seq of spm has a convergent subseq
+- 4.3.4. all vaguely convergent subseq of a spm seq have the same limit
