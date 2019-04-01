@@ -16,4 +16,9 @@ See [Compiled](https://elbaro.github.io/math).
   - [Unofficial errata](http://sites.psu.edu/ehssan/wp-content/uploads/sites/7257/2013/10/Errata-for-An-Introduction-to-Manifolds-Second-Edition.pdf)
   - [Partial Solutions by Clayton Lungstrum](http://web.math.rochester.edu/people/grads/clungstr/manifolds/manifolds.html)
 
+
+- 김우철, 2012 (1st edition, 5th print), 수리통계학 (Mathematical Statistics). 민영사
+  - The book includes the solutions for off problems
+
+
 Please file an issue for typo, incorrect solution, or any helpful comment for other readers.
