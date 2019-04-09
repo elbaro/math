@@ -21,7 +21,7 @@ $g(y_1,y_2)=f(y_1y_2,y_2)=2e^{-y_1y_2-y_2} I_{(0<y_1<1,0<y_2)}$
 
 4.8
 (a) $g(y)=\sum f(x_i) |dy/dx|^{-1}=1/4 |1/2x| * 2 = 1/(4\sqrt y)$
-(b) ..
+(b) this margin is too narrow to contain the demonstration.
 
 
 
@@ -35,6 +35,7 @@ $g(y_1,y_2)=f(y_1y_2,y_2)=2e^{-y_1y_2-y_2} I_{(0<y_1<1,0<y_2)}$
 (b) $F_Y(y)=y^n, f_Y(y)=ny^{n-1}$.
 
 4.14
+Let $Y=(U_1,..U_n)$ and $Z=(U_1,U_2/U_1,..U_n/U_{n-1})$. Then $y_1=z_1, y_2=z_1z_2, y_3=z_1z_2z_3, \cdots$. $\operatorname{pdf}_Z(z) = \operatorname{pdf}_U(u) |\frac{\partial y}{\partial z}|=n!*1*z_1*z_1z_2*z_1z_2z_3*\cdots$. Marginalize $z_1$ out: $\int_0^1 \operatorname{pdf}_Z(z)dz_1=n!/(n+1)*z_2^{n-1}z_3^{n-2}\cdots z_n$. Hence $f(U_2/U_1,\cdots,U_n/U_{n-1})=n!/(n+1)*(U_2/U_1)^{n-1}(U_3/U_2)^{n-2}\cdots (U_n/U_{n-1})=n!/(n+1)*\frac{U_2U_3\cdots U_n}{U_1^{n-1}}$.
 
 4.16
 $f(U_1,U_n)=n!/(n-2)!*(U_n-U_1)^{n-2}$
@@ -49,7 +50,29 @@ $f(U_n-U_1=\Delta)=\int_{U_1=0}^{1-\Delta} f(u_1,u_1+\Delta)du_1=\int_{U_1=0}^{1
 
 
 4.20
+$X=\tan((U-1/2)\pi)$
+The problem asks to prove $\operatorname{pdf}_X(x)=1/(\pi(1+x^2))$ for $-\infty<x<\infty$. Replace $x=tan \theta$. Then $\operatorname{pdf}_X(x)=\operatorname{pdf}_\Theta(\theta)(dx/d\theta)^{-1}=\operatorname{pdf}_U(u)(d\theta/du)^{-1}(dx/d\theta)^{-1}=(1/\pi)(sec^2 \theta)^{-1}=(1/\pi)(1+\tan^2 \theta)^{-1}=1/(\pi(1+x^2))$.
 
 4.22
+Using a polar coordinate,
+$f(x,y)=(1/2\pi) e^{-0.5r^2}(1+r^2 cos\theta sin\theta e^{-0.5r^2+1})=g(r,\theta) |dr\theta/dxy|^{-1}=g(r,\theta)/r$
+$\int_0^\infty \int_0^{2\pi} g(r,\theta) d\theta dr=\int_0^\infty r e^{-0.5r^2}dr=[-e^{-0.5r^2}]_0^\infty=1$. Hence this is a distribution.
+
+$f(x)=\int_{-\infty}^{+\infty} \frac{1}{2\pi}e^{-\frac{1}{2}(x^2+y^2)}+\frac{1}{2\pi}xye^{-x^2-y^2+1} dy$, using $\int_{-\infty}^\infty e^{-y^2}dy=\sqrt \pi$ and $\int_{-\infty}^\infty ye^{-y^2}dy=0$, we have $f(x)=\frac{1}{2\pi}e^{-0.5x^2} \sqrt{2\pi}=\frac{e^{-0.5x^2}}{\sqrt{2\pi}}=N(0,1)$. In the same way, $f_2(y)=N(0,1)$.
 
 4.24
+(a) $Y_1=(X_1-X_2+X_3,2X_1+X_2-X_3,0)^T=\begin{bmatrix}
+   1 & -1 & 1 \\
+   2 & 1 & -1 \\
+   0 & 0 & 0
+\end{bmatrix}(AZ+\mu)=(\begin{bmatrix}
+   1 & -1 & 1 \\
+   2 & 1 & -1 \\
+   0 & 0 & 0
+\end{bmatrix}A) Z + \begin{bmatrix}
+   2 \\ 1 \\ 0
+\end{bmatrix}$
+The new mean is $[2,1,0]^T$ and new variance matrix is $(MA)(MA)^t=MAA^tM^t=M\Sigma M^t=\begin{bmatrix}
+   5 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 & 0
+\end{bmatrix}$.
+Ditching the last one, the original $Y$ follows $N([2,1]^T,\begin{bmatrix} 5 & 1 \\ 1 & 2 \end{bmatrix})$.
