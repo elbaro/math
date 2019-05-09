@@ -1,5 +1,21 @@
 # 7장. 검정
 
+## Notes
+7.1: $P(기긱역|H_0)\le\alpha$ 으로 유의수준 결정
+- 랜덤화 검정 (randomized test): 특정 조건은 ,확률적으로 기각
+- 검정력 함수 test function: $f(observation X_1,X_2..)$=이 관측을 할 시 기각할 확률
+
+7.2 (ML ratio test): $P(기긱역|H_1 \cup H_0)/P(기긱역|H_0)\le$ 로 유의수준 결정
+7.3: $P(기긱역(n)|H_0\cup H_1)/P(기긱역(n)|H_0)$ as $n\longrightarrow\infty$ 로 유의수준 결정
+- Wald's 검정통계량
+- Rao's 검정통계량
+- 분할표
+
+
+## Problems
+
+
+
 7.2
 
 7.4
@@ -15,7 +31,10 @@ For $c=29$, $z=(29/7-3.5)/0.5=1.285714285$, $P(..>c)\sim=0.0993$
 Hence the answer is 29.
 
 (b)
+c=29면 기각, c=30이면 $\gamma$ 확률로 기각
+
 (c)
+
 
 7.6
 
