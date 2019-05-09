@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>4. Connectedness and Compactness - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="..">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/lee/ch4.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#4-connectedness-and-compactness">4. Connectedness and Compactness</a></li>
+            <li><a href="#connectedness">Connectedness</a></li>
+            <li><a href="#compactness">Compactness</a></li>
+            <li><a href="#local-compactness">Local Compactness</a></li>
+            <li><a href="#paracompactness">Paracompactness</a></li>
+            <li><a href="#proper-maps">Proper Maps</a></li>
+            <li><a href="#problems">Problems</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="4-connectedness-and-compactness">4. Connectedness and Compactness</h1>
+<h2 id="connectedness">Connectedness</h2>
+<p>Ex 4.3. If <span class="arithmatex">\(X\)</span> is empty, the statement is true. Otherwise choose any <span class="arithmatex">\(x\in X\)</span> and let <span class="arithmatex">\(c\)</span> the equivalence class of <span class="arithmatex">\(x\)</span>. Then <span class="arithmatex">\(c\)</span> is open and the union of all other equivalence classes is open, and these two subsets are the partition of <span class="arithmatex">\(X\)</span>. If <span class="arithmatex">\(c\neq X\)</span>, then <span class="arithmatex">\(X\)</span> is disconnected, which contradicts the assumption. Therefore <span class="arithmatex">\(c=X\)</span>.</p>
+<p>Ex 4.4. Suppose <span class="arithmatex">\(X\)</span> is disconnected, <span class="arithmatex">\(X=A\cup B\)</span> for two disjoint open sets <span class="arithmatex">\(A, B\)</span>. Define a map <span class="arithmatex">\(f\)</span> that <span class="arithmatex">\(f(A)=0, f(B)=1\)</span>. Then <span class="arithmatex">\(f\)</span> is continuous and non-constant. Conversely, if there is <span class="arithmatex">\(f\)</span> that is nonconstant and continuous from <span class="arithmatex">\(X\)</span> to the discrete space, then by Proposition 4.2, <span class="arithmatex">\(X\)</span> is empty or disconnected. If <span class="arithmatex">\(X\)</span> is empty, <span class="arithmatex">\(f\)</span> is constant. Hence <span class="arithmatex">\(X\)</span> is disconnected.</p>
+<p>Ex 4.5. (Disjoint union of spaces here refers to one in Chapter 3.) Suppose <span class="arithmatex">\(X\)</span> is disconnected by two open subsets. Let the subspaces for these open subsets <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. We will prove <span class="arithmatex">\(X\)</span> is homeomorphic to a disjoint union topology <span class="arithmatex">\(A^*\cup B^*\)</span> by a mapping <span class="arithmatex">\(f, \forall a\in A,f(a)=(a,A),\forall b\in B,f(b)=(b,B)\)</span>. <span class="arithmatex">\(f\)</span> is continuous because for any open subset <span class="arithmatex">\(E\sub A^*\cup B^*, E=(E\cap A^*)\cup (E\cap B^*), f^{-1}(E)=f^{-1}(E\cap A^*)\cup f^{-1}(E\cap B^*)\)</span>, and <span class="arithmatex">\(f^{-1}(E\cap A^*), f^{-1}(E\cap B^*)\)</span> are open by definition of disjoint union topology, hence <span class="arithmatex">\(f^{-1}(E)\)</span> is open. <span class="arithmatex">\(f^{-1}\)</span> is continuous because for any open subset <span class="arithmatex">\(E\sub X, f(E)=f(E\cap A)\cup f(E\y cap B)\)</span>, and <span class="arithmatex">\(f(E\cap A)\)</span> is open in <span class="arithmatex">\(A^*\)</span>, <span class="arithmatex">\(f(E\cap B)\)</span> is open in <span class="arithmatex">\(B^*\)</span>, <span class="arithmatex">\(f(E)\)</span> is open.</p>
+<p>Conversely, if <span class="arithmatex">\(X\)</span> is homeomorphic to a disjoint union <span class="arithmatex">\(\cup X_k\)</span> with at least two spaces, then by Proposition 4.2, <span class="arithmatex">\(X\)</span> is not a nonempty connected space. <span class="arithmatex">\(X\)</span> is not empty, hence <span class="arithmatex">\(X\)</span> is disconnected.</p>
+<p>Ex 4.10.</p>
+<p>Ex 4.14.<br />
+(a) Let <span class="arithmatex">\(f:X\longrightarrow f(X)\)</span> is continuous, and <span class="arithmatex">\(X\)</span> is path-connected. Then for any two points <span class="arithmatex">\(a,b\in f(X)\)</span>, there is a path <span class="arithmatex">\(g\)</span> from <span class="arithmatex">\(f^{-1}(a)\)</span> to <span class="arithmatex">\(f^{-1}(b)\)</span> in <span class="arithmatex">\(X\)</span>. Then <span class="arithmatex">\(f\circ g:I\longrightarrow f(X)\)</span> is continuous and from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>. hence a path. Therefore <span class="arithmatex">\(f(X)\)</span> is path-connected.<br />
+(b) Let <span class="arithmatex">\(p\)</span> a point in common. Then for any two points <span class="arithmatex">\(a,b\in \cup B_\alpha\)</span>, there exists <span class="arithmatex">\(B_a\)</span> that contains <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(B_b\)</span> that contains <span class="arithmatex">\(b\)</span>. <span class="arithmatex">\(B_a\)</span> has a path <span class="arithmatex">\(f\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(p\)</span>, and <span class="arithmatex">\(B_b\)</span> has a path <span class="arithmatex">\(g\)</span> from <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(b\)</span>. Define <span class="arithmatex">\(f':[0,0.5]\longrightarrow \R,f'(x)=f(x*2), g':[0.5,1]\longrightarrow \R, g'(x)=f(x*2-1)\)</span>. Both <span class="arithmatex">\(f', g'\)</span> are continous. We can use the gluing lemma (pasting lemma) to define <span class="arithmatex">\(h:[0,1]\longrightarrow \R\)</span> from <span class="arithmatex">\(f'\)</span> and <span class="arithmatex">\(g'\)</span>. Then <span class="arithmatex">\(h\)</span> is a path from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span>. Hence cup B_\alpha<span class="arithmatex">\( is path-connected.
+(c) Let \)</span>S_1,\dots,S_n<span class="arithmatex">\( path-connected spaces and \)</span>S=\prod S_n<span class="arithmatex">\(. For any two points \)</span>a,b\in S<span class="arithmatex">\(, \)</span>a=(a_1,\dots,a_n),b=(b_1,\dots,b_n)<span class="arithmatex">\(. For each index \)</span>k\in[1,n]<span class="arithmatex">\(, there exists a path \)</span>f_k<span class="arithmatex">\( from \)</span>a_k<span class="arithmatex">\( to \)</span>b_k<span class="arithmatex">\( in \)</span>S_k<span class="arithmatex">\(. Define \)</span>f:I\rightarrow S, f(x)=(f_1(x),\dots,f_n(x))<span class="arithmatex">\(. Then by characteristic property of the product topology, \)</span>f<span class="arithmatex">\( is continous from that each \)</span>f_k<span class="arithmatex">\( is continous. Hence \)</span>f<span class="arithmatex">\( is a path from \)</span>a<span class="arithmatex">\( to \)</span>b<span class="arithmatex">\( in \)</span>S<span class="arithmatex">\(, and \)</span>S$ is path-connected.<br />
+(d) A quotient map is continuous, hence by (a) every quotient space of a path-connected space is path-connected.</p>
+<p>Ex 4.22.<br />
+(a) Suppose two path components of <span class="arithmatex">\(X\)</span> are not disjoint. They have a common point, so the union of two is also path-connected, which contradicts that path components were maximal. Therefore path components are all disjoint, and form a partition of <span class="arithmatex">\(X\)</span>.<br />
+(b) A path component is connected, so by Proposition 4.20 (a), the path component is in a single component. Path components are disjoint and each element belongs to one path component, hence each component is a disjoint union of path components.<br />
+(c) For an nonempty path-connected subset <span class="arithmatex">\(E\)</span> of <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(E\)</span>, there exists a path component <span class="arithmatex">\(P\)</span> that shares a point with <span class="arithmatex">\(E\)</span>. Then <span class="arithmatex">\(E\cup P\)</span> is also path-connected. Since <span class="arithmatex">\(P\)</span> is a maximal path-connected subset, <span class="arithmatex">\(E\cup P\sub P\Longrightarrow E\sub P\)</span>.</p>
+<p>Ex 4.24. Let <span class="arithmatex">\(M\)</span> a manifold and consider <span class="arithmatex">\(p\in M\)</span>. Since <span class="arithmatex">\(M\)</span> is locally Euclidean, <span class="arithmatex">\(p\)</span> has a neighborhood <span class="arithmatex">\(U\)</span> that is homeomorphic to an open ball in <span class="arithmatex">\(R^n\)</span> by a homeomorphism <span class="arithmatex">\(\phi\)</span>. An open ball in <span class="arithmatex">\(R^n\)</span> is path-connected. For any neighborhood <span class="arithmatex">\(V\)</span> of <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(\phi(U\cap V)\)</span> is open and contains <span class="arithmatex">\(\phi(p)\)</span>. Since <span class="arithmatex">\(\phi(U)\)</span> is locally path-connected, <span class="arithmatex">\(\phi(U\cap V)\)</span> has a path-connected subset <span class="arithmatex">\(W\)</span>. <span class="arithmatex">\(\phi^{-1}(W)\)</span> is path-connected and a subset of <span class="arithmatex">\(U\cap V\)</span>. We showed any neighborhood of <span class="arithmatex">\(p\)</span> has a path-connected subset, hence <span class="arithmatex">\(M\)</span> is locally path-connected. Since a path-connected subset is connected subset, <span class="arithmatex">\(M\)</span> is also locally connected.</p>
+<h2 id="compactness">Compactness</h2>
+<p>Ex 4.28. Suppose <span class="arithmatex">\(A\)</span> is compact. For any open cover <span class="arithmatex">\(\cup_\alpha E_\alpha\)</span> of <span class="arithmatex">\(A\)</span> by open sets of <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(\cup_\alpha (E_\alpha \cap A)\)</span> is an open cover of <span class="arithmatex">\(A\)</span> by open sets in <span class="arithmatex">\(A\)</span>. Since <span class="arithmatex">\(A\)</span> is compact, it has a finite subcover <span class="arithmatex">\(\cup_1^N (E_{\alpha_n}\cap A)\)</span>. For every open set <span class="arithmatex">\(E\)</span> in <span class="arithmatex">\(A\)</span>, there exists an open set <span class="arithmatex">\(F\)</span> in <span class="arithmatex">\(X\)</span> such that <span class="arithmatex">\(F\cap A=E\)</span>. Define <span class="arithmatex">\(\phi(E)=F\)</span>. Then <span class="arithmatex">\(A=\cup_1^n (E_{\alpha_n}\cap A)\Longrightarrow A\sub\cup_1^n \phi(E_{\alpha_n}\cap A)\)</span>, where the last union is a finite subcover by open sets in <span class="arithmatex">\(X\)</span>. This proves the forward direction of the lemma.<br />
+Conversely suppose every open cover of <span class="arithmatex">\(A\)</span> by open sets in <span class="arithmatex">\(X\)</span> has a finite subcover by open sets in <span class="arithmatex">\(X\)</span>. Then for any open cover <span class="arithmatex">\(\cup E_\alpha\)</span> of <span class="arithmatex">\(A\)</span> by open sets in <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(\cup_\alpha \phi(E_\alpha)\)</span> is an open cover of <span class="arithmatex">\(A\)</span> by open sets in <span class="arithmatex">\(X\)</span>, hence it has a finite subcover <span class="arithmatex">\(\cup_1^N \phi(E_{\alpha_n})\)</span>. Then <span class="arithmatex">\(\cup_1^N (\phi(E_{\alpha_n})\cap A)\)</span> is a finite cover of <span class="arithmatex">\(A\)</span> by open sets in <span class="arithmatex">\(A\)</span>. Hence <span class="arithmatex">\(A\)</span> is compact.</p>
+<p>Ex 4.29. For compact subsets <span class="arithmatex">\(A_1,\dots,A_n\)</span>, consider an open cover <span class="arithmatex">\(\cup E_i\)</span> of <span class="arithmatex">\(\cup A_k\)</span> by open sets of <span class="arithmatex">\(X\)</span>. For each <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(A_k\cap (\cup E_i)=\cup (A_k\cap E_i)=A_k\)</span>, and <span class="arithmatex">\(\cup(A_k\cap E_i)\)</span> is an open cover of <span class="arithmatex">\(A_k\)</span> because <span class="arithmatex">\(A_k\cap E_i\)</span> is open in <span class="arithmatex">\(A_k\)</span>. Since <span class="arithmatex">\(A_k\)</span> is compact, there is a finite subcover <span class="arithmatex">\(\cup_n B_{kn}\)</span> of <span class="arithmatex">\(A_k\)</span>. Collecting all finite subcovers for each <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(\cup_k \cup_n B_{kn}=\cup A_k\)</span>, and <span class="arithmatex">\(\cup B_{kn}\)</span> is a finite subcover of <span class="arithmatex">\(\cup A_k\)</span>.</p>
+<p>Ex 4.37.</p>
+<p>Ex 4.38.</p>
+<p>Ex 4.49.<br />
+- Theorem 4.46: <span class="arithmatex">\(\R^n\)</span> is compact, and by Heine-Borel,</p>
+<h2 id="local-compactness">Local Compactness</h2>
+<h2 id="paracompactness">Paracompactness</h2>
+<h2 id="proper-maps">Proper Maps</h2>
+<h2 id="problems">Problems</h2></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

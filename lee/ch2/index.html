@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>2. Topological Spaces - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="..">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/lee/ch2.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#2-topological-spaces">2. Topological Spaces</a></li>
+            <li><a href="#note">Note</a></li>
+            <li><a href="#topologies">Topologies</a></li>
+            <li><a href="#convergence-and-continuity">Convergence and Continuity</a></li>
+            <li><a href="#hausdorff-spaces">Hausdorff Spaces</a></li>
+            <li><a href="#bases-and-countability">Bases and Countability</a></li>
+            <li><a href="#manifolds">Manifolds</a></li>
+            <li><a href="#problems">Problems</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="2-topological-spaces">2. Topological Spaces</h1>
+<p><span class="arithmatex">\(\gdef\Int{\operatorname{Int}}\)</span><br />
+<span class="arithmatex">\(\gdef\Ext{\operatorname{Ext}}\)</span></p>
+<h2 id="note">Note</h2>
+<ul>
+<li><span class="arithmatex">\(A = \Int A+ \partial A + \Ext A \\
+  = (\text{limit point} + \text{isolated point}) + \Ext A\)</span><br />
+    where <span class="arithmatex">\(+\)</span> is a disjoint partition op</li>
+<li>boundary -&gt; limit point, not isolated</li>
+<li>isolated -&gt; int</li>
+</ul>
+<h2 id="topologies">Topologies</h2>
+<ul>
+<li>
+<p>Ex 2.2<br />
+It can be easily seen that all examples satisfy (i)~(iii) in page 20.</p>
+</li>
+<li>
+<p>Ex 2.4<br />
+(a) For "only if", any open ball w.r.t <span class="arithmatex">\(d\)</span> is an open set w.r.t <span class="arithmatex">\(d'\)</span>, and any open set contains an open ball, hence there exists <span class="arithmatex">\(r_1\)</span>. The same for <span class="arithmatex">\(r_2\)</span>. For "if", Suppose a set <span class="arithmatex">\(A\)</span> is open in <span class="arithmatex">\((M,d)\)</span>. Any point <span class="arithmatex">\(x\in A\)</span> is internal point in <span class="arithmatex">\((M,d)\)</span> and there exists <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(B_r^{(d)}(x)\sub A\)</span>. Since <span class="arithmatex">\(B_{r_1}^{(d')}(x)\sub A\)</span>, <span class="arithmatex">\(x\)</span> is an internal point of <span class="arithmatex">\(A\)</span> in <span class="arithmatex">\((M,d')\)</span>. Hence <span class="arithmatex">\(A\)</span> is open in <span class="arithmatex">\((M,d')\)</span>. Conversely, any open set in <span class="arithmatex">\((M,d')\)</span> is open in <span class="arithmatex">\((M,d)\)</span>. Therefore two topologies are the same.<br />
+(b) <span class="arithmatex">\(B_r^{(d)}=B_{cr}^{(d')}\)</span>, so their open sets are the same, and generated topologies are the same.<br />
+(c) <span class="arithmatex">\(d'\le d\le nd'\)</span>. It can be proved using (a) that <span class="arithmatex">\(d\)</span> and <span class="arithmatex">\(d'\)</span> generate the same topology.<br />
+(d) With the discrete metric, <span class="arithmatex">\(B_{0.5}(x)=\{x\}\)</span>. These generate all possible subsets of <span class="arithmatex">\(X\)</span>.<br />
+(e) With the Euclidean metric, <span class="arithmatex">\(B_{0.5}(x)=\{x\}\)</span>. These generate all possible subsets of <span class="arithmatex">\(\Z\)</span>.</p>
+</li>
+<li>
+<p>Ex 2.5<br />
+(1) <span class="arithmatex">\(\varnothing \sub Y, Y \sub Y\)</span>.<br />
+(2) The set is closed under finite intersection because they were closed in <span class="arithmatex">\(X\)</span>.<br />
+(3) The set is closed under any union of arbitrarily many elements because they were closed in <span class="arithmatex">\(X\)</span>.</p>
+</li>
+<li>
+<p>Ex 2.6<br />
+(1) All topologies have <span class="arithmatex">\(\varnothing\)</span> and <span class="arithmatex">\(X\)</span>, hence <span class="arithmatex">\({\varnothing,X}\sub \mathscr T\)</span>.<br />
+(2) <span class="arithmatex">\(\mathscr T\)</span> is closed under finite intersection, since its elements were the elements of <span class="arithmatex">\(T_{\alpha_0}\)</span> for some <span class="arithmatex">\(\alpha_0\)</span>, and their intersection existed in <span class="arithmatex">\(T_{\alpha_0}\)</span>.<br />
+(3) The same as (2).</p>
+</li>
+<li>
+<p>Ex 2.9<br />
+TODO:</p>
+</li>
+<li>
+<p>Ex 2.10<br />
+By Proposition 2.8, a boundary point is a limit point. If a set contains all of its limit points, the set contains all boundary points, hence closed. Now suppose a set is closed. Any limit point of the set <span class="arithmatex">\(A\)</span> is in <span class="arithmatex">\(\Int A\)</span>, <span class="arithmatex">\(\Ext A\)</span>, or <span class="arithmatex">\(\partial A\)</span>. The limit points in <span class="arithmatex">\(\Int A\)</span> are obviously in <span class="arithmatex">\(A\)</span>. The limit points which are boundary points are in <span class="arithmatex">\(A\)</span> because <span class="arithmatex">\(A\)</span> is closed. <span class="arithmatex">\(\Ext A\)</span> cannot have a limit point because a point <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\Ext A\)</span> has a neighborhood in <span class="arithmatex">\(X\setminus A\)</span>, and the neighborhood has no point of <span class="arithmatex">\(A\)</span> other than <span class="arithmatex">\(x\)</span>, so <span class="arithmatex">\(x\)</span> is not a limit point. Therefore <span class="arithmatex">\(A\)</span> contains all of its limit points.</p>
+</li>
+<li>
+<p>Ex 2.11<br />
+Suppose <span class="arithmatex">\(A\)</span> is dense in <span class="arithmatex">\(X\)</span> and there is an non-empty open subset <span class="arithmatex">\(B\)</span> of <span class="arithmatex">\(X\)</span> that contains no point of <span class="arithmatex">\(A\)</span>. <span class="arithmatex">\(B\)</span> has at least one element, say <span class="arithmatex">\(b\)</span>. Then <span class="arithmatex">\(B\)</span> is a neighborhood of <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(B\sub X\setminus A\)</span>. By Proposition 2.8 (b), <span class="arithmatex">\(b\)</span> is in <span class="arithmatex">\(\Ext A\)</span>. However, <span class="arithmatex">\(\Ext A\)</span> = <span class="arithmatex">\(X\setminus \overline A = \varnothing\)</span>, contradicts. Hence the statement is true.</p>
+</li>
+</ul>
+<p>Conversely, suppose every non-empty open subset of <span class="arithmatex">\(X\)</span> contains a point of <span class="arithmatex">\(A\)</span>. Then by definition any point of <span class="arithmatex">\(X\)</span> is a limit point of <span class="arithmatex">\(A\)</span>. Since <span class="arithmatex">\(\overline A\)</span> is closed, using Exercise 2.10, <span class="arithmatex">\(\overline A\)</span> contains all of its limit points, <span class="arithmatex">\(X\)</span>. Hence <span class="arithmatex">\(\overline A=X\)</span>.</p>
+<h2 id="convergence-and-continuity">Convergence and Continuity</h2>
+<ul>
+<li>
+<p>Ex 2.12<br />
+An open ball is a neighborhood, so the definition in topology space implies that a sequence converges if given <span class="arithmatex">\(\epsilon&gt;0\)</span> its tail is contained in some open ball of size <span class="arithmatex">\(\epsilon\)</span>. Conversely any non-empty neighborhood of a point <span class="arithmatex">\(x\)</span> has an open ball centered at <span class="arithmatex">\(x\)</span>, and since the definition in metric space implies the sequence tail is contained in the open ball, it is contained in the neighborhood as well.</p>
+</li>
+<li>
+<p>Ex 2.13<br />
+If a sequence is eventually constant, the sequence after some point is in a neighborhood of the constant, so it is convergent. If a sequence converges to <span class="arithmatex">\(x\)</span> in a discrete topological space, <span class="arithmatex">\(\{x\}\in \mathscr T\)</span>, so there exists <span class="arithmatex">\(N\)</span> such that <span class="arithmatex">\(\forall n&gt;N, x_n\in \{x\}\)</span>. Hence the sequence is eventually constant.</p>
+</li>
+<li>
+<p>Ex 2.14<br />
+If <span class="arithmatex">\(x\in A\)</span>, then <span class="arithmatex">\(x\in \overline A\)</span>. If not, <span class="arithmatex">\(x\)</span> is either in <span class="arithmatex">\(\partial A\)</span> or <span class="arithmatex">\(\Ext A\)</span>. Any sequence in <span class="arithmatex">\(A\)</span> cannot converge to a point of <span class="arithmatex">\(\Ext A\)</span> because there is a neighborhood of the point in <span class="arithmatex">\(\Ext A\)</span> that has no point of <span class="arithmatex">\(A\)</span>. Therefore <span class="arithmatex">\(x\)</span> is in <span class="arithmatex">\(\partial A\)</span>, hence <span class="arithmatex">\(x\in \overline A\)</span>.</p>
+</li>
+<li>
+<p>Ex 2.16<br />
+From Exercise A.4 (e), <span class="arithmatex">\(f^{-1}(E^c)=f^{-1}(Y\setminus E)=f^{-1}(Y)\setminus f^{-1}(E)=f^{-1}(Y)\cap (f^{-1}(E))^c=X\cap (f^{-1}(E))^c\)</span>. If <span class="arithmatex">\(f\)</span> is continuous and <span class="arithmatex">\(E^c\)</span> is closed in <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(E\)</span> is open, <span class="arithmatex">\(f^{-1}(E)\)</span> is open, <span class="arithmatex">\((f^{-1}(E))^c\)</span> is closed, and <span class="arithmatex">\(X\)</span> is closed, so their intersection <span class="arithmatex">\(X\cap (f^{-1}(E))^c=f^{-1}(E^c)\)</span> is closed. With <span class="arithmatex">\(E^c=F\)</span>, we showed that <span class="arithmatex">\(f^{-1}(F)\)</span> is closed for any closed <span class="arithmatex">\(F\)</span>. Conversely, if the preimage <span class="arithmatex">\(f^{-1}(E^c)\)</span> of any closed set <span class="arithmatex">\(E^c\)</span> in <span class="arithmatex">\(Y\)</span> is closed in <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(f^{-1}(E)\)</span> is open, hence <span class="arithmatex">\(f\)</span> is continuous.</p>
+</li>
+<li>
+<p>Ex 2.18<br />
+(a) A constant map is continuous because the preimage is either <span class="arithmatex">\(\varnothing\)</span> or <span class="arithmatex">\(X\)</span>.<br />
+(b) The identity map is continuous because the preimage of an open set <span class="arithmatex">\(E\)</span> in <span class="arithmatex">\(X\)</span> is <span class="arithmatex">\(X\)</span>.<br />
+(c) Let <span class="arithmatex">\(g\)</span> be a restriction of <span class="arithmatex">\(f\)</span> to an open subset <span class="arithmatex">\(Z\)</span> of <span class="arithmatex">\(X\)</span>. The preimage <span class="arithmatex">\(f^{-1}(E)\)</span> of an open set <span class="arithmatex">\(E\)</span> is open, and <span class="arithmatex">\(g^{-1}(E)=f^{-1}\cap Z\)</span> is the intersection of two open sets, hence open. Therefore <span class="arithmatex">\(g\)</span> is continuous.</p>
+</li>
+<li>
+<p>Ex 2.20<br />
+The continuity of a composotion of two continuous mapping implies the equivalence relation.</p>
+</li>
+<li>
+<p>Ex 2.21<br />
+if <span class="arithmatex">\(f\)</span> is homeomorphism, for any <span class="arithmatex">\(U\in\mathscr T_2, f^{-1}(U)\in \mathscr T_1\)</span> because <span class="arithmatex">\(f\)</span> is continuous. The converse is true in the same way. Therefore <span class="arithmatex">\(f(\mathscr T_1) = \mathscr T_2\)</span>.<br />
+Now conversely if for any <span class="arithmatex">\(U\in\mathscr T_1\)</span> it is true that <span class="arithmatex">\(f(U)\in\mathscr T_2\)</span>, then <span class="arithmatex">\(f^{-1}\)</span> is continuous. Symmetrically we can show <span class="arithmatex">\(f\)</span> is continuous. Therefore <span class="arithmatex">\(f\)</span> is homeomorphism.</p>
+</li>
+<li>
+<p>Ex 2.22<br />
+Since <span class="arithmatex">\(f^{-1}\)</span> is continuous and <span class="arithmatex">\(U\)</span> is open, <span class="arithmatex">\(f(U)\)</span> is open. A restriction of continuous <span class="arithmatex">\(f\)</span> to <span class="arithmatex">\(U\)</span> is continuous, and at the same time <span class="arithmatex">\(f^{-1}\)</span> is restricted to <span class="arithmatex">\(f(U)\)</span> which is open, hence both <span class="arithmatex">\(f|_U\)</span> and <span class="arithmatex">\(f|_U^{-1}\)</span> are continuous, and is homeomorphism <span class="arithmatex">\(U\longrightarrow f(U)\)</span>.</p>
+</li>
+<li>
+<p>Ex 2.23<br />
+TODO</p>
+</li>
+<li>
+<p>Ex 2.27<br />
+TODO</p>
+</li>
+<li>
+<p>Ex 2.28<br />
+TODO</p>
+</li>
+<li>
+<p>Ex 2.29<br />
+(a)-&gt;(b): Since <span class="arithmatex">\(f^{-1}\)</span> is continuous, <span class="arithmatex">\(f\)</span> maps any open set in <span class="arithmatex">\(x\)</span> to an open set in <span class="arithmatex">\(Y\)</span>.<br />
+(b)-&gt;(c): For a closed set <span class="arithmatex">\(E\sub X\)</span>, <span class="arithmatex">\(f(E^c)\)</span> is open. Since <span class="arithmatex">\(f\)</span> is bijective, <span class="arithmatex">\(f(E^c)=f(E)^c\)</span>. Hence <span class="arithmatex">\(f(E)\)</span> is closed.<br />
+(b)-&gt;(a): Since (b) imlies that <span class="arithmatex">\(f^{-1}\)</span> is continuous, and <span class="arithmatex">\(f\)</span> is continuous by asumption, <span class="arithmatex">\(f\)</span> is homeomorphic.</p>
+</li>
+<li>
+<p>Ex 2.32<br />
+(a) Already proved in Exercise 2.22.<br />
+(b★) Using Proposition 2.19, local homeomorphism implies the continuity. To show <span class="arithmatex">\(f\)</span> is open, consider any open set <span class="arithmatex">\(E\)</span>. For each <span class="arithmatex">\(x\in E\)</span>, we have an open set <span class="arithmatex">\(U_x\)</span> such that <span class="arithmatex">\(f|_{U_x}\)</span> is homeomorphism, and since <span class="arithmatex">\(U_x\cap E\)</span> is open, <span class="arithmatex">\(f|_{U_x}(U_x\cap E)\)</span> is open. Then <span class="arithmatex">\(f(E)=\cup_{x\in E}f(U_x\cap E)\)</span> is the union of open sets, which is open. Hence <span class="arithmatex">\(f\)</span> is open. <a href="https://math.stackexchange.com/questions/1826878/show-that-every-local-homeomorphism-is-continuous-and-open-therefore-bijective-l">link</a><br />
+(c) By Exercise 2.29, if <span class="arithmatex">\(f\)</span> is bijective, continuous and open (from (b)) then <span class="arithmatex">\(f\)</span> is homeomorphism.</p>
+</li>
+</ul>
+<h2 id="hausdorff-spaces">Hausdorff Spaces</h2>
+<ul>
+<li>
+<p>Ex 2.33<br />
+Any sequence converges to any element <span class="arithmatex">\(y\in Y\)</span> because the only neighborhood of <span class="arithmatex">\(y\)</span> is <span class="arithmatex">\(Y\)</span> in the trivial topology and the sequence is in this neighborhood.</p>
+</li>
+<li>
+<p>Ex 2.35 (★)<br />
+For two distinct points <span class="arithmatex">\(p,q\in X\)</span>, there exists <span class="arithmatex">\(f\)</span> such that <span class="arithmatex">\(f^{-1}(0)=\{p\}\)</span>. Let <span class="arithmatex">\(\epsilon=f(q)/2\)</span>. Wlog, assume <span class="arithmatex">\(\epsilon&gt;0\)</span>. Since <span class="arithmatex">\(\epsilon\neq 0\)</span>, two intervals <span class="arithmatex">\((-\epsilon,\epsilon)\)</span> and <span class="arithmatex">\((\epsilon, 3\epsilon)\)</span> are open and disjoint, and so are their mapping by <span class="arithmatex">\(f^{-1}\)</span>. Since <span class="arithmatex">\(p\in f^{-1}(-\epsilon,\epsilon), q\in f^{-1}(\epsilon,3\epsilon)\)</span>, these two are disjoint neighborhoods of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>. Hence <span class="arithmatex">\(X\)</span> is Hausdorff.</p>
+</li>
+<li>
+<p>Ex 2.38<br />
+The discrete topology is obviously Hausdorff topology. A Hausdorff topology on a finite set has <span class="arithmatex">\(\{p\}\)</span> for all <span class="arithmatex">\(p\)</span>, so these generate all possible subsets, which is the discrete topology.</p>
+</li>
+</ul>
+<h2 id="bases-and-countability">Bases and Countability</h2>
+<ul>
+<li>
+<p>Ex 2.40<br />
+If <span class="arithmatex">\(U\)</span> is open, it is the union of some collection of elements of <span class="arithmatex">\(\mathscr B\)</span>. Therefore each element of <span class="arithmatex">\(U\)</span> belongs to some <span class="arithmatex">\(B_\alpha\sub U\)</span>. Conversely, if such <span class="arithmatex">\(B\)</span> exists for each <span class="arithmatex">\(p\in U\)</span>, denote <span class="arithmatex">\(B\)</span> as <span class="arithmatex">\(B_p\)</span>. Then <span class="arithmatex">\(U=\cup B_p\)</span>, hence <span class="arithmatex">\(U\)</span> is open.</p>
+</li>
+<li>
+<p>Ex 2.42<br />
+(a) Each point of <span class="arithmatex">\(C_s(x)\)</span> is internal so <span class="arithmatex">\(C_s(x)\)</span> is open. For an open ball <span class="arithmatex">\(B\)</span>, it contains an open ball <span class="arithmatex">\(V_{r_x}(x)\)</span> for each element <span class="arithmatex">\(x\)</span>. Then <span class="arithmatex">\(V_{r_x}(x)\)</span> contains an open cube <span class="arithmatex">\(C(x)\)</span> which includes <span class="arithmatex">\(x\)</span>. Then <span class="arithmatex">\(\cup_{x\in B} C(x) = B\)</span>. Since open cubes can generate open balls, open cubes are a basis for <span class="arithmatex">\(R^n\)</span>.</p>
+</li>
+</ul>
+<p>(b) Similar to (a), each point <span class="arithmatex">\(x\)</span> of an open ball <span class="arithmatex">\(B\)</span> has an open ball <span class="arithmatex">\(V_x\)</span> in <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(V_x\)</span> contains a 'rational ball' <span class="arithmatex">\(R_x\)</span> that includes <span class="arithmatex">\(x\)</span>. Therefore <span class="arithmatex">\(\cup_{x\in B}R_x=B\)</span>. Since rational balls generate open balls, <span class="arithmatex">\(\mathscr B_2\)</span> is a basis for <span class="arithmatex">\(R^n\)</span>.</p>
+<ul>
+<li>
+<p>Ex 2.45<br />
+A topology should have <span class="arithmatex">\(X\)</span> itself as an open set. If (i) is false, the basis cannot generate <span class="arithmatex">\(X\)</span>. So (i) is true. For (ii), given <span class="arithmatex">\(B_1,B_2\in \mathscr B\)</span>, their intersection is open, so there should exist a subset of <span class="arithmatex">\(B_1\cap B_2\)</span> in <span class="arithmatex">\(\mathscr B\)</span>, otherwise it cannot generate <span class="arithmatex">\(B_1\cap B_2\)</span>.</p>
+</li>
+<li>
+<p>Ex 2.51</p>
+</li>
+<li>A second countable space <span class="arithmatex">\(X\)</span> has a countable basis <span class="arithmatex">\((B_n)\)</span>. Pick any element <span class="arithmatex">\(x_n\)</span> from each <span class="arithmatex">\(B_n\)</span>, and denote the set as <span class="arithmatex">\(D\)</span>. <span class="arithmatex">\(D\)</span> is clearly countable. From Exercise 2.11, <span class="arithmatex">\(D\)</span> is dense because every non-empty open subset of <span class="arithmatex">\(X\)</span> is an union of <span class="arithmatex">\((B_{i_n})\)</span> and contains a point of <span class="arithmatex">\(D\)</span>, for example, <span class="arithmatex">\(x_{i_1}\)</span>. <a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_separable">link</a></li>
+</ul>
+<h2 id="manifolds">Manifolds</h2>
+<ul>
+<li>Ex 2.54<br />
+If a topological space is a 0-manifold, for any element <span class="arithmatex">\(x\)</span>, it has a neighborhood homeomorphic to <span class="arithmatex">\(R^0={0}\)</span>. So the neighborhood of <span class="arithmatex">\(x\)</span> is <span class="arithmatex">\(\{x\}\)</span>. Since the topology has the smallest unit of open sets, they generate the discrete topology. A manifold is second countable, hence countable.</li>
+</ul>
+<p>If a set <span class="arithmatex">\(E\)</span> is countable discrete space, it is a Hausdorff space and it has a basis that consists of single-element sets. This basis is countable, so <span class="arithmatex">\(E\)</span> is second-countable. For a point <span class="arithmatex">\(x\in E\)</span>, it has a neighborhood <span class="arithmatex">\(\{x\}\)</span> which is homeomorphic to <span class="arithmatex">\(R^0\)</span>. Hence <span class="arithmatex">\(E\)</span> is a 0-manifold.</p>
+<h2 id="problems">Problems</h2>
+<p>2-1.<br />
+(a) <span class="arithmatex">\(\{\varnothing,X\}\sub \mathscr T_1\)</span>, <span class="arithmatex">\(X\setminus(\cup U_k)\sub X\setminus U_1\)</span> is finite, <span class="arithmatex">\(X\setminus (\cap^n U_k)=\cup_1^n(X\setminus U_k)\)</span> is finite, hence <span class="arithmatex">\(\mathscr T_1\)</span> is a topology.</p>
+<p>(b) <span class="arithmatex">\(\{\varnothing,X\}\sub \mathscr T_2\)</span>, <span class="arithmatex">\(X\setminus(\cup U_k)\sub X\setminus U_1\)</span> is countable, <span class="arithmatex">\(X\setminus (\cap^n U_k)=\cup_1^n(X\setminus U_k)\)</span> is countable, hence <span class="arithmatex">\(\mathscr T_2\)</span> is a topology.</p>
+<p>(c) <span class="arithmatex">\(\{\varnothing,X\}\sub \mathscr T_3\)</span>, <span class="arithmatex">\(p\in\cup U_k\)</span>, <span class="arithmatex">\(p\in\cap U_k\)</span>, hence <span class="arithmatex">\(\mathscr T_3\)</span> is a topology.</p>
+<p>(d) <span class="arithmatex">\(\{\varnothing,X\}\sub \mathscr T_4\)</span>, <span class="arithmatex">\(p\notin\cup U_k\)</span>, <span class="arithmatex">\(p\notin\cap U_k\)</span>, hence <span class="arithmatex">\(\mathscr T_4\)</span> is a topology.</p>
+<p>(e) <span class="arithmatex">\(\{\varnothing,X\}\sub \mathscr T_5\)</span> because <span class="arithmatex">\(X\)</span> is infinite. <span class="arithmatex">\(X\setminus(\cap^n U_k)\supset X\setminus U_1\)</span> is infinite, but <span class="arithmatex">\(X\setminus (\cup U_k)=\cap(X\setminus U_k)\)</span> may be finite. An example is <span class="arithmatex">\(X=\Z\)</span> and <span class="arithmatex">\(U_1=\{\text{even integers}\}, U_2=\{\text{odd integers}\}\)</span>, then <span class="arithmatex">\(U_1,U_2\in \mathscr T_5\)</span> but <span class="arithmatex">\(X\setminus(U_1\cap U_2)=\varnothing\)</span>.</p>
+<p>2-2.<br />
+- <span class="arithmatex">\(\{ \text{discrete topology} \}\)</span>, <span class="arithmatex">\(\{\text{trivial topology}\}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{2,3\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{1,2\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{1,2\}, \{1,3\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{1,2\}, \{2,3\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{1,2\}, \{1,3\}, \{2,3\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{2\}, \{1,2\}, X \}\)</span>, <span class="arithmatex">\(\{ \varnothing, \{1\}, \{2\}, \{1,2\}, \{1,3\}, X \}\)</span>.</p>
+<p>2-3.<br />
+(a) Taking the complement on both sides, the equation reduces to <span class="arithmatex">\(\Ext (X\setminus B)=\Int B\)</span>, which is true by definition because LHS represents the points with some neighborhood in <span class="arithmatex">\((X\setminus B)^c=X\)</span>, and RHS represents the same.<br />
+(b) <span class="arithmatex">\(\Int (X\setminus B) = X\setminus \overline B=\Ext B\)</span>, which is the same as (a) with replacing <span class="arithmatex">\(B\)</span> with <span class="arithmatex">\(X\setminus B\)</span>.</p>
+<p>2-4.<br />
+(a) LHS is the minimal closed set including <span class="arithmatex">\(\cap A\)</span>. RHS is closed and includes <span class="arithmatex">\(\cap A\)</span>. Hence LHS<span class="arithmatex">\(\sub\)</span>RHS.<br />
+(b) Any element <span class="arithmatex">\(x\)</span> of RHS belongs to some <span class="arithmatex">\(\overline {A_\alpha}\)</span>. Since <span class="arithmatex">\(x \in \overline {A_\alpha} \sub \overline{\cup A}\)</span>, RHS is a subset of LHS.<br />
+(c) Any point <span class="arithmatex">\(x\)</span> of LHS has a neighborhood <span class="arithmatex">\(V\)</span> in <span class="arithmatex">\(\cap A_\alpha\)</span>. Then <span class="arithmatex">\(\forall\alpha,  V\sub A_\alpha\)</span>, hence <span class="arithmatex">\(x\)</span> is in <span class="arithmatex">\(\Int A_\alpha\)</span> for all <span class="arithmatex">\(\alpha\)</span>, and <span class="arithmatex">\(x\)</span> is an element of RHS.<br />
+(d) Any point <span class="arithmatex">\(x\)</span> of RHS has a neighborhood <span class="arithmatex">\(V\)</span> in some <span class="arithmatex">\(A_0\)</span>. Since <span class="arithmatex">\(V\sub \cup A_\alpha\)</span>, <span class="arithmatex">\(x\)</span> has a neighborhood in <span class="arithmatex">\(\cup A_\alpha\)</span>, and <span class="arithmatex">\(x\in \Int(\cup A_\alpha)\)</span>.</p>
+<p>equality:</p>
+<p>(a) An example with strict inequality is <span class="arithmatex">\(A_1=\mathbb Q, A_2=\R\setminus\mathbb Q\)</span>.</p>
+<p>(b) We show a boundary point <span class="arithmatex">\(p\)</span> of <span class="arithmatex">\(\cup A\)</span> is in <span class="arithmatex">\(\cup\overline A\)</span>. Since <span class="arithmatex">\(\mathscr A\)</span> is finite, the smallest neighborhood <span class="arithmatex">\(V\)</span> of <span class="arithmatex">\(p\)</span> exists, and is the intersection of all neighborhoods of <span class="arithmatex">\(p\)</span>. <span class="arithmatex">\(V\)</span> has a point <span class="arithmatex">\(q\)</span> other than <span class="arithmatex">\(p\)</span> in <span class="arithmatex">\(A_i\)</span> for some <span class="arithmatex">\(i\)</span>. Then <span class="arithmatex">\(p\in \overline A_i\)</span> because any neighborhood of <span class="arithmatex">\(p\)</span> contains <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(V\)</span> contains <span class="arithmatex">\(q\)</span>, so <span class="arithmatex">\(p\)</span> is a limit point of <span class="arithmatex">\(A_i\)</span>. We proved <span class="arithmatex">\(\partial (\cup A)\sub \cup\overline A\)</span>, and clearly <span class="arithmatex">\(\Int (\cup A ) \sub \cup \overline A\)</span>, hence <span class="arithmatex">\(\overline{\cup A}\sub \cup\overline A\)</span>.</p>
+<p>(c) Any point of <span class="arithmatex">\(\cap \Int A\)</span> has a neighborhood in each <span class="arithmatex">\(A_i\)</span>. The finite intersection <span class="arithmatex">\(V\)</span> of them is also a neighborhood. <span class="arithmatex">\(\forall i, V\sub A_i\Longrightarrow V\sub \cap A\)</span>. Hence the point is interior of <span class="arithmatex">\(\cap A\)</span>.</p>
+<p>(d) An example with strict inequality is that <span class="arithmatex">\(A\)</span> is indexed by a real number <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(A_\alpha=\{\alpha\}\)</span>, then <span class="arithmatex">\(\Int(\cup A_\alpha)=\Int \R = \R \supset \cup \varnothing\)</span>.</p>
+<p>2-5.</p>
+<p>2-6.<br />
+(a) Suppose <span class="arithmatex">\(f\)</span> is continuous. <span class="arithmatex">\(A\sub f^{-1}(f(A))\sub f^{-1}(\overline{f(A)})\)</span> and <span class="arithmatex">\(f^{-1}(\overline{f(A)})\)</span> is closed. Since <span class="arithmatex">\(\overline A\)</span> is the smallest closed set containing <span class="arithmatex">\(A\)</span>, we have <span class="arithmatex">\(\overline A\sub f^{-1}(\overline{f(A)})\Longrightarrow f(\overline A)\sub \overline{f(A)}\)</span>. Conversely suppose <span class="arithmatex">\(f(\overline A)\sub \overline{f(A)}\)</span> for all <span class="arithmatex">\(A\sub X\)</span>.<br />
+(b)<br />
+(c)<br />
+(d)</p>
+<p>2-7. Suppose a neighborhood <span class="arithmatex">\(V\)</span> of <span class="arithmatex">\(p\)</span> contains finitely many points of <span class="arithmatex">\(A\)</span>. Since <span class="arithmatex">\(p\)</span> is a limit point of <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(V\)</span> has another point <span class="arithmatex">\(q\in A, q\neq p\)</span>. <span class="arithmatex">\(X\)</span> is Hausdorff so there are two disjoint neighborhoods <span class="arithmatex">\(V_p, V_q\)</span> such that <span class="arithmatex">\(p\in V_p, q\in V_q\)</span>. Then <span class="arithmatex">\(V\cap V_p\)</span> is also a neighborhood of <span class="arithmatex">\(p\)</span> and does not contain <span class="arithmatex">\(q\)</span>. If we repeat the above with <span class="arithmatex">\(V\cap V_p\)</span> as new <span class="arithmatex">\(V\)</span>, then at each step the size of <span class="arithmatex">\(V\cap A\)</span> decreases by at least one, and since <span class="arithmatex">\(V\cap A\)</span> is finite by assumption, the process cannot continue, which contradicts. Therefore <span class="arithmatex">\(V\cap A\)</span> is infinite.</p>
+<p>2-25.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

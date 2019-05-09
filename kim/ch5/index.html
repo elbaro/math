@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>5장. 표본분포의 근사 - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="..">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/kim/ch5.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#5">5장. 표본분포의 근사</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="5">5장. 표본분포의 근사</h1>
+<p>5.2</p>
+<p><span class="arithmatex">\(Z=(X-25)/5=X/5-5\sim N(0,1)\)</span><br />
+(a) <span class="arithmatex">\(P(19&lt;X\le 33)=P(-6/5&lt;Z\le 8/5)\)</span><br />
+(b) <span class="arithmatex">\(P(19.5&lt;X\le 33.5)=P(-5.5/&lt;Z\le 8.5/5)\)</span></p>
+<p>5.4<br />
+<span class="arithmatex">\(P(Y_n\le x)=P(X_1\le x)^n=I_x(1,\alpha)^n=(1-(1-x)^\alpha)^n\)</span><br />
+<span class="arithmatex">\(P(n^{1/\alpha}(1-Y_n)\le x)=P(1-xn^{-1/\alpha}\le Y_n)=1-P(Y_n\le 1-xn^{-1/\alpha})=1-(1-(1-(1-xn^{-1/\alpha}))^\alpha)^n=1-(1-(xn^{-1/\alpha})^\alpha)^n=1-(1-(xn^{-1/\alpha})^\alpha)^n=1-(1-x^\alpha n^{-1})^n\)</span></p>
+<p>Using <span class="arithmatex">\((1-x^\alpha n^{-1})^n=(1-x^\alpha/n)^{n/x^\alpha*x^\alpha}\Longrightarrow (1/e)^{x^\alpha}\)</span>, The last term is <span class="arithmatex">\(1-e^{-x^\alpha}\)</span>.</p>
+<p>If <span class="arithmatex">\(Z\sim \exp(1)\)</span>, then <span class="arithmatex">\(P(Z\le x^\alpha)=1-e^{-x^\alpha}=P(Z^{1/\alpha}\le x)\)</span>. Therefore the given quantity has the same distribution as <span class="arithmatex">\(Z^{1/\alpha}\)</span> where <span class="arithmatex">\(Z\sim \exp(1)\)</span>.</p>
+<p>5.6<br />
+<span class="arithmatex">\(P(Y_n\le x)=P(X_1\le x)^n=(1-e^{-x})^n\)</span><br />
+<span class="arithmatex">\(P(Y_n-\log n\le x)=P(Y_n\le x+\log n)=(1-e^{-x}/n)^{n/e^{-x}*e^{-x}}\Longrightarrow e^{-x-1}\)</span></p>
+<p>5.8<br />
+(a) <span class="arithmatex">\(\operatorname{plim} (X_n,Y_n)^t=(\operatorname{plim} X_n, \operatorname{plim} Y_n)^t=(0,1)^t\)</span><br />
+(b) <span class="arithmatex">\(\operatorname{pdf}(X_n\ge x, Y_n\le y)=(y-x)^n\)</span><br />
+<span class="arithmatex">\(\operatorname{pdf}(X_n=x,Y_n=y)=\frac{\partial}{\partial x}\frac{\partial}{\partial y} (y-x)^n = \frac{\partial}{\partial x}n(y-x)^{n-1}=n(n-1)(y-x)^{n-2}\)</span><br />
+<span class="arithmatex">\(\operatorname{pdf}(R_n=r)=\int_{x=0}^{1-r} P(x_n=x,y_n=r+x) dx=n(n-1)r^{n-2}(1-r)\)</span><br />
+<span class="arithmatex">\(\operatorname{pdf}(n(1-R_n)=x)=\operatorname{pdf}(R_n=1-x/n)=n(n-1)(1-x/n)^{n-2}(x/n)=(n-1)(1-x/n)^{n-2}x\)</span></p>
+<p>5.10<br />
+(a) <span class="arithmatex">\(\limsup P(|X_n+Y_n|&gt;k) = \limsup P(|X_n+Y_n|&gt;2k) \le \limsup P(|X_n|&gt;k)+\limsup P(|Y_n|&gt;k)=0\)</span><br />
+(b) <span class="arithmatex">\(\limsup P(|X_nY_n|&gt;k)\le\limsup P(|X_n|&gt;\sqrt k)+\limsup P(|Y_n|&gt;\sqrt k)=0\)</span><br />
+(c) We want to show <span class="arithmatex">\(\forall \epsilon&gt;0, \lim_{n\longrightarrow \infty} P(|Z_nX_n|&gt;\epsilon)=0\)</span>. For any <span class="arithmatex">\(\epsilon&gt;0, \delta&gt;0\)</span>, there exists <span class="arithmatex">\(K&gt;0\)</span> such that <span class="arithmatex">\(\forall k&gt;K, \sup P(|X_n|&gt;k)&lt;\delta/2\)</span>. Also there exists <span class="arithmatex">\(N&gt;0\)</span> such that <span class="arithmatex">\(\forall n&gt;N, P(|Z_n|&gt;\epsilon/K)&lt;\delta/2\)</span>. Since <span class="arithmatex">\(\{ |Z_nX_n|&gt;\epsilon \}\sub \{ |Z_n|&gt;\epsilon/k \}\cup \{ |X_n|&gt;k \}\)</span>, we have for <span class="arithmatex">\(n&gt;N\)</span>, <span class="arithmatex">\(P(|Z_nX_n|&gt;\epsilon)\le P(|Z_n|&gt;\epsilon/K)+P(|X_n|&gt;K)\le P(|Z_n|&gt;\epsilon/K)+\sup_i P(|X_i|&gt;K)&lt;\delta\)</span>, which proves the statement.</p>
+<p>(d) <span class="arithmatex">\(\sup P(|Z_n|&gt;k)\)</span> is a non-increasing function of <span class="arithmatex">\(k\)</span> and bounded below by <span class="arithmatex">\(0\)</span>, hence <span class="arithmatex">\(\lim \sup P(|Z_n|&gt;k)\)</span> exists and is non-negative. Suppose this value is not <span class="arithmatex">\(0\)</span>, i.e. <span class="arithmatex">\(\lim_{k\longrightarrow \infty} \sup_n P(|Z_n|&gt;k) = c&gt;0\)</span>. This implies <span class="arithmatex">\(\forall k&gt;0, \sup_n P(|Z_n|&gt;k)\ge c\)</span>. Since a supremum is at least <span class="arithmatex">\(c\)</span>, all <span class="arithmatex">\(P\)</span> values are at least <span class="arithmatex">\(c/2\)</span>. Hence <span class="arithmatex">\(\forall k&gt;0, \forall n&gt;0, P(|Z_n|&gt;k)\ge c/2&gt;0\)</span>. This contradicts to the assumption <span class="arithmatex">\(Z_n=o_P(1)\)</span>, i.e. <span class="arithmatex">\(\forall k&gt;0, \lim_n P(|Z_n|&gt;k)=0\)</span>.</p>
+<p>5.12<br />
+By the CLT, <span class="arithmatex">\(\sqrt n (\overline X - \lambda)\sim N(0,\lambda)\)</span>. With <span class="arithmatex">\(g(X_i)=X_i/\sqrt \lambda\)</span>, <span class="arithmatex">\(\sqrt n (g(\overline {X_n})-g(\lambda))\sim N(0,1)\)</span>. We can estimate a confidence interval, for example, <span class="arithmatex">\(P(-3\le \sqrt n (g(\overline{X_n})-\sqrt \lambda)\le 3)\approx 0.9973\)</span>.</p>
+<p>5.14</p>
+<p>(a) By the CLT, <span class="arithmatex">\(\sqrt n \overline X \sim N(0,1)\)</span>. For every <span class="arithmatex">\(\epsilon&gt;0\)</span> we have <span class="arithmatex">\(\lim_{n\longrightarrow \infty} P(\sqrt n \overline X \overline Y&gt;\epsilon)\le \lim P(n^{1/4} \overline X&gt;\sqrt \epsilon)+\lim P(n^{1/4} \overline Y&gt;\sqrt \epsilon)=\lim P(\sqrt n \overline X&gt;n^{1/4} \sqrt \epsilon)+\lim P(\sqrt n \overline Y&gt;n^{1/4} \sqrt \epsilon)=0+0=0\)</span>. Hence <span class="arithmatex">\(\operatorname{plim} \sqrt n \overline X \overline Y = 0\)</span>. We get the 'therefore' part from canceling <span class="arithmatex">\(\overline{XY}\)</span> and multiplying both sides by <span class="arithmatex">\(\sqrt n\)</span>.</p>
+<p>(b) With <span class="arithmatex">\(m_1=\overline X, m_2=\overline{X^2}\)</span>, the statement is <span class="arithmatex">\(\sqrt{m_2-m_1^2}-\sqrt{m_2}=-m_1^2/(\sqrt{m_2-m_1^2}+\sqrt{m_2})\)</span>, which can be easily proven by manipulation.</p>
+<p>[TODO: Prove 'therefore' part]</p>
+<p>(c)</p>
+<p>By the CLT, <span class="arithmatex">\(\sqrt n (\overline{X^2}-1)/\sigma_{\overline{X^2}}\sim N(0,1)\)</span>. With <span class="arithmatex">\(g(x)=(\sqrt x-1)^2\)</span>, we have <span class="arithmatex">\(\sqrt n (g(\overline{X^2})-g(1))/\sigma_{\overline{X^2}}\sim g'(1) N(0,1)\)</span>, which simplifies to <span class="arithmatex">\(\sqrt n (\sqrt{\overline{X^2}}-1)^2/\sigma_{\overline{X^2}}\sim 0\)</span>. The condition required for this is <span class="arithmatex">\(\sigma_{\overline{X^2}}&lt;\infty\)</span>.</p>
+<p>From the given assumption <span class="arithmatex">\(E[X^4]&lt;\infty\)</span>, we have <span class="arithmatex">\(E[\overline{X^2}^2]&lt;\infty, \operatorname{Var}[\overline{X^2}]=E[\overline{X^2}^2]-E[\overline{X^2}]^2&lt;\infty - 1, \sigma_{\overline{X^2}}&lt;\infty\)</span>.</p>
+<p><span class="arithmatex">\(\sqrt n r_{3n} = -\frac{1}{2}\sqrt n (\overline{X^2}-2\sqrt{\overline{X^2}}+1)=-\frac{1}{2}\sqrt n (\sqrt{\overline{X^2}}-1)^2\sim 0\)</span>.</p>
+<p>(d)</p>
+<p>(e)</p>
+<p>5.16<br />
+[TODO]</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

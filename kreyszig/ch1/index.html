@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>1. Metric Spaces - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="..">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/kreyszig/ch1.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#1-metric-spaces">1. Metric Spaces</a></li>
+            <li><a href="#11-metric-space">1.1. Metric Space</a></li>
+            <li><a href="#12-further-examples-of-metric-spaces">1.2. Further Examples of Metric Spaces</a></li>
+            <li><a href="#13-open-set-closed-set-neighborhood">1.3. Open Set, Closed Set, Neighborhood</a></li>
+            <li><a href="#14-convergence-cauchy-sequence-completeness">1.4. Convergence, Cauchy Sequence, Completeness</a></li>
+            <li><a href="#15-examples-completeness-proofs">1.5. Examples, Completeness Proofs</a></li>
+            <li><a href="#16-completion-of-metric-spaces">1.6. Completion of Metric Spaces</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="1-metric-spaces">1. Metric Spaces</h1>
+<h2 id="11-metric-space">1.1. Metric Space</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(d(x,y)=|x-y|\)</span> for <span class="arithmatex">\(x,y\in \R\)</span><br />
+    (M1) trivial<br />
+    (M2) <span class="arithmatex">\(|x-y|=0 \iff x=y\)</span><br />
+    (M3) <span class="arithmatex">\(|x-y|=|y-x|\)</span><br />
+    (M4) <span class="arithmatex">\(|x-y|\le|x-z|+|z-y|\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x,y)=(x-y)^2\)</span>, (M1)~(M3) are trivial. (M4) is false for <span class="arithmatex">\(x=0, y=2, z=1, (x-y)^2\nleq (x-z)^2+(z-y)^2\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x,y)=\sqrt{|x-y|}\)</span>, (M1)~(M3) are trivial. For (M4), <span class="arithmatex">\(\sqrt{|x-y|}\le\sqrt{|x-z|}+\sqrt{|z-y|} \iff |x-y| \le |x-z|+|z-y|+2\sqrt{...}\)</span>, which is true from <span class="arithmatex">\(|x-y|\le |x-z|+|z-y|\)</span>.</p>
+</li>
+<li>
+<p>For two points, <span class="arithmatex">\(X=\{a,b\}, d(a,a)=d(b,b)=0, d(a,b)=d(b,a)=c&gt;0\)</span>. For one point, <span class="arithmatex">\(X={a}, d(a,a)=0\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((X,d)\)</span><br />
+    (i) if <span class="arithmatex">\(|X|&gt;1\)</span>, <span class="arithmatex">\(k&gt;0\)</span>. If <span class="arithmatex">\(|X|=1\)</span>, <span class="arithmatex">\(k\ge 0\)</span>. If <span class="arithmatex">\(|X|=0\)</span>, <span class="arithmatex">\(k\)</span> is any real number. <span class="arithmatex">\(k\in \R\)</span> in all cases.</p>
+<p>(ii) <span class="arithmatex">\((d+k)(a,a)=0=d(a,a)+k\)</span>. If <span class="arithmatex">\(|X|\ge 1, k=0\)</span>. Otherwise <span class="arithmatex">\(k\)</span> is any real number.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x,y)=\sup_{j\in \N}|x_j-y_j|\)</span><br />
+    We have <span class="arithmatex">\(\forall j\in\N, |x_j-y_j|\le|x_j-z_j|+|z_j-y_j|\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x,y)=1\)</span> if <span class="arithmatex">\(x\ne y\)</span>, 0 if <span class="arithmatex">\(x=y\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\tilde d(x,y)=\int_a^b |x(t)-y(t)|dt\)</span><br />
+    (M1) <span class="arithmatex">\(\forall f\in X\)</span>, <span class="arithmatex">\(f\)</span> is bounded because its domain is a closed interval. Hence <span class="arithmatex">\(\tilde d\)</span> is real, finite, and non-negative.<br />
+    (M2) <span class="arithmatex">\(\tilde d(x,y)=0 \iff \)</span>\forall t\in[a,b], x(t)=y(t)<span class="arithmatex">\( \iff x=y\)</span><br />
+    (M3) obvious<br />
+    (M4) <span class="arithmatex">\(\int_a^b |x(t)-y(t)|dt\le \int_a^b |x(t)-z(t)|+|z(t)-y(t)|dt = \int_a^b |x(t)-z(t)|+\int_a^b |z(t)-y(t)|dt\)</span></p>
+</li>
+<li>
+<p>(M1)~(M3) are obvious.<br />
+    (M4) <span class="arithmatex">\(d(x,y)\le d(x,z)+d(z,y)\)</span><br />
+    since each term is <span class="arithmatex">\(0\)</span> or <span class="arithmatex">\(1\)</span>, the only case (M4) is false is <span class="arithmatex">\(d(x,y)=1, d(x,z)=d(z,y)=0\)</span>. This means <span class="arithmatex">\(x\ne y, x=z, z=y\)</span>, which is impossible. Hence (M4) is true. <span class="arithmatex">\(d\)</span> is a metric.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(X=\{(0,0,0),...(1,1,1)\}, |X|=2^3=8\)</span>. <span class="arithmatex">\(d(x,y)=\sum |x_i-y_i|\)</span>.<br />
+    (M1)~(M3) are obvious.<br />
+    For (M4), <span class="arithmatex">\(\sum |x_i-y_i|\le\sum(|x_i-z_i|+|z_i-y_i|)=\sum|x_i-z_i|+\sum|z_i-y_i|\)</span></p>
+</li>
+<li>
+<div class="arithmatex">\[\begin{aligned}
+    d(x_1,x_n)\le &amp;d(x_1,x_2)+d(x_2,x_n)\\
+    &amp;d(x_1,x_2)+d(x_2,x_3)+d(x_3,x_n)\\
+    &amp;\dots\\
+    &amp;d(x_1,x_2)+d(x_2,x_3)+\dots+d(x_{n-1},x_n)
+    \end{aligned}\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(|d(x,y)-d(z,w)|\le d(x,z)+d(y,w)\)</span>?<br />
+    WLOG, <span class="arithmatex">\(d(x,y)\ge d(z,w)\)</span>, then the question becomes<br />
+<span class="arithmatex">\(d(x,y)\le d(x,z)+d(z,w)+d(w,y)\)</span>, which is true by triangle inequality.</p>
+</li>
+<li>
+<p>It is enough to consider <span class="arithmatex">\(d(x,z)-d(y,z)\ge0\)</span>. Then the inequality is <span class="arithmatex">\(d(x,z)\le d(x,y)+d(y,z)\)</span>, which is the triangle inequality.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x,y)\le d(z,x)+d(z,y)\)</span> and <span class="arithmatex">\(d(x,y)=0 \iff x=y\)</span>.<br />
+    (M3) With <span class="arithmatex">\(z=y\)</span>, we have <span class="arithmatex">\(d(x,y)\le d(y,x)\)</span>. Swapping <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>, we have <span class="arithmatex">\(d(y,x)\le d(x,y)\)</span>. Hence <span class="arithmatex">\(d(x,y)=d(y,x)\)</span>.<br />
+    (M4) <span class="arithmatex">\(d(x,y)\le d(z,x)+d(z,y)=d(x,z)+d(z,y)\)</span>.</p>
+</li>
+<li>
+<p>Putting <span class="arithmatex">\(x=y\)</span> into <span class="arithmatex">\(d(x,y)\le d(x,z)+d(z,y)\)</span>, we have <span class="arithmatex">\(0\le d(x,z)\)</span> for all <span class="arithmatex">\(x, z\)</span>.</p>
+</li>
+</ol>
+<h2 id="12-further-examples-of-metric-spaces">1.2. Further Examples of Metric Spaces</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(d(x,y)=\sum_{j=1}^\infty \mu_j \frac{|x_j-y_j|}{1+|x_j-y_j|}, \sum\mu_j&lt;\infty, \mu_j&gt;0\)</span><br />
+    (M1) <span class="arithmatex">\(d(x,y)&lt;\sum \mu_j &lt;\infty\)</span>.<br />
+    (M2, M3) obvious<br />
+    (M4) The same proof from 1.2-1 applies here too. (<span class="arithmatex">\(f(t)=\frac{t}{1+t}, \cdots\)</span>)</p>
+</li>
+<li>
+<p>With <span class="arithmatex">\(\alpha=\sqrt a, \beta=\sqrt b, p=2, q=2\)</span>, we have <span class="arithmatex">\(\alpha\beta\le \frac{\alpha^p}{p}+\frac{\beta^q}{q}\Longrightarrow \sqrt{ab}\le\frac{a+b}{2}\)</span>.</p>
+</li>
+<li>
+<p>Setting <span class="arithmatex">\(b_i=1\)</span>, (11) becomes <span class="arithmatex">\((\sum|a_i|)^2\le\sum|a_i|^2\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x_n=1/\log n\)</span>. Then <span class="arithmatex">\(\lim_{n\to\infty} x_n=0\)</span>. Given <span class="arithmatex">\(p\)</span>, there exists <span class="arithmatex">\(m\)</span> such that <span class="arithmatex">\(\forall n\ge m, \log^pn&lt;n\)</span>. Thus</p>
+<div class="arithmatex">\[\begin{aligned}
+\sum|x_n|^p
+=\sum_{n=1}^\infty \frac{1}{\log^p n}
+&amp;&gt; \sum_{n=m}^\infty \frac{1}{\log^p n}\\
+&amp;&gt; \sum_{n=m}^\infty \frac{1}{n}=\infty
+\end{aligned}\]</div>
+<p><span class="arithmatex">\(\therefore x\notin l^p\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(x_n=1/n\)</span>, then <span class="arithmatex">\(\sum 1/n=\infty\Longrightarrow x\notin l^1, \sum1/n^p&lt;\infty\Longrightarrow x\in l^2\)</span>. These can be easily shown by integrals and lower, upper bounds.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\delta(A)=\infty\)</span>, for any <span class="arithmatex">\(\delta_0&gt;0, \exists x,y\in A, d(x,y)&gt;\delta_0\)</span>, this means <span class="arithmatex">\(\delta(B)\ge\delta_0\)</span>, hence <span class="arithmatex">\(\delta(B)=\infty\)</span>. Now assume <span class="arithmatex">\(\delta(A)&lt;\infty\)</span>. Also assume <span class="arithmatex">\(A\sub B, \delta(A)&gt;\delta(B)\)</span>. For any <span class="arithmatex">\(\epsilon&gt;0\)</span>, there must be <span class="arithmatex">\(x,y\in A\)</span> such that <span class="arithmatex">\(d(x,y)&gt;\delta(A)-\epsilon\)</span>. Since <span class="arithmatex">\(x,y\in B\)</span>, <span class="arithmatex">\(\delta(B)\ge d(x,y)&gt;\delta(A)-\epsilon\)</span>. Hence <span class="arithmatex">\(\delta(B)\ge \delta(A)\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\delta(A)=0\Longrightarrow d(x,y)\le 0\Longrightarrow x=y\Longrightarrow |A|\le 1\)</span>. If <span class="arithmatex">\(|A|=0, \delta(A)=-\infty\)</span>, hence <span class="arithmatex">\(|A|=1\)</span>. Conversely, <span class="arithmatex">\(|A|=1\Longrightarrow \delta(A)=0\)</span>.</p>
+</li>
+<li>
+<p>For distinct <span class="arithmatex">\(x,y\in X\)</span>, <span class="arithmatex">\(D(\{x\},\{x,y\})=0\)</span> but <span class="arithmatex">\(\{x\}\ne\{x,y\}, \therefore\)</span> D is not a metric. <span class="arithmatex">\(D\)</span> can be a metric if <span class="arithmatex">\(A=\varnothing\)</span> or <span class="arithmatex">\(B=\varnothing\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(A\cap B\ne \varnothing\Longrightarrow\exists x\in A\cap B\Longrightarrow D(A,B)=D(\{x,\dots\},\{x,\dots\})=0\)</span>. The converse is not true. Let <span class="arithmatex">\(A=[0,3], B=(3,6]\)</span>, then <span class="arithmatex">\(D(A,B)=0\)</span> but <span class="arithmatex">\(A\cap B=\varnothing\)</span>.</p>
+</li>
+<li>
+<p>It is enough to prove <span class="arithmatex">\(D(x,B)-D(y,B)\le d(x,y)\)</span>. For <span class="arithmatex">\(\forall b\in B\)</span>,</p>
+<div class="arithmatex">\[\begin{aligned}&amp;D(x,B)\le d(x,b)\le d(x,y)+d(y,b)\\
+\Longrightarrow &amp;D(x,B)-d(x,y)\le d(y,b) \\
+\Longrightarrow &amp;D(x,B)-d(x,y) \text{ is a lower bound of d(y,b)} \\
+\Longrightarrow &amp;D(x,B)-d(x,y)\le D(y,B) \\
+\Longrightarrow &amp;D(x,B)-D(y,B)\le d(x,y)
+\end{aligned}\]</div>
+</li>
+<li>
+<p>(M1)~(M3) are obvious.<br />
+    (M4) Let <span class="arithmatex">\(f(t)=t/(1+t)\)</span>. It is shown in 1.2-1 that <span class="arithmatex">\(f\)</span> is increasing.<br />
+    From <span class="arithmatex">\(d(x,y)\le d(x,z)+d(z,y)\)</span>,</p>
+<div class="arithmatex">\[\begin{aligned}
+f(d(x,y))&amp;\le f(d(x,z)+d(z,y)) \\
+\frac{d(x,y)}{1+d(x,y)}&amp;\le \frac{d(x,z)+d(z,y)}{1+d(x,z)+d(z,y)}\\
+&amp;=\frac{d(x,z)}{1+d(x,z)+d(z,y)}+\frac{d(z,y)}{1+d(x,z)+d(z,y)}\\
+&amp;\le\frac{d(x,z)}{1+d(x,z)}+\frac{d(z,y)}{1+d(z,y)}
+\end{aligned}\]</div>
+<p>Also <span class="arithmatex">\(0\le f(t)\le 1\)</span>, so <span class="arithmatex">\(X\)</span> is bounded.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(a_0\in A, b_0\in B\)</span>. For any <span class="arithmatex">\(a\in A, b\in B\)</span>,</p>
+<div class="arithmatex">\[\begin{aligned}
+d(a,b)&amp;\le d(a,a_0)+d(a_0,b_0)+d(b_0,b)\\
+&amp;\le\delta(A)+d(a_0,b_0)+\delta(B)\\
+&amp;&lt;\infty
+\end{aligned}\]</div>
+<p><span class="arithmatex">\(\therefore A\cup B\)</span> is bounded.</p>
+</li>
+<li>
+<p>(M1)~(M3) are obvious.<br />
+    (M4)</p>
+<div class="arithmatex">\[\begin{aligned}
+d(x,y)&amp;=d_1(x_1,y_1)+d_2(x_2,y_2)\\
+&amp;\le d_1(x_1,z_1)+d_1(z_1,y_1)+d_2(x_2,z_2)+d_2(z_2,y_2)\\
+&amp;=d(x,z)+d(z,y)
+\end{aligned}\]</div>
+</li>
+<li>
+<p>(M1)~(M3) are clear.<br />
+    (M4) <span class="arithmatex">\(\tilde d(x,y)\le \tilde d(x,z)+\tilde d(z,y)\)</span> can be written as <span class="arithmatex">\(|a+bi|\le|c+di|+|e+fi|\)</span> with <span class="arithmatex">\(a\le c+e, b\le d+f\)</span>.</p>
+<div class="arithmatex">\[\begin{aligned}
+|a+bi|\le|(c+e)+(d+f)i|&amp;=|c+di+e+fi|\\
+&amp;\le|c+di|+|e+fi|
+\end{aligned}\]</div>
+<p>the last inequality holds because <span class="arithmatex">\(\mathbb C\)</span> is a metric space.</p>
+</li>
+<li>
+<div class="arithmatex">\[\begin{aligned}\tilde{\tilde{\kern{-0.3ex}d}}(x,y)&amp;=\max(d_1(x_1,y_1),d_2(x_2,y_2))\\
+    &amp;=\max(xy1, xy2)\\
+    &amp;=\max(xz1+zy1,xz2+zy2)=\triangle
+    \end{aligned}\]</div>
+<p>(<span class="arithmatex">\(xy1\)</span> represents <span class="arithmatex">\(d_1(x_1,y_1)\)</span> for convenience)</p>
+<p>We want to prove <span class="arithmatex">\(\triangle\le \max(xz1, xz2)+\max(zy1,zy2)\)</span>. This is equivalent to show <span class="arithmatex">\(\max(a+b,c+d)\le \max(a,c)+\max(b,d)\)</span>.</p>
+<div class="arithmatex">\[\begin{aligned}
+\max(a+b,c+d)&amp;\le\max(\max(a,c)+b,\max(a,c)+d)\\
+&amp;\le\max(\max(a,c)+\max(b,d),\cdots)\\
+&amp;\le\max(a,c)+\max(b,d)
+\end{aligned}\]</div>
+</li>
+</ol>
+<h2 id="13-open-set-closed-set-neighborhood">1.3. Open Set, Closed Set, Neighborhood</h2>
+<ol>
+<li>
+<p>(a) For any <span class="arithmatex">\(x\in B(x_0,r)\)</span>, define <span class="arithmatex">\(B'=\{y|d(x,y)&lt;r-d(x,x_0)&gt;\}\)</span>. Since <span class="arithmatex">\(d(x_0,y)\le d(x,y)+d(x,x_0)&lt;r\)</span>, <span class="arithmatex">\(B'\sub B\)</span>. <span class="arithmatex">\(\therefore B\)</span> is an open set.<br />
+    (b) Let a closed ball <span class="arithmatex">\(\tilde B(x_0,r)\)</span>. Then <span class="arithmatex">\(\tilde B^c = {p|d(p,x_0)&gt;r}. For any point \)</span>x\in\tilde B^c<span class="arithmatex">\(, let \)</span>B_x=B(x, d(x,x_0)-r)<span class="arithmatex">\(. A point \)</span>y\in B_x<span class="arithmatex">\( is not in \)</span>B<span class="arithmatex">\( because \)</span>r&lt;d(x,x_0)-d(x,y)\le d(x,y)+d(y,x_0)-d(x,y)=d(x_0,y)<span class="arithmatex">\(. \)</span>\therefore B_x \in \tilde B^c<span class="arithmatex">\(, so \)</span>x<span class="arithmatex">\( is an internal point of \)</span>\tilde B^c<span class="arithmatex">\(, hence \)</span>B^c<span class="arithmatex">\( is open, and \)</span>B$ is closed.</p>
+</li>
+<li>
+<p>An open ball in <span class="arithmatex">\(\R\)</span> is an open interval. An open ball in <span class="arithmatex">\(\mathbb C\)</span> is a filled circle without boundary in the complex plane. An open ball <span class="arithmatex">\(B(x_0,r) \)</span>in <span class="arithmatex">\(C[a,b]\)</span> is a set of functions <span class="arithmatex">\(x\)</span> whose the value at <span class="arithmatex">\(t\in[a,b]\)</span> satisfies <span class="arithmatex">\(|x(t)-x_0(t)|\le r\)</span>. In other words, <span class="arithmatex">\(x_0(t)-r\le x(t)\le x_0(t)+r\)</span>.</p>
+</li>
+<li>
+<p>We need to find the smallest <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(\forall t |\cos t-\sin t|\le r\)</span>. Equivalently, find the maximum <span class="arithmatex">\(\cos t + \sin t\)</span> where <span class="arithmatex">\(t\in [0,\pi/4]\)</span>, or, <span class="arithmatex">\(\max f(x)\)</span> where <span class="arithmatex">\(f(x)=x+\sqrt{1-x^2}, x\in[0,1]\)</span>. <span class="arithmatex">\(f'(x)=1+\frac{-2x}{2\sqrt{1-x^2}}=0\Longrightarrow x=\frac{1}{\sqrt 2}\)</span>. Therefore <span class="arithmatex">\(t\)</span> is <span class="arithmatex">\(0\degree, 45\degree, 90\degree\)</span>. Trying these values, we have <span class="arithmatex">\(\max(\cos t + \sin t)=\sqrt 2\)</span>.</p>
+</li>
+<li>
+<p>If a non-empty set <span class="arithmatex">\(A\)</span> is open, each point <span class="arithmatex">\(a\in A\)</span> has a ball <span class="arithmatex">\(B_a\sub A\)</span>. Let <span class="arithmatex">\(B=\cup_a B_a\)</span>, then <span class="arithmatex">\(B\sub A\)</span>. Also <span class="arithmatex">\(A\sub B\)</span> because every <span class="arithmatex">\(a\in A\)</span>, <span class="arithmatex">\(a\in B_a\sub B\)</span>. Hence <span class="arithmatex">\(A=B\)</span>, and <span class="arithmatex">\(A\)</span> is an union of open balls. Conversely if <span class="arithmatex">\(A\)</span> is an union of open balls, it is open (by what we learned).</p>
+</li>
+<li>
+<p>(a) <span class="arithmatex">\(\varnothing\)</span> is open because it has no member and we can say all members are internal points. <span class="arithmatex">\(X\)</span> is open because any neighborhood is in <span class="arithmatex">\(X\)</span>. <span class="arithmatex">\(\varnothing, X\)</span> are closed because their complements are open.<br />
+    (b) For a subset <span class="arithmatex">\(Y\sub X\)</span>, <span class="arithmatex">\(Y\)</span> is open because for <span class="arithmatex">\(y\in Y, B(y,0.5)=\{y\}\sub Y\)</span>. Since every subset is open, <span class="arithmatex">\(Y^c\)</span> is open, hence <span class="arithmatex">\(Y\)</span> is closed.</p>
+</li>
+<li>
+<p>Suppose a neighborhood <span class="arithmatex">\(N\)</span> of <span class="arithmatex">\(x_0\)</span> contains finitely many points of <span class="arithmatex">\(A\)</span>. Let <span class="arithmatex">\(d_0=\min_{a\in N\cap A} d(x_0, a)\)</span>. Then it contradicts that <span class="arithmatex">\(B(x_0, d_0/2)\)</span> should contain at least one point of <span class="arithmatex">\(A\)</span>.</p>
+</li>
+<li>
+<p>(a) <span class="arithmatex">\(\N=\overline \N\)</span> on <span class="arithmatex">\(\R\)</span><br />
+    (b) <span class="arithmatex">\(\overline\mathbb Q=\R\)</span> on <span class="arithmatex">\(\R\)</span><br />
+    (c) <span class="arithmatex">\(\overline{\mathbb Q \times \mathbb Q}=\R\times\R\)</span><br />
+    (d) <span class="arithmatex">\(\overline{\{z\mid \lvert z\rvert&lt;1\}}=\{z\mid\lvert z\rvert \le 1\}\)</span> on <span class="arithmatex">\(C\)</span></p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(X=\{0,1\}\)</span>. Then <span class="arithmatex">\(B(0;1)=\{0\}, \overline{B(0;1)}=\{0\}\)</span>, but <span class="arithmatex">\(\tilde B(0;1)=\{0,1\}\)</span>.</p>
+</li>
+<li>
+<ul>
+<li><span class="arithmatex">\(A\sub \overline A = A\cup\{\text{accumulation points}\}\)</span></li>
+<li>
+<p><span class="arithmatex">\(\overline A=\overline{\overline A}\)</span>: We have <span class="arithmatex">\(\overline A\sub \overline {\overline A}\)</span>. For the converse, suppose the contrary, so <span class="arithmatex">\(\exists a\in \overline{\overline A}, a\notin \overline A\)</span>. Since <span class="arithmatex">\(a\)</span> is not an accumulation point of <span class="arithmatex">\(A\)</span>, but of <span class="arithmatex">\(\overline A\)</span>,<br />
+<span class="arithmatex">\(\exists \epsilon_0&gt;0, B(a,\epsilon_0)\cap A-\{a\}=\varnothing\)</span><br />
+<span class="arithmatex">\(\forall \epsilon&gt;0, B(a,\epsilon)\cap \overline A - \{a\}\neq \varnothing\)</span><br />
+Let <span class="arithmatex">\(a'\in B(a,\epsilon_0/2)\cap \overline A-\{a\}\)</span>, then <span class="arithmatex">\(a'\in \overline A-A\)</span> so <span class="arithmatex">\(a'\)</span> is an accumulation point of <span class="arithmatex">\(A\)</span>.<br />
+<span class="arithmatex">\(\forall \epsilon&gt;0, B(a', \epsilon)\cap A-\{a'\}\neq \varnothing\)</span><br />
+with <span class="arithmatex">\(\epsilon=\epsilon_0/2\)</span>,<br />
+<span class="arithmatex">\(\exists a''\in B(a', \epsilon_0/2)\cap A-\{a'\}\)</span><br />
+<span class="arithmatex">\(d(a'',a')&lt;\epsilon_0/2, d(a',a)&lt;\epsilon_0/2, d(a'',a)&lt;\epsilon_0/2\)</span><br />
+Also <span class="arithmatex">\(a''\neq a\)</span> because <span class="arithmatex">\(a''\in A, a\in \overline A\)</span>. This contradicts to <span class="arithmatex">\(a'' \in B(a,\epsilon_0)\cap A-\{a\}\)</span>. Therefore such <span class="arithmatex">\(a\)</span> does not exist, and <span class="arithmatex">\(\overline{\overline A}=A\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\overline{A\cup B}=\overline A\cup \overline B\)</span>: suppose <span class="arithmatex">\(x\in \overline{A\cup B}, x\notin \overline A, x\notin \overline B\)</span>. Then <span class="arithmatex">\(\exists \epsilon&gt;0\)</span>, <span class="arithmatex">\(B(x,\epsilon)\cap A\sub\{x\}\)</span>, <span class="arithmatex">\(B(x,\epsilon)\cap B\sub \{x\}\)</span>, but <span class="arithmatex">\(B(x,\epsilon)\cap(A\cup B)\not\subset \{x\}\)</span>, which contradicts. Hence <span class="arithmatex">\(\overline{A\cup B}\sub (\overline A\cup \overline B)\)</span>. Now suppose <span class="arithmatex">\(x\in \overline A\)</span> but <span class="arithmatex">\(x\notin \overline{A\cup B}\)</span>. <span class="arithmatex">\(\forall \epsilon&gt;0, B(x,\epsilon)\cap A-\{x\}\neq\varnothing, B(x,\epsilon)\cap(A\cup B)-\{x\}\neq \varnothing\)</span>, <span class="arithmatex">\(x\)</span> is an accumulation point of <span class="arithmatex">\((A\cup B)\)</span>. Therefore the converse is also true.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\overline{A\cap B}\sub \overline A\cap \overline B\)</span><br />
+    if <span class="arithmatex">\(x\in A\cap B\)</span>, then <span class="arithmatex">\(x\in A\sub \overline A, x\in B\sub \overline B\Longrightarrow x\sub \overline A\cap \overline B\)</span>. If <span class="arithmatex">\(x\in \overline{A\cap B}\)</span>, <span class="arithmatex">\(\forall \epsilon&gt;0, B(x,\epsilon)\cap(A\cap B)-\{x\}\neq\varnothing, B(x,\epsilon)\cap A-\{x\}\neq\varnothing\)</span> and <span class="arithmatex">\(B(x,\epsilon)\cap B-\{x\}\neq\varnothing\)</span>, hence <span class="arithmatex">\(x\)</span> is in <span class="arithmatex">\(\overline A\)</span> and <span class="arithmatex">\(\overline B\)</span>, and <span class="arithmatex">\(x\in \overline A\cap \overline B\)</span>.</p>
+<p>Conversely suppose <span class="arithmatex">\(x\in \overline A\cap \overline B\)</span>. If <span class="arithmatex">\(x\in A\cap B\)</span> then <span class="arithmatex">\(x\in \overline{A\cap B}\)</span>. If <span class="arithmatex">\(x\notin A, x\in B\)</span>, then <span class="arithmatex">\(B(x,\epsilon)\cap A-\{x\}\neq\varnothing, B(x,\epsilon)\cap B-\{x\}\neq\varnothing, B(x,\epsilon)\cap (A\cap B)-\{x\}\neq\varnothing, (\overline A\cap \overline B)\not\sub\overline{A\cap B}\)</span>. Hence <span class="arithmatex">\(\overline{A\cap B}\not\sub\overline A\cap\overline B\)</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(x\in A \Longrightarrow d(x,x)=0 \Longrightarrow D(x,A)=0\)</span>,<br />
+<span class="arithmatex">\(x\notin A\Longrightarrow \forall \epsilon&gt;0, B(x,\epsilon)\cap A-\{x\}\neq \varnothing\)</span><br />
+    If <span class="arithmatex">\(D(x,A)=\epsilon_0&gt;0\)</span> let <span class="arithmatex">\(a\in B(x,\epsilon_0)\cap A-\{x\}\)</span>, then <span class="arithmatex">\(d(x,a)&lt;D(x,A)\)</span> which contradicts. <span class="arithmatex">\(\therefore x\in \overline A \Longrightarrow D(x,A)=0\)</span>.<br />
+    For converse, <span class="arithmatex">\(D(x,A)=0\)</span>. Then there exists a sequence in <span class="arithmatex">\(A\)</span> that converges to <span class="arithmatex">\(x\)</span>, hence <span class="arithmatex">\(x\in \overline A\)</span>.</p>
+</li>
+<li>
+<p>(a) the boundary of<br />
+<span class="arithmatex">\((-1,1)\Longrightarrow\{-1,1\}\)</span><br />
+<span class="arithmatex">\([-1,1)\Longrightarrow\{-1,1\}\)</span><br />
+<span class="arithmatex">\([-1,1]\Longrightarrow\{-1,1\}\)</span><br />
+    (b) <span class="arithmatex">\(\mathbb Q\sub\R\)</span>: the boundary is <span class="arithmatex">\(\R\)</span> because any neighborhood has a point of <span class="arithmatex">\(\mathbb Q\)</span> and a point of <span class="arithmatex">\(\R\)</span>.<br />
+    (c) For both disks, the boundary is <span class="arithmatex">\(\{z\mid \lvert z\rvert=1\}\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(B[a,b]\)</span> is not separable: Consider a subset <span class="arithmatex">\(F\)</span>, a set of functions <span class="arithmatex">\(f(x)\)</span> such that <span class="arithmatex">\(f(x)=0\)</span> if <span class="arithmatex">\(a\le x&lt;t\)</span>, 1 if <span class="arithmatex">\(t\le x\le b\)</span>, for <span class="arithmatex">\(a&lt;t&lt;b\)</span>. <span class="arithmatex">\(F\)</span> is uncountable and <span class="arithmatex">\(B(f,1/2)=\{f\}\)</span> for <span class="arithmatex">\(f\in F\)</span>. If <span class="arithmatex">\(B[a,b]\)</span> has any dense subset <span class="arithmatex">\(A\)</span>, disjoint and uncountably many neighbors <span class="arithmatex">\(B(f,1/2)\)</span> should contain a point of <span class="arithmatex">\(A\)</span>, which makes <span class="arithmatex">\(A\)</span> uncountable.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(X\)</span> is separable <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(X\)</span> has a countable dense subset <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(X\)</span> has a countable subset <span class="arithmatex">\(Y\)</span> such that <span class="arithmatex">\(\forall \epsilon&gt;0, \forall x\in X, \exists y\in Y, d(x,y)&lt;\epsilon\)</span>. The interpretation is that for any point <span class="arithmatex">\(x\)</span>, there exists a sequence of <span class="arithmatex">\((y_n)\)</span> that converges to <span class="arithmatex">\(x\)</span>.</p>
+</li>
+<li>
+<p>Show ① <span class="arithmatex">\(T:X\Longrightarrow Y\)</span> is continuous <span class="arithmatex">\(\iff\)</span> ② <span class="arithmatex">\(T^{-1}(M)\)</span> is closed in <span class="arithmatex">\(X\)</span>.<br />
+    ① to ②: <span class="arithmatex">\(T^{-1}(M^c)=(T^{-1}(M))^c\)</span>. If <span class="arithmatex">\(M\)</span> is closed, <span class="arithmatex">\(M^c\)</span> is open, and by ①, <span class="arithmatex">\(T^{-1}(M^c)\)</span> is open. Since <span class="arithmatex">\((T^{-1}(M))^c\)</span> is open, <span class="arithmatex">\(T^{-1}(M)\)</span> is closed.</p>
+<p>② to ①: If <span class="arithmatex">\(M\)</span> is open, <span class="arithmatex">\(M^c\)</span> is closed, and by ②, <span class="arithmatex">\(T^{-1}(M^c)=(T^{-1}(M))^c\)</span> is closed, so <span class="arithmatex">\(T^{-1}(M)\)</span> is open.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(cos(x)\)</span> on <span class="arithmatex">\((-2\pi,2\pi)\)</span> has an open domain but the range <span class="arithmatex">\([-1,1]\)</span> is closed.</p>
+</li>
+</ol>
+<h2 id="14-convergence-cauchy-sequence-completeness">1.4. Convergence, Cauchy Sequence, Completeness</h2>
+<ol>
+<li>
+<p>If <span class="arithmatex">\((x_n)\)</span> converges to a limit <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(\forall \epsilon&gt;0, \exists N&gt;0, \forall n&gt;N, d(x_n,x)&lt;\epsilon\)</span>, then for any <span class="arithmatex">\((x_{n_k})\)</span>, <span class="arithmatex">\(\forall\epsilon&gt;0, \exists K&gt;0, \forall k&gt;K, d(x_{n_k}, x)&lt;\epsilon\)</span>, therefore <span class="arithmatex">\(x_{n_k}\longrightarrow x\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((x_n)\)</span> is Cauchy and <span class="arithmatex">\(x_{n_k}\longrightarrow x\)</span>, then <span class="arithmatex">\(\forall \epsilon&gt;0\)</span>,<br />
+   - <span class="arithmatex">\(\exists K&gt;0, \forall k&gt;K, d(x_{n_k},x)&lt;\epsilon/2\)</span><br />
+   - <span class="arithmatex">\(\exists N&gt;0, \forall n,m&gt;K, d(x_n,x_m)&lt;\epsilon/2\)</span><br />
+   - Then <span class="arithmatex">\(\forall n&gt;max(N,n_k), \exists i, n_i&gt;n\)</span>, and <span class="arithmatex">\(d(x_n,x)\le d(x_n,x_{n_i})+d(x_{n_i},x)&lt;\epsilon/2+\epsilon/2=\epsilon\)</span>.<br />
+    Hence <span class="arithmatex">\((x_n)\)</span> converges to <span class="arithmatex">\(x\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((x_n)\longrightarrow x\)</span> is equivalent to <span class="arithmatex">\(\forall V=n(x), \exists n_0, \forall n&gt;n_0, x_n\in V\)</span><br />
+    (<span class="arithmatex">\(\Longrightarrow\)</span>): for a neighborhood <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(\exists r, B_r(x)\sub V\)</span>, there exists <span class="arithmatex">\(N\)</span> such that <span class="arithmatex">\(\forall n&gt;N, d(x_n,x)&lt;r\)</span>, hence <span class="arithmatex">\(x_n\in B_r(x)\sub V\)</span>.</p>
+<p>(<span class="arithmatex">\(\Longleftarrow\)</span>): For any <span class="arithmatex">\(\epsilon&gt;0\)</span> and <span class="arithmatex">\(B_\epsilon (x)\)</span>, there exists <span class="arithmatex">\(n_0\)</span> such that <span class="arithmatex">\(x_n\in B_\epsilon(x) \Longrightarrow d(x_n,x)&lt;\epsilon\)</span> for all <span class="arithmatex">\(n&gt;n_0\)</span>. Hence <span class="arithmatex">\((x_n)\longrightarrow x\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists N, \forall n,m\ge N, d(x_n,x_m)&lt;1\Longrightarrow \forall n\ge N, d(x_n,x_N)&lt;1\)</span>. Hence <span class="arithmatex">\(x_N,x_{N+1},..\)</span> are bounded. Also <span class="arithmatex">\(x_1, x_2, .. x_{N-1}\)</span> are finite, so bounded.</p>
+</li>
+<li>
+<p>No. A counter example is <span class="arithmatex">\(x_n=\sin n\)</span>.</p>
+</li>
+<li>
+<p>We will show that <span class="arithmatex">\((a_n)\)</span> is Cauchy, then since <span class="arithmatex">\(\R\)</span> is complete, <span class="arithmatex">\((a_n)\)</span> converges. For any <span class="arithmatex">\(\epsilon&gt;0, \exists N, \forall n,m&gt;N, d(x_n,x_m)&lt;\epsilon/4\)</span> and <span class="arithmatex">\(d(y_n,y_m)&lt;\epsilon/4\)</span>. Then <span class="arithmatex">\(|a_n-a_m|=|d(x_n,y_n)-d(x_m,y_m)|\le d(x_n,x_m)+d(y_n,y_m)&lt;\epsilon/2\)</span>. Hence <span class="arithmatex">\((a_n)\)</span> is Cauchy, thus convergent.</p>
+</li>
+<li>
+<p>1.4-2 (b) has a stronger condition than Prob 6, hence 1.4-2 (b) is true.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\((x_n)\)</span> is Cauchy in <span class="arithmatex">\((X,d_1)\)</span>, for <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, we have <span class="arithmatex">\(d_1(x_n,x_m)&lt;b\epsilon\)</span>, or, <span class="arithmatex">\(d_2(x_n,x_m)&lt;\epsilon\)</span>. Hence <span class="arithmatex">\((x_n)\)</span> is Cauchy in <span class="arithmatex">\((X,d_2)\)</span>. In the same way, a cauchy seq in <span class="arithmatex">\((X,d_2)\)</span> is Cauchy in <span class="arithmatex">\((X,d_1)\)</span>.</p>
+</li>
+<li>
+<p>It can be easily shown that <span class="arithmatex">\(\tilde{\tilde{\kern{-0.3ex}d}}\le \tilde d\le d\le 2*\tilde{\tilde{\kern{-0.3ex}d}}\)</span>.</p>
+</li>
+<li>
+<p>Consider a Cauchy sequence <span class="arithmatex">\(c_n=(a_n+i b_n)\)</span> in <span class="arithmatex">\(\mathbb C\)</span>, where <span class="arithmatex">\(a_n,b_n\in \R\)</span>. Then for any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(m\)</span>, <span class="arithmatex">\(d(a_n,a_m)\le d(c_n,c_m)&lt;\epsilon, d(b_n,b_m)\le d(c_n,c_m)&lt;\epsilon\)</span>, hence <span class="arithmatex">\((a_n)\)</span> and <span class="arithmatex">\((b_n)\)</span> are Cauchy. Since <span class="arithmatex">\(\R\)</span> is complete, <span class="arithmatex">\((a_n)\longrightarrow a, (b_n)\longrightarrow b\)</span>. Again, for any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(d(a_n,a)&lt;\epsilon/2, d(b_n,b)=d(i b_n, i b)&lt;\epsilon/2\)</span>, hence <span class="arithmatex">\(d(c_n,a+bi)&lt;\epsilon\)</span>, <span class="arithmatex">\((c_n)\longrightarrow a+bi\)</span>, <span class="arithmatex">\(\mathbb C\)</span> is complete.</p>
+</li>
+</ol>
+<h2 id="15-examples-completeness-proofs">1.5. Examples, Completeness Proofs</h2>
+<ol>
+<li>
+<p>Since <span class="arithmatex">\(\R\)</span> is complete, a subset is complete iff it is complete. Hence <span class="arithmatex">\((a,b)\)</span> is incomplete and <span class="arithmatex">\([a,b]\)</span> is complete.</p>
+</li>
+<li>
+<p>Consider a Cauchy <span class="arithmatex">\((x^(1),x^(2),\dots)\)</span>. For any <span class="arithmatex">\(\epsilon\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, <span class="arithmatex">\(d(x^{(n)},x^{(m)})&lt;\epsilon\Longrightarrow \forall j, |x_j^{(n)}-x_j^{(m)}|&lt;\epsilon\)</span>. For a fixed <span class="arithmatex">\(j\)</span>, (x^{(n)}_j) is Cauchy. Since <span class="arithmatex">\(\R\)</span> is complete, <span class="arithmatex">\(x^{(n)}_j\)</span> converges, and let the limit point <span class="arithmatex">\(x_j\)</span>, and let <span class="arithmatex">\(x=(x_n)\)</span>. Note that <span class="arithmatex">\(x\in X\)</span>. For any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, <span class="arithmatex">\(\forall j |x_j^n-x_j|\le \epsilon\Longrightarrow d(x^n,x)\le \epsilon\)</span>, and <span class="arithmatex">\(x^n\)</span> converges to <span class="arithmatex">\(x\)</span>. Since any Cauchy converges, <span class="arithmatex">\(X\)</span> is compelte.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x_1=(1,0,0,\dots), x_2=(1,1/2,0,0,\dots), x_3=(1,1/2,1/4,0,0,\dots), \dots\)</span>. The sequence <span class="arithmatex">\((x_1,x_2,\dots)\)</span> converges to <span class="arithmatex">\((1,1/2,1/4,1/8,\dots)\)</span> but this has infinitely many zeros, therefore this is not in <span class="arithmatex">\(M\)</span>. Hence <span class="arithmatex">\(M\)</span> is not complete.</p>
+</li>
+<li>
+<p>The previous example converges to a point not in <span class="arithmatex">\(M\)</span>, hence <span class="arithmatex">\(M\)</span> is not closed, Since <span class="arithmatex">\(l^\infty\)</span> is complete, <span class="arithmatex">\(M\)</span> is not complete.</p>
+</li>
+<li>
+<p>Consider a Cauchy <span class="arithmatex">\((x_n)\)</span>. For <span class="arithmatex">\(\epsilon=0.5\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, <span class="arithmatex">\(|x_n-x_m|&lt;1\)</span>, which means <span class="arithmatex">\(x_n=x_m\)</span> and the sequence is eventually constant and convergent. Hence <span class="arithmatex">\(X\)</span> is complete.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((x_n=n)\)</span> is Cauchy. Suppose this sequence converges to <span class="arithmatex">\(x\)</span>. For large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(x_n&gt;x\Longrightarrow \arctan(x_n)&gt;\arctan(x)\)</span>, so it cannot converge. Hence the space is incomplete.</p>
+</li>
+<li>
+<p>Similar to 6, <span class="arithmatex">\((x_n=n)\)</span> is Cauchy but it does not converge.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(C[a,b]\)</span> is complete. We will show <span class="arithmatex">\(Y\)</span> is closed. Consider <span class="arithmatex">\((y_n)\longrightarrow y\)</span> and suppose <span class="arithmatex">\(y\notin Y\)</span>. Then <span class="arithmatex">\(y(a)\neq y(b)\)</span> and for any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(|y_n(a)-y(a)|&lt;\epsilon/2, |y_n(b)-y(b)|&lt;\epsilon/2, |y(a)-y(b)|&lt;\epsilon\)</span>, which implies <span class="arithmatex">\(y(a)=y(b)\)</span>, a contradiction. Hence <span class="arithmatex">\(Y\)</span> is closed and complete.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((x_m)\in C[a,b], (x_m)\Longrightarrow x\)</span>. For any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(d(x_n,x)&lt;\epsilon\Longrightarrow |x_n(t)-x(t)|&lt;\epsilon\)</span>. Since <span class="arithmatex">\(x_n\)</span> is continuous, for any <span class="arithmatex">\(\epsilon_2&gt;0\)</span> there exists <span class="arithmatex">\(\delta&gt;0\)</span>, <span class="arithmatex">\(|t_1-t_2|&lt;\delta\Longrightarrow |x_n(t_1)-x_n(t_2)|&lt;\epsilon_2\)</span>. Then for <span class="arithmatex">\(t_1,t_2\in [a,b]\)</span> such that <span class="arithmatex">\(|t_1-t_2|&lt;\delta, |x(t_1)-x(t_2)|\le|x(t_1)-x_n(t_1)|+|x_n(t_1)-x_n(t_2)|+|x_n(t_2)-x(t_2)|&lt;\epsilon+\epsilon_2+\epsilon\)</span>. Since <span class="arithmatex">\(\epsilon\)</span> and <span class="arithmatex">\(\epsilon_2\)</span> were chosen arbitrarily, <span class="arithmatex">\(x\)</span> is continuous.</p>
+</li>
+<li>
+<p>Any Cauchy sequence in a discrete metric space is eventually constant (use <span class="arithmatex">\(\epsilon=0.5\)</span>), and converges to the constant. Hence discrete metric spaces are complete.</p>
+</li>
+<li>
+<p>Suppose <span class="arithmatex">\(x_n\longrightarrow x\)</span>. Then for any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(d(x_n,x)=\sum_j \frac{1}{2^j} \frac{|x_j^{(n)}-x_j|}{|x_j^{(n)}-x_j|+1}&lt;\epsilon\)</span>. Since all terms are positive, <span class="arithmatex">\(\frac{|x_j^{(n)}-x_j|}{|x_j^{(n)}-x_j|+1}&lt;2^j \epsilon\)</span>. Let <span class="arithmatex">\(f(t)=\frac{t}{1+t}\)</span>. <span class="arithmatex">\(f\)</span> is continuous and increasing. <span class="arithmatex">\(f(|x_j^{(n)}-x_j|)&lt;2^j\epsilon\)</span> implies <span class="arithmatex">\(x_j^{(n)}\longrightarrow x_j\)</span>. (why?)</p>
+</li>
+<li>
+<p>Consider a Cauchy <span class="arithmatex">\((x^{(m)})\)</span>. For any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, <span class="arithmatex">\(d(x^{(n)},x^{(m)})&lt;\epsilon\Longrightarrow f(|x_j^{(n)}-x_j^{(m)}|)&lt;2^j \epsilon\Longrightarrow |x_j^{(n)}-x_j^{(m)}|&lt;f^{-1}(2^j\epsilon)\)</span>. For a fixed <span class="arithmatex">\(j\)</span> and any <span class="arithmatex">\(\epsilon_2&gt;0\)</span>, there exists <span class="arithmatex">\(\epsilon_0\)</span> such that <span class="arithmatex">\(f^{-1}(2^j\epsilon_0)&lt;\epsilon_2\)</span>. With <span class="arithmatex">\(\epsilon=\epsilon_0\)</span> in the previous inequality, <span class="arithmatex">\(|x_j^{(n)}-x_j^{(m)}|&lt;f^{-1}(2^j\epsilon_0)&lt;\epsilon_2\)</span>, hence <span class="arithmatex">\(x_j^{(n)}\)</span> is Cauchy. This sequence converges to <span class="arithmatex">\(x_j\)</span> because <span class="arithmatex">\(\R\)</span> is complete. By Problem 11, <span class="arithmatex">\(x^{(n)}\Longrightarrow x\)</span>. Therefore <span class="arithmatex">\(s\)</span> is complete.</p>
+</li>
+<li>
+<p>With <span class="arithmatex">\(n&lt;m\)</span>, <span class="arithmatex">\(d(x_n,x_m)=\int_{m^{-2}}^{n^{-2}}(t^{-1/2}-t)dt=[2t^{1/2}-1/2 t^2]_{m^{-2}}^{n^{-2}}=2(n^{-1}-m^{-1})-1/2(n^{-4}-m^{-4})&lt;2(n^{-1}-m^{-1})&lt;2n^{-1}\)</span>. Thus for any <span class="arithmatex">\(epsilon&gt;0\)</span>, choose <span class="arithmatex">\(n\)</span> such that <span class="arithmatex">\(2n^{-1}&lt;\epsilon\)</span>, then <span class="arithmatex">\(d(x_n,x_m)&lt;\epsilon)\)</span>. Hence <span class="arithmatex">\((x_n)\)</span> is Cauchy.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((x_n)\)</span> converges to <span class="arithmatex">\(x(t)=t^{-1/2}\)</span> for <span class="arithmatex">\(t&gt;0\)</span>, but <span class="arithmatex">\(x(0)=0\)</span>. Hence <span class="arithmatex">\(x\)</span> is not continuous at <span class="arithmatex">\(t=0\)</span> and <span class="arithmatex">\(x\)</span> is not in the space.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(d(x_n,x_m)=\frac{1}{(n+1)^2}+\frac{1}{(n+2)^2}+\dots+\frac{1}{m^2}\le \int_{n+1}^{m+1} \frac{1}{t^2} dt = [-1/t]^{m+1}_{n+1}=\frac{1}{n+1}-\frac{1}{m+1}&lt;\frac{1}{n+1}\)</span>. Therefore for <span class="arithmatex">\(n,m&gt;1/\epsilon, d(x_n,x_m)&lt;\frac{1}{n+1}&lt;\frac{1}{n}&lt;\epsilon\)</span>, Hence this is Cauchy.<br />
+Suppose this converges to <span class="arithmatex">\(x\)</span>. Let <span class="arithmatex">\(k\)</span> the index ofo the last nonzero element of <span class="arithmatex">\(x\)</span>. Then for <span class="arithmatex">\(n&gt;k, d(x,x_n)&gt;\frac{1}{(k+1)^2}+\frac{1}{(k+2)^2}+\dots+\frac{1}{n^2}\)</span>. Hence <span class="arithmatex">\(d(x,x_n)&gt;\frac{1}{(k+1)^2}\)</span> and <span class="arithmatex">\((x_n)\)</span> does not converge to <span class="arithmatex">\(x\)</span>.</p>
+</li>
+</ol>
+<h2 id="16-completion-of-metric-spaces">1.6. Completion of Metric Spaces</h2>
+<ol>
+<li>
+<p>Let <span class="arithmatex">\(d_m=\min_{a,b\in Y, a\neq b} d(a,b)\)</span>. This exists because <span class="arithmatex">\(Y\)</span> is finite. Also <span class="arithmatex">\(d_m&gt;0\)</span>. For any Cauchy sequence <span class="arithmatex">\((x_n)\)</span>, with <span class="arithmatex">\(\epsilon=d_m/2\)</span> and large enough <span class="arithmatex">\(n,m\)</span>, <span class="arithmatex">\(d(x_n,x_m)&lt;d_m/2\)</span>. The only possible distance smaller than <span class="arithmatex">\(d_m\)</span> is <span class="arithmatex">\(0\)</span>, hence <span class="arithmatex">\(x_n=x_m\)</span>, therefore <span class="arithmatex">\((x_n)\)</span> converges to a constant in <span class="arithmatex">\(Y\)</span>. This proves <span class="arithmatex">\(Y\)</span> is complete.</p>
+</li>
+<li>
+<p>The completion of <span class="arithmatex">\((\mathscr Q,d)\)</span> is <span class="arithmatex">\((\R, d')\)</span> where <span class="arithmatex">\(d'(x,y)=|x-y|\)</span>.</p>
+</li>
+<li>
+<p>A discrete metric space is already complete.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(T\)</span> a bijective isometry from <span class="arithmatex">\(X_1\)</span> onto <span class="arithmatex">\(X_2\)</span>. Consider a Cauchy sequence <span class="arithmatex">\((y_n)\)</span> in <span class="arithmatex">\(X_2\)</span>. Then <span class="arithmatex">\((T^{-1} y_n)\)</span> is Cauchy in <span class="arithmatex">\(X_1\)</span> because <span class="arithmatex">\(d'(y_n,y_m)&lt;\epsilon\longrightarrow d(T^{-1}y_n,T^{-1}y_m)&lt;\epsilon\)</span>. This converges to <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(X_1\)</span> because <span class="arithmatex">\(X_1\)</span> is complete. Then <span class="arithmatex">\(d(T^{-1}y_n,x)&lt;\epsilon\longrightarrow d'(y_n,Ty_n)&lt;\epsilon\)</span>, hence <span class="arithmatex">\(y_n\)</span> converges to <span class="arithmatex">\(Tx\)</span>. This proves <span class="arithmatex">\(X_2\)</span> is complete.</p>
+</li>
+</ol>
+<p>5.<br />
+(a) Let <span class="arithmatex">\(T\)</span> a bijective isometry from <span class="arithmatex">\(X\)</span> onto <span class="arithmatex">\(Y\)</span>. It is continuous. (for any <span class="arithmatex">\(\epsilon&gt;0\)</span>, <span class="arithmatex">\(\delta=\epsilon\)</span>) The inverse is also continuous (for any <span class="arithmatex">\(\epsilon&gt;0\)</span>, <span class="arithmatex">\(\delta=\epsilon\)</span>). Hence <span class="arithmatex">\(T\)</span> is a homeomorphism.<br />
+(b) <span class="arithmatex">\(\arctan\)</span> maps from <span class="arithmatex">\((-\infty,\infty)\)</span> (complete) to <span class="arithmatex">\((-\pi/2,\pi/2)\)</span> (incomplete). The function is bijective, and both the forward and inverse are continuous, hence <span class="arithmatex">\(\arctan\)</span> is a homeomorphism.</p>
+<ol start="6">
+<li>
+<p>Define <span class="arithmatex">\(T:C[a,b]\longrightarrow C[0,1], T(f)(x)=f((b-a)x+a)\)</span>. Then for <span class="arithmatex">\(f,g\in C[a,b]\)</span>,</p>
+<div class="arithmatex">\[\begin{aligned}
+&amp;d'(Tf,Tg) \\
+&amp;=\sup |Tf(t)-Tg(t)|, t\in[0,1] \\
+&amp;=\sup |f((b-a)t+a)-g((b-a)t+a)|, t\in[0,1] \\
+&amp;=\sup |f(x)-g(x)|, x\in[a,b] \\
+&amp;=d(f,g)
+\end{aligned}\]</div>
+</li>
+</ol>
+<p>where <span class="arithmatex">\(C[a,b]\)</span> is equipped with <span class="arithmatex">\(d\)</span> and <span class="arithmatex">\(C[a,b]\)</span> is equipped with <span class="arithmatex">\(d'\)</span>. <span class="arithmatex">\(T\)</span> is bijective, hence <span class="arithmatex">\(C[a,b]\)</span> and <span class="arithmatex">\(C[0,1]\)</span> are isomorphic.</p>
+<p>7.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

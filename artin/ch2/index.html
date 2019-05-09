@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Chapter 2. Groups - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="..">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/artin/ch2.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#chapter-2-groups">Chapter 2. Groups</a></li>
+            <li><a href="#checklist">Checklist</a></li>
+            <li><a href="#section-1-laws-of-composition">Section 1. Laws of Composition</a></li>
+            <li><a href="#section-2-groups-and-subgroups">Section 2. Groups and Subgroups</a></li>
+            <li><a href="#section-3-subgroups-of-the-additive-group-of-integers">Section 3. Subgroups of the Additive Group of Integers</a></li>
+            <li><a href="#section-4-cyclic-groups">Section 4. Cyclic Groups</a></li>
+            <li><a href="#section-5-homomorphisms">Section 5. Homomorphisms</a></li>
+            <li><a href="#section-6-isomorphisms">Section 6. Isomorphisms</a></li>
+            <li><a href="#section-7-equivalence-relations-and-partitions">Section 7. Equivalence Relations and Partitions</a></li>
+            <li><a href="#section-8-cosets">Section 8. Cosets</a></li>
+            <li><a href="#section-9-modular-arithmetic">Section 9. Modular Arithmetic</a></li>
+            <li><a href="#section-10-the-correspondence-theorem">Section 10. The Correspondence Theorem</a></li>
+            <li><a href="#section-11-product-groups">Section 11. Product Groups</a></li>
+            <li><a href="#section-12-quotient-groups">Section 12. Quotient Groups</a></li>
+            <li><a href="#miscellaneous-problems">Miscellaneous Problems</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="chapter-2-groups">Chapter 2. Groups</h1>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>Group</li>
+<li>Group's order</li>
+<li>Subgroup</li>
+<li>Relation between left inverse / right inverse</li>
+<li>Cyclic Group</li>
+<li>Coset</li>
+</ul>
+<h2 id="section-1-laws-of-composition">Section 1. Laws of Composition</h2>
+<p>1.1. <span class="arithmatex">\(ab=a\)</span>, <span class="arithmatex">\((ab)c=ac=a\)</span>, <span class="arithmatex">\(a(bc)=ab=a\)</span>.</p>
+<p>1.2. (Note: these properties are not true with non-associative operations.)<br />
+    - <span class="arithmatex">\(la=ar=1, (lar)=l=r, ra=ar=1, a^{-1}=r\)</span>.<br />
+    - an inverse is unique, if not (<span class="arithmatex">\(b\ne c\)</span>), <span class="arithmatex">\(ab=1, ac=1, cab=c(ab)=c=(ca)b=b, b=c\)</span>.<br />
+    - <span class="arithmatex">\((ab)(b^{-1}a^{-1})=aa^{-1}=1, \therefore (ab)^{-1}=b^{-1}a^{-1}\)</span>.<br />
+    - A counter-example is Exercise 1.3.</p>
+<p>1.3. For right inverse, <span class="arithmatex">\(ss^{-1}(n)=n\)</span>, <span class="arithmatex">\(s^{-1}(n)=n-1\)</span> For left inverse, <span class="arithmatex">\(s^{-1}s(n) = s^{-1}(n+1)=n\)</span>, however <span class="arithmatex">\(s^{-1}(1)\)</span> is unspecified, hence infinitely many left ivnerses.</p>
+<h2 id="section-2-groups-and-subgroups">Section 2. Groups and Subgroups</h2>
+<p>2.1. skip</p>
+<p>2.2. The subset is closed under inverse, contains 1 because 1 is invertible, and if the subset has <span class="arithmatex">\(a, b\)</span>, <span class="arithmatex">\(ab\)</span> has the inverse <span class="arithmatex">\(b^{-1}a^{-1}\)</span>, hence <span class="arithmatex">\(ab\)</span> is the element of the subset as well. Therefore the subset is a subgroup.</p>
+<p>2.3. .<br />
+    (a) <span class="arithmatex">\(y=x^{-1}w^{-1}z\)</span><br />
+    (b) <span class="arithmatex">\(x(yz)=(yz)x=1\)</span>. <span class="arithmatex">\(yxz\)</span> may be be <span class="arithmatex">\(1\)</span>, since it is possible <span class="arithmatex">\(xy\ne yx\)</span>.</p>
+<p>2.4. .<br />
+    (a) yes<br />
+    (b) yes<br />
+    (c) no, <span class="arithmatex">\(H\)</span> is not closed under inverse.<br />
+    (d) yes<br />
+    (e) no, <span class="arithmatex">\(I\)</span> is not in <span class="arithmatex">\(H\)</span>.</p>
+<p>2.5. If <span class="arithmatex">\(G\)</span> has an identity <span class="arithmatex">\(I_1\)</span> and <span class="arithmatex">\(H\)</span> has an identity <span class="arithmatex">\(I_2\)</span>, <span class="arithmatex">\(I_1 I_2 = I_1 = I_2\)</span>.</p>
+<p>2.6. <span class="arithmatex">\(G^\circle\)</span> is still assosiative, has the same identity, same inverse. Hence <span class="arithmatex">\(G\)</span> is a group.</p>
+<h2 id="section-3-subgroups-of-the-additive-group-of-integers">Section 3. Subgroups of the Additive Group of Integers</h2>
+<p>3.1. skip</p>
+<p>3.2. <span class="arithmatex">\(a+b=p, gcd(a,b)=gcd(a,p-a)=gcd(a,p)=1\)</span> because <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(p\)</span> are coprime.</p>
+<p>3.3. .<br />
+    (a) <span class="arithmatex">\(gcd(a_1,a_2,..a_n)=gcd(gcd(a_1,..a_{n-1}, a_n)\)</span>, then a linear combination of linear combinations is a linear combination.<br />
+    (b) if <span class="arithmatex">\(gcd(a_1/d, a_2/d, .. a_n/d) = d'\)</span>, then <span class="arithmatex">\(d*d'\)</span> is a linear combination of <span class="arithmatex">\(a_1, .., a_n\)</span>, and <span class="arithmatex">\(d*d'\)</span> divides <span class="arithmatex">\(d\)</span>, so <span class="arithmatex">\(d'=1\)</span>.</p>
+<h2 id="section-4-cyclic-groups">Section 4. Cyclic Groups</h2>
+<p>4.1. <span class="arithmatex">\(a^7=1, a^3b = ba^3, ba^3b^{-1}=a^3\)</span>, squaring the both sides, <span class="arithmatex">\(ba^6b^{-1}=a^6, ba^{-1}b^{-1}=a^{-1}\)</span>, then <span class="arithmatex">\(ab=ba\)</span>.</p>
+<p>4.2. .<br />
+    (a) skip (use <span class="arithmatex">\(e^{in/(2\pi)}\)</span>)<br />
+    (b) if <span class="arithmatex">\(n\)</span> is even, the sum of power is 0 (modular n), thus the product <span class="arithmatex">\(1\)</span>.  if <span class="arithmatex">\(n\)</span> is odd, all terms except <span class="arithmatex">\(1\)</span> cancel out, and the product is <span class="arithmatex">\(1\)</span>.</p>
+<p>4.3. <span class="arithmatex">\((ab)^k=1 \iff a((ba)^k)a^{-1}=1 \iff (ba)^k=1\)</span>, hence the order of two are the same.</p>
+<p>4.4. Any group with order greater than 1 has a trivial proper subgroup <span class="arithmatex">\({1}\)</span> and it is the smallest group. Only <span class="arithmatex">\({1}\)</span> has no proper subgroup.</p>
+<p>4.5. If a subgroup is a trivial <span class="arithmatex">\({1}\)</span>, it is cyclic. Otherwise the subgroup of a group <span class="arithmatex">\(&lt;x&gt;\)</span> consists of <span class="arithmatex">\(x^k\)</span> and let <span class="arithmatex">\(m\)</span> be the smallest positive <span class="arithmatex">\(k\)</span>. For any element of the subgroup <span class="arithmatex">\(x^l\)</span>, <span class="arithmatex">\(l=mq+r\)</span> by the division theorem. Since the subgroup has <span class="arithmatex">\(x^{mq}\)</span> and <span class="arithmatex">\(x^{mq+r}\)</span>, it also has <span class="arithmatex">\(x^{-mq}\)</span> (inverse) and <span class="arithmatex">\(x^r\)</span>. If <span class="arithmatex">\(r\)</span> is not <span class="arithmatex">\(0\)</span>, it contradicts that <span class="arithmatex">\(m\)</span> is the smallest positive <span class="arithmatex">\(k\)</span>. Hence <span class="arithmatex">\(r\)</span> is zero, <span class="arithmatex">\(l\)</span> is a multiple of <span class="arithmatex">\(m\)</span>. This proves the subgroup is a cyclic, <span class="arithmatex">\(&lt;x^m&gt;\)</span>.</p>
+<p>4.6. .<br />
+    (a) skip<br />
+    (b) <span class="arithmatex">\(x^k\)</span> generates a cyclic group <span class="arithmatex">\(&lt;x&gt;\)</span> of order <span class="arithmatex">\(n\)</span> if and only if <span class="arithmatex">\(gcd(k,n)=1\)</span>. The answer is <span class="arithmatex">\(\phi(n)\)</span>, which is the euler phi function.</p>
+<p>4.7. <span class="arithmatex">\(H\)</span> is closed under the composition because <span class="arithmatex">\(xx=1, yy=1, (xy)(xy)=1\)</span>, <span class="arithmatex">\(xy\)</span> is in <span class="arithmatex">\(H\)</span>, <span class="arithmatex">\(yx=y^{-1} x^{-1} = (xy)^{-1} = xy\)</span> is in <span class="arithmatex">\(H\)</span>, <span class="arithmatex">\(xxy=xy\)</span>, <span class="arithmatex">\(yxy=x^{-1}=x, xyx=y^{-1}=y, xyy=x\)</span>. <span class="arithmatex">\(H\)</span> also has <span class="arithmatex">\(1\)</span> and all inverses (the inverse of an element is itself). Hence <span class="arithmatex">\(H\)</span> is a subgroup. It is of order <span class="arithmatex">\(4\)</span> because <span class="arithmatex">\(x, y, xy\)</span> are all different. If <span class="arithmatex">\(x=y\)</span>, <span class="arithmatex">\(xy=1\)</span>, so the order of <span class="arithmatex">\(xy\)</span> is <span class="arithmatex">\(1\)</span>, contradicts. If <span class="arithmatex">\(x=xy\)</span>, then <span class="arithmatex">\(y\)</span> is an identity, <span class="arithmatex">\(y=1\)</span>, the order of <span class="arithmatex">\(y\)</span> is <span class="arithmatex">\(2\)</span>, contradicts. Therefore they are all different.</p>
+<p>4.8. .<br />
+    (a) (Type 2) can be represented as (Type 1) and (Type 3). Suppose two rows are <span class="arithmatex">\((r1,r2)\)</span>. Then <span class="arithmatex">\((r1,r2)\Rightarrow (r1+r2,r2)\Rightarrow (r1+r2,-r1)\Rightarrow (r1+r2,r1)\Rightarrow (r2,r1)\)</span>. Therefore only (Type1) and (Type3) are enough to generate <span class="arithmatex">\(GL_n(\R)\)</span>.<br />
+    (b) Without (Type3) we can make a matrix similar to a row echelon one, except each row's leading non-zero element is not 1. Any product of (Type 1) matrices has the determinant <span class="arithmatex">\(1\)</span> hence it is in <span class="arithmatex">\(SL_n(\R)\)</span>. Any element in <span class="arithmatex">\(SL_n(\R)\)</span> has the determinant <span class="arithmatex">\(1\)</span>, and can be reduced to an upper triangle matrix using only (Type 1). The first <span class="arithmatex">\(n-1\)</span> diagonal elements also can be reduced to 1 using (Type 1). The last diagonal element is automatically <span class="arithmatex">\(1\)</span> since the product of diagonal elements is the determinant. Hence it is possible to reduce any element of <span class="arithmatex">\(SL_n(\R)\)</span> to <span class="arithmatex">\(I\)</span>, and taking the inverse of a sequence of (Type 1) operations used, we have a product of (Type 1) which is equal to the element. Therefore (Type 1) operations exactly generates <span class="arithmatex">\(SL_n(\R)\)</span>.</p>
+<p>4.9. skip</p>
+<p>4.10.</p>
+<p>4.11. .<br />
+    (a)<br />
+    (b)</p>
+<h2 id="section-5-homomorphisms">Section 5. Homomorphisms</h2>
+<p>5.5</p>
+<h2 id="section-6-isomorphisms">Section 6. Isomorphisms</h2>
+<p>6.1</p>
+<p>6.2</p>
+<h2 id="section-7-equivalence-relations-and-partitions">Section 7. Equivalence Relations and Partitions</h2>
+<h2 id="section-8-cosets">Section 8. Cosets</h2>
+<h2 id="section-9-modular-arithmetic">Section 9. Modular Arithmetic</h2>
+<h2 id="section-10-the-correspondence-theorem">Section 10. The Correspondence Theorem</h2>
+<h2 id="section-11-product-groups">Section 11. Product Groups</h2>
+<h2 id="section-12-quotient-groups">Section 12. Quotient Groups</h2>
+<h2 id="miscellaneous-problems">Miscellaneous Problems</h2>
+<p>M.1.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

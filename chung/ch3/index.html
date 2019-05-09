@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>3. Random Variable. Expectation. Independence - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="..">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/chung/ch3.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#3-random-variable-expectation-independence">3. Random Variable. Expectation. Independence</a></li>
+            <li><a href="#31-general-definitions">3.1. General Definitions</a></li>
+            <li><a href="#32-properties-of-mathematical-expectation">3.2. Properties of mathematical expectation</a></li>
+            <li><a href="#33-independence">3.3. Independence</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="3-random-variable-expectation-independence">3. Random Variable. Expectation. Independence</h1>
+<h2 id="31-general-definitions">3.1. General Definitions</h2>
+<ol>
+<li>
+<p>f</p>
+</li>
+<li>
+<p>d</p>
+</li>
+<li>
+<p>Define r.v. X as the identity, so <span class="arithmatex">\(X(B)=B\)</span> for <span class="arithmatex">\(B\in\mathscr B_1\)</span>. Then <span class="arithmatex">\(\mu(X^{-1}(B))=\mu(B)\)</span>. An identity mapping may be not continuous in some spaces, which means there exists an open set <span class="arithmatex">\(B\)</span> such that <span class="arithmatex">\(X^{-1}(B)\)</span> is not open, thus <span class="arithmatex">\(\mu\circ X^{-1}\)</span> is not defined at <span class="arithmatex">\(B\)</span>.</p>
+</li>
+<li>
+<p>We need to show <span class="arithmatex">\(\mathscr P\{G(\theta)\le x\}=F(x)\)</span> for all <span class="arithmatex">\(x\in\R\)</span>. This is equivalent to <span class="arithmatex">\(\mathscr P\{\sup\{y;F(y)\le\theta(\omega)\}\le x\}=F(x)\)</span> for all <span class="arithmatex">\(x\)</span>. <span class="arithmatex">\(\sup\{y;F(y)\le\theta\}\le x \iff F(x)\ge \theta\)</span>, and <span class="arithmatex">\(\mathscr P\{F(x)\ge\theta(\omega)\}=P\{\theta(\omega)\le F(x)\}=D(F(x))=F(x)\)</span> where <span class="arithmatex">\(D\)</span> is a d.f. of uniform distribution on <span class="arithmatex">\([0,1]\)</span>. Hence it is proved.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(G\)</span> the d.f. of of <span class="arithmatex">\(F(X)\)</span>. Then for <span class="arithmatex">\(k\in[0,1]\)</span>, <span class="arithmatex">\(G(k)=\mathscr P\{F(x)\le k\}=\mathscr P\{x\le F^{-1}(k)\}=F(F^{-1}(k))=k\)</span> where <span class="arithmatex">\(x\le F^{-1}(k)\)</span> means <span class="arithmatex">\(x\)</span> is equal to or smaller than any element of <span class="arithmatex">\(F^{-1}(\{k\})\)</span>. Hence <span class="arithmatex">\(F(X)\)</span> has the uniform distribution on <span class="arithmatex">\([0,1]\)</span>. The continuity is used for <span class="arithmatex">\(F^{-1}(k)\neq\varnothing\)</span>. If <span class="arithmatex">\(F\)</span> is not continuous, for example <span class="arithmatex">\(F\)</span> jumps from <span class="arithmatex">\(0.2\)</span> to <span class="arithmatex">\(0.3\)</span> at <span class="arithmatex">\(x_0\)</span>, <span class="arithmatex">\(G(k)\)</span> is not defined on <span class="arithmatex">\((0.2,0.3)\)</span>. Clearly this is not uniform distribution.</p>
+</li>
+</ol>
+<p>6..</p>
+<p>7..</p>
+<p>8..</p>
+<p>9..</p>
+<p>10..</p>
+<ol start="11">
+<li>(<span class="arithmatex">\(X\)</span> is r.v.) Since <span class="arithmatex">\(X\)</span> is measurable, <span class="arithmatex">\(X^{-1}(B)\in \mathscr F\{X\}\)</span>. Conversely, <span class="arithmatex">\(\mathscr F\{X\}\)</span> is generated by a collection of <span class="arithmatex">\(X^{-1}(B)\)</span> for <span class="arithmatex">\(B\in\mathscr B^1\)</span>. Any element of <span class="arithmatex">\(\mathscr F\{X\}\)</span> is made of complement/union/intersection of basis elements, and the inverse is commutative with complement/union/intersection, hence <span class="arithmatex">\(\Lambda\in\mathscr F\{X\}\Longrightarrow \Lambda=X^
+{-1}(B)\)</span> for some <span class="arithmatex">\(B\)</span>.  <span class="arithmatex">\(B\)</span> is not unique if <span class="arithmatex">\(x\)</span> is not surjective.</li>
+</ol>
+<h2 id="32-properties-of-mathematical-expectation">3.2. Properties of mathematical expectation</h2>
+<p>(46p)</p>
+<ol>
+<li>
+<p>From <span class="arithmatex">\(X\ge 0\)</span> a.e., there exists a null set <span class="arithmatex">\(N\)</span> such that <span class="arithmatex">\(X\ge 0\)</span> on \Lambda\setminus N<span class="arithmatex">\(. Consider a set \)</span>E_n={X\ge 1/n}<span class="arithmatex">\(. Then \)</span>\mathscr P(E_n)=0<span class="arithmatex">\( because if not, \)</span>\mathscr P(E_n)&gt;0, \int_\Lambda Xd\mathscr P=\int_{\Lambda\setminus N} Xd\mathscr P\ge \int_{E_n} Xd\mathscr P\ge \mathscr P(E_n)*1/n&gt;0<span class="arithmatex">\(, which contradicts. Let \)</span>E=\cup_n E_n={X&gt;0}<span class="arithmatex">\(, then \)</span>\mathscr P(E)=0<span class="arithmatex">\(. Hence \)</span>X=0<span class="arithmatex">\( on \)</span>\Lambda\setminus E\setminus N<span class="arithmatex">\( whose the measure is 1. Therefore \)</span>X=0$ almost everywhere.</p>
+</li>
+<li>
+<p>(The statement is wrong in a case of direc-delta function?) [WIP] In particular, suppose <span class="arithmatex">\(\lim_{n\Longrightarrow\infty}\mathscr P(|X|&gt;n)=k&gt;0\)</span>. Then it is a contradiction that <span class="arithmatex">\(\int_X Xd\mathscr P\ge nk\)</span> for all <span class="arithmatex">\(n\)</span> and thus <span class="arithmatex">\(\int_X Xd\mathscr P=\infty\)</span>. Therefore <span class="arithmatex">\(\lim_{n\Longrightarrow\infty}\mathscr P(|X|&gt;n)=0\)</span>. (Or, more easily, use Theorem 3.2.1) Using the first statement in the problem,  <span class="arithmatex">\(\lim_{n\longrightarrow\infty}\int_{|X|&gt;n}Xd\mathscr P=0\)</span>.</p>
+</li>
+<li>
+<p>We show three conditions on page 21. (iii) <span class="arithmatex">\(\nu(\Omega)=1d\)</span>, (i) <span class="arithmatex">\(X\ge 0\Longrightarrow \nu(\Lambda)\ge 0\)</span>, (ii) the additivity from the additivity of integral. Therefore <span class="arithmatex">\(\nu\)</span> is a p.m.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sum_{n=1}^\infty \mathscr P(|X|\ge cn)=\sum_{n=1}^\infty \mathscr P(|X|/c\ge n)&lt;\infty \iff \mathscr E(|X|/c)&lt;infty \iff \mathscr E(|X|)&lt;infty\)</span>.</p>
+</li>
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(Z_n=Y-X_n\)</span> and apply Fatou's lemma on <span class="arithmatex">\(Z_n\)</span>. Since <span class="arithmatex">\(Y-\limsup X_n=\liminf Z_n\)</span>, we get the desired inequality. Without the condition on <span class="arithmatex">\(Y\)</span>, it's equivalent to claim Fatou's lemma without non-negativity, which is known false. (TODO: Counterexample)</p>
+</li>
+<li>
+<p>(This problem is equivalent to Folland 2.26) We use the dominated convergence theorem. First let <span class="arithmatex">\(X=X^+-X^-\)</span>. For <span class="arithmatex">\(X^+\)</span>, there exists a sequence of simple rv.s <span class="arithmatex">\((\phi^+_n)\)</span> that pointwise converges to <span class="arithmatex">\(X^+\)</span>. <span class="arithmatex">\(|\phi^+_n-X^+|\)</span> converges to <span class="arithmatex">\(0\)</span>. Also <span class="arithmatex">\(|\phi^+_n-X^+|\le|\phi^+_n|+|X^+|\le 2|X^+|\)</span> and since <span class="arithmatex">\(|X^+|\)</span> is integrable, <span class="arithmatex">\(|\phi^+_n-X^+|\)</span> is bounded by an integral function. Now we apply the dominated convergence theorem on <span class="arithmatex">\(|\phi^+_n-X^+|\)</span> and get <span class="arithmatex">\(\int |\phi^+_n-X^+| \longrightarrow \int \lim |\phi^+_n-X^+| = 0\)</span>. This means that for any <span class="arithmatex">\(\epsilon&gt;0\)</span> and large enough <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(\int |\phi^+_n-X^+| &lt; \epsilon/2\)</span>. We can do the same for <span class="arithmatex">\(X^-\)</span>, and combining them to get the desired result.d</p>
+</li>
+</ol>
+<p>8.</p>
+<h4 id="part-2">Part 2</h4>
+<p>9..</p>
+<ol start="10">
+<li>Let <span class="arithmatex">\(\phi(x)=x^{r'/r}\)</span>. Then <span class="arithmatex">\(\phi\)</span> is convex. By Jensen inequality, <span class="arithmatex">\(\phi(\int |X|^{r})\le \int \phi(|X|^{r})=\int |X|^{r'}&lt;\infty\)</span>. For the second statement, when <span class="arithmatex">\(p\ge 1\)</span> and <span class="arithmatex">\(\mathscr E(|X|^r)&lt;\infty\)</span>, using Minkowski, <span class="arithmatex">\(\mathscr E(|X-a|^r)^{1/r} &lt; \mathscr E(|X|^r)^{1/r} + \mathscr E(|a|^r)^{1/r} &lt; \infty\)</span>. For the other direction, <span class="arithmatex">\(\mathscr E(|X|^r)^{1/r}=\mathscr E(|X-a+a|^r)^{1/r}&lt;E(|X-a|^r)^{1/r}+E(|a|^r)^{1/r}&lt;\infty\)</span>. For <span class="arithmatex">\(0&lt;p&lt;1\)</span>, <span class="arithmatex">\(|X-a|^r\le |(|X|+|a|)|^r\le |X|^r+|a|^r\)</span> since <span class="arithmatex">\(f(x)=x^r\)</span> is concave and the subadditivity holds. Similarily, <span class="arithmatex">\(|X|^r=|X-a+a|^r\le |X-a|^r+|a|^r\)</span>. Applying integrals on both sides, this proves the second statement.d</li>
+</ol>
+<p>11..</p>
+<p>12..</p>
+<p>13..</p>
+<p>14..</p>
+<p>15..</p>
+<ol start="16">
+<li>
+<p><span class="arithmatex">\(\int_{-\infty}^{\infty}[F(x+a)-F(x)]dx=\int_{-\infty}^{\infty}\int_{x}^{x+a} f(t) dt dx=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(t) \chi_E(x,t) dt dx\)</span> where <span class="arithmatex">\(E=\{x\le t\le x+a\}\)</span>. By Fubini, This is equal to <span class="arithmatex">\(\int\int f(t)\chi_E(x,t)dxdt = \int f(t) \int \chi_E(x,t) dxdt = \int f(t)*a \,dt=a\int_{-\infty}^\infty f(t)dt = a*1 = a\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\int_0^\infty (1-F(x)) dx=\int_0^\infty \mathscr P(X&gt;x)dx=\int_0^\infty \int_x^\infty \mathscr f(t) \,dt \,dx\)</span>. By Tonelli, this is <span class="arithmatex">\(=\int_0^\infty \int_0^t \mathscr f(t) \,dx \,dt=\int_0^\infty t*f(t)\,dt=\mathscr E(X)\)</span>. Since <span class="arithmatex">\(\mathscr P(X=x)=0\)</span>, <span class="arithmatex">\(\mathscr P(X&gt;x)=\mathscr P(X\ge x)\)</span>.</p>
+</li>
+</ol>
+<p>18..<br />
+19. ???<br />
+20..</p>
+<h2 id="33-independence">3.3. Independence</h2>
+<ol>
+<li>
+<p>[WIP] Let <span class="arithmatex">\(\mathscr F=\{\varnothing,\{a\},\{b\},\{a,b\}\}, \mathscr P_1(\{a\})=0.5, \mathscr P_1(\{b\})=0.5, \mathscr P_1(\{a,b\})=1, X_1(a)=1, X_1(b)=2, X_2(a)=1, X_2(b)=1\)</span>. Then <span class="arithmatex">\(\mathscr P(X_1=1)=0.5, P(X_2=1)=1\)</span></p>
+</li>
+<li>
+<p>It can be easily checked that they are pairwise independent. They are not totally independent because <span class="arithmatex">\(P(X_1X_2=1,X_1=1,X_2=1)=1/4\neq P(X_1=1)P(X_1=1)P(X_1X_2=1)=1/8\)</span>. <span class="arithmatex">\(\mathscr F=\{X_1,X_2,\dots,X_{n-1},X_1X_2X_3\dots X_{n-1}\}\)</span> is an example that every <span class="arithmatex">\(n-1\)</span> of them are independent but not all of them. Let <span class="arithmatex">\(\Lambda_1=\{b,c\},\Lambda_2=\{a,b\},\Lambda_3=\{c,d\}, P(b)=1/4=P(ab)P(bc)=1/2*1/2\)</span> and <span class="arithmatex">\(P(c)=1/4=P(bc)P(cd)=1/2*1/2\)</span>. Then <span class="arithmatex">\(\Lambda_1\)</span> and <span class="arithmatex">\(\Lambda_2\cup\Lambda_3=\{a,b,c,d\}\)</span> are not independent.</p>
+</li>
+</ol>
+<p>3..</p>
+<p>4..</p>
+<p>5..</p>
+<p>6..</p>
+<p>7..</p>
+<p>8..</p>
+<ol start="9">
+<li>
+<p><span class="arithmatex">\(\int_{Y\in B}Xd\mathscr P=\int X\Delta_B(Y)d\mathscr P=\mathscr E(X\Delta_B(Y))=\mathscr E(X) \mathscr E(\Delta_B(Y))=\mathscr E(X) \mathscr P(Y\in B)\)</span>. <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(\Delta_B(Y)\)</span> are independent because the identity is measurable and an indicator of a borel set is measurable, so by Theorem 3.3.1 they are independent.</p>
+</li>
+<li>
+<p>Let any possible value of <span class="arithmatex">\(Y\)</span> be <span class="arithmatex">\(y\)</span>. By Fubini, <span class="arithmatex">\(\mathscr E(|X+y|^p)&lt;\infty\)</span>. There exists a constant <span class="arithmatex">\(c\in(0,\infty)\)</span> such that <span class="arithmatex">\(|a+b|^p\le c(|a|^p+|b|^p)\)</span> for all <span class="arithmatex">\(a, b\)</span>.  Then <span class="arithmatex">\(\mathscr E(|X|^p)=E(|X+y-y|^p)\le \mathscr E((|X+y|+|y|)^p)\le\mathscr E(c(|X+y|^p+|y|^p))=\mathscr cE(|X+y|^p)+|y|^p&lt;\infty\)</span>. The similar proof for <span class="arithmatex">\(\mathscr E(Y)\)</span> holds. <a href="https://math.stackexchange.com/questions/1589248/if-the-sum-of-two-independent-random-variables-is-lp-does-it-imply-that">link</a></p>
+</li>
+</ol>
+<p>11..</p>
+<p>12..</p>
+<p>13..</p>
+<p>14..</p>
+<p>15..</p>
+<p>16..</p>
+<p>17..</p>
+<p>18..</p>
+<p>19..</p>
+<p>20..</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

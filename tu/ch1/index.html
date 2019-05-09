@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Chapter 1. Euclidean Spaces - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../kim">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="..">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/tu/ch1.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#chapter-1-euclidean-spaces">Chapter 1. Euclidean Spaces</a></li>
+            <li><a href="#1-smooth-functions-on-a-euclidean-space">1 Smooth Functions on a Euclidean Space</a></li>
+            <li><a href="#2-tangent-vectors-in-rn-as-derivations">2 Tangent Vectors in \(\R^n\) as Derivations</a></li>
+            <li><a href="#3-the-exterior-algebra-of-multicovectors">3 The Exterior Algebra of Multicovectors</a></li>
+            <li><a href="#4-differential-forms-on-rn">4 Differential Forms on \(\R^n\)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="chapter-1-euclidean-spaces">Chapter 1. Euclidean Spaces</h1>
+<h2 id="1-smooth-functions-on-a-euclidean-space">1 Smooth Functions on a Euclidean Space</h2>
+<p>summary.<br />
+<span class="arithmatex">\(C^k, C^\infty\)</span>, smooth, real-analytic, star-shaped, taylor theoerem, diffeomorphism</p>
+<p>1.1. (???) negative^fraction is not defined in R-&gt;R</p>
+<!-- <span class="arithmatex">\(g(x)=\frac{3}{4}x^\frac{4}{3}, \)</span> -->
+
+<p>1.2.<br />
+(a) Suppose <span class="arithmatex">\(f^{(k)}(x)\)</span> is continuous and of the form <span class="arithmatex">\(p_{2k}(1/x)e^{-1/x}\)</span> for some <span class="arithmatex">\(k\le 0, x&gt;0\)</span>. Then <span class="arithmatex">\(\frac{dp_{2k}(1/x)}{dx}=p_{2k-1}(1/x)*(-1/x^2)\)</span> which is a <span class="arithmatex">\(2k+1\)</span> degree polynomial of <span class="arithmatex">\(1/x\)</span>, and <span class="arithmatex">\(\frac{de^{-1/x}}{dx}=e^{-1/x}*(1/x^2)\)</span>, hence <span class="arithmatex">\(f^{(k)}(x)\)</span> is of degree <span class="arithmatex">\(2(k+1)\)</span>. Since it can be easily shown that the statement is true for <span class="arithmatex">\(k=0\)</span>, it is true by induction.<br />
+(b) Suppose <span class="arithmatex">\(f^{(k)}(0)=0\)</span> and <span class="arithmatex">\(f^{(k)}\)</span> is continus for some <span class="arithmatex">\(k\)</span>. Then <span class="arithmatex">\(f^{(k+1)}(0)=\lim_{x\longrightarrow 0} \frac{f^{(k)}(x)-f^{(k)}(0)}{x}=\lim_{x\longrightarrow 0} \frac{f^{(k)}(x)}{x}\)</span>. The limit from left is <span class="arithmatex">\(0\)</span> since it is obvious that <span class="arithmatex">\(f^{(k)}(x)=0\)</span> for <span class="arithmatex">\(x&lt;0\)</span>. The limit from right is, by L'Hopital's rule, <span class="arithmatex">\(\lim_{x\longrightarrow 0+} \frac{f^{(k+1)}(x)}{1}\)</span> if this limit exists. This limit is zero because <span class="arithmatex">\(\lim_{x\longrightarrow 0+} f^{(k+1)}(x)=\lim_{x\longrightarrow 0+} p_{2k+1}(1/x) e^{-1/x}=\lim_{y\longrightarrow \infty} p_{2k+1}(y)/e^y=0\)</span>, from that <span class="arithmatex">\(e^y\)</span> grows much faster than the polynomial <span class="arithmatex">\(p_{2k+1}(y)\)</span>. Both left limit and right limit are zero, therefore <span class="arithmatex">\(f^{(k+1)}(0)\)</span> exists and is zero. Also <span class="arithmatex">\(f^{(k+1)}\)</span> is continuous since its limit from right at <span class="arithmatex">\(x=0\)</span> is zero. For <span class="arithmatex">\(k=0\)</span>, <span class="arithmatex">\(f^{(0)}(0)=0\)</span> and <span class="arithmatex">\(f^{(0)}\)</span> is continus. By induction, the statement is true.</p>
+<p>-</p>
+<p>1.3.</p>
+<p>(a)<br />
+- <span class="arithmatex">\(\tan x\)</span> is smooth because <span class="arithmatex">\(\tan^{(k)}\)</span> is a polynomial of <span class="arithmatex">\(\tan\)</span> and <span class="arithmatex">\(\sec\)</span> which is continuous.<br />
+- <span class="arithmatex">\(\arctan x\)</span> is smooth because <span class="arithmatex">\(\arctan^{(k)} x = \frac{P(x)}{(1+x^2)^k}\)</span> where <span class="arithmatex">\(P(x)\)</span> is a polynomial of <span class="arithmatex">\(x\)</span> and this is continuous for all <span class="arithmatex">\(k\ge 0\)</span>.<br />
+- <span class="arithmatex">\(\tan x\)</span> is strictly increasing, and it is easy to show that <span class="arithmatex">\(\tan\)</span> is bijective from <span class="arithmatex">\((-\pi/2,\pi/2)\)</span> to <span class="arithmatex">\((-\infty,\infty)\)</span>.<br />
+Hence <span class="arithmatex">\(\tan\)</span> is diffeomorphism.</p>
+<p>(b) Given <span class="arithmatex">\(a,b\)</span>, we can scale and shift <span class="arithmatex">\(\arctan\)</span> to get <span class="arithmatex">\(h\)</span>. Precisely, <span class="arithmatex">\(\arctan\)</span> maps an interval <span class="arithmatex">\((a,b)\)</span> to <span class="arithmatex">\((\arctan a, \arctan b)\)</span>, therefore let <span class="arithmatex">\(h(x)=\arctan(x-(a+b)/2)/\arctan ((b-a)/2)\)</span>, then <span class="arithmatex">\(h\)</span> maps from <span class="arithmatex">\((a,b)\)</span> to <span class="arithmatex">\((-1,1)\)</span>. This proves <span class="arithmatex">\((a,b)\)</span> and <span class="arithmatex">\((-1,1)\)</span> are diffeomorphic, and it it clear that the inverse is also a diffeomorphism from <span class="arithmatex">\((-1,1)\)</span> to <span class="arithmatex">\((a,b)\)</span>. Hence arbitrary two intervals <span class="arithmatex">\((a,b)\)</span> and <span class="arithmatex">\((c,d)\)</span> are diffeomorphic by transitivity.</p>
+<p>(c) ??<br />
+<span class="arithmatex">\(-e^x\)</span> is a diffeomorphism from <span class="arithmatex">\(\R\)</span> to <span class="arithmatex">\(()\)</span></p>
+<p>1.4.<br />
+**1.5.<br />
+1.6.<br />
+1.7.<br />
+1.8.</p>
+<h2 id="2-tangent-vectors-in-rn-as-derivations">2 Tangent Vectors in <span class="arithmatex">\(\R^n\)</span> as Derivations</h2>
+<p>summary. <span class="arithmatex">\(T_p(\R^n), D_v f\)</span>, relation, germ of <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(C_p^\infty(\R^n)=C_p^\infty\)</span>, <span class="arithmatex">\(\R\)</span>-linear, Leibniz rule, a point derivation of <span class="arithmatex">\(C_p^\infty\)</span>, <span class="arithmatex">\(D_p(\R^n)\)</span>, kronecker delta,</p>
+<h2 id="3-the-exterior-algebra-of-multicovectors">3 The Exterior Algebra of Multicovectors</h2>
+<h2 id="4-differential-forms-on-rn">4 Differential Forms on <span class="arithmatex">\(\R^n\)</span></h2></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

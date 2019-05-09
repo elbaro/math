@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>2장. 다차원 확률변수의 확률분포 - Math</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Math</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="..">Kim</a>
+                            </li>
+                            <li >
+                                <a href="../../chung">Chung</a>
+                            </li>
+                            <li >
+                                <a href="../../lee">Lee</a>
+                            </li>
+                            <li >
+                                <a href="../../tu">Tu</a>
+                            </li>
+                            <li >
+                                <a href="../../artin">Artin</a>
+                            </li>
+                            <li >
+                                <a href="../../kreyszig">Kreyszig</a>
+                            </li>
+                            <li >
+                                <a href="../../stein">Stein</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/elbaro/math/edit/master/docs/kim/ch2.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#2">2장. 다차원 확률변수의 확률분포</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#-varxyvarxvary2covxy">- Var(X+Y)=Var(X)+Var(Y)=2Cov(X,Y)</a></li>
+            <li><a href="#problems">Problems</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="2">2장. 다차원 확률변수의 확률분포</h1>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>joint moment = <span class="arithmatex">\(M(t_1,t_2)=E(e^{t_1X+t_2Y})\)</span></li>
+<li>joint cumulant = <span class="arithmatex">\(C(t_1,t_2)=\log M(t_1,t_2)\)</span></li>
+<li>independence =&gt;</li>
+<li>cdf = cdf*cdf</li>
+<li>pdf = pdf*pdf</li>
+<li>mgf = mgf*mgf</li>
+<li>g_1(X) and g_2(Y) are independent</li>
+<li>E[g_1(X)g_2(Y)] = E[g_1(X)]E[g_2(Y)]</li>
+<li>
+<ul>
+<li>Cov(X,Y)=0</li>
+</ul>
+</li>
+<li>pdf=g1(x)g2(y) =&gt; independent</li>
+<li>same for cdf, mgf.</li>
+</ul>
+<h2 id="-varxyvarxvary2covxy">- Var(X+Y)=Var(X)+Var(Y)=2Cov(X,Y)</h2>
+<ul>
+<li>Var(matrix X)=E[(X-mean)(X-mean)^T]</li>
+<li>Cov(matrix X, matrix Y)=E[(X-Xmean)(Y-Ymean)^T]</li>
+<li>Var(AX+b)=AVar(X)A^T</li>
+<li>Cov(AX+b,CY+d)=ACov(X,Y)C^T</li>
+<li>Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)</li>
+<li>Cov(X,Y+Z)=Cov(X,Y)+Cov(X,Z)</li>
+<li>
+<p>Var(X+Y)=Var(X)+Var(Y)+Cov(X,Y)+Cov(Y,X)</p>
+</li>
+<li>
+<p>For multi-dim cgf, see page. 95</p>
+</li>
+<li>
+<p>multi-dim independence =&gt;</p>
+</li>
+<li>Cov(X,Y)=0</li>
+<li>Var(X1+..+Xn) = Var(X_1)+..Var(Xn)</li>
+<li>mgf_{X_1+..}(t)=mgf_{X_1}(t)mgf_{X_2}(t)..<br />
+  -</li>
+</ul>
+<h2 id="problems">Problems</h2>
+<p>2.1<br />
+(a) <span class="arithmatex">\(P(Y\le 1/2)=\int_0^1\int_x^1 10xy^2 dy dx\)</span><br />
+(b) <span class="arithmatex">\(P(X+Y\le 1)=\int_0^1\int_x^{1-x} 10xy^2 dy dx\)</span></p>
+<p>2.2<br />
+(a) <span class="arithmatex">\(\int_0^1\int_x^1 cx^2y dydx=1\)</span><br />
+(b) similar to 2.1 (a)<br />
+(c) <span class="arithmatex">\(\int_0^1\int_x^{\min(1,2x)} cx^2y dydx=1\)</span></p>
+<p>2.4<br />
+(a) <span class="arithmatex">\(f_1(x)=\int_x^1 2 dy=2(1-x)\)</span><br />
+(b) <span class="arithmatex">\(f_1(x)=\int_x^\infty e^{-y} dy=e^{-x}\)</span></p>
+<p>2.6<br />
+<span class="arithmatex">\(E[X] = \int_0^\infty x \int_x^\infty xe^{-y} dy dx\)</span><br />
+<span class="arithmatex">\(E[Y] = \int_0^\infty y \int_0^y  xe^-y  dx dy\)</span></p>
+<p><span class="arithmatex">\(\operatorname{Cov}(X,Y) = E[(X-E[X])(Y-E[Y])]\)</span></p>
+<p>2.8<br />
+(a) <span class="arithmatex">\(f_2(y)=\int_0^y 10xy^2 dx=5y^4\)</span><br />
+(b) <span class="arithmatex">\(f_{1,2}(x,y)/f_2(y)=2x/y^2\)</span><br />
+(c) <span class="arithmatex">\(E(X|Y)=2y/3, Var(X|Y)=E((X-E(X|Y))^2|Y)=\int_0^y (X-E(X|Y))P(X|Y)dx=\int_0^y (x-2y/3)(2x/y^2)dx\)</span><br />
+(d) <span class="arithmatex">\(\operatorname{Var[E(X|Y)]}=\)</span>, E[\operatorname{Var}(X|Y)]<span class="arithmatex">\(
+(e) \)</span>f_1(x)=\int_x^1 10xy^2 dy<span class="arithmatex">\(, \)</span>E[X]=..<span class="arithmatex">\(, \)</span>\operatorname{Var(X)}=E[(X-E[X])^2]=..$</p>
+<p>2.10<br />
+(a) Var[E(X|Y)]=<br />
+, E[Var(X|Y)]<br />
+(b) d</p>
+<p>..</p>
+<p>2.12</p>
+<p>2.14</p>
+<p>2.16</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" defer></script>
+        <script src="../../math.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
